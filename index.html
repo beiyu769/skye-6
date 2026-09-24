@@ -1,0 +1,2055 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世盖易 SKYE | 全球头仓配一体化跨境物流服务商</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;color:#2c3e50;background:#fff;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;height:auto;display:block}
+:root{--blue:#123570;--blue-dark:#0d2548;--blue-light:#1a4d8f;--orange:#DB7B1B;--orange-hover:#c56d16;--bg-light:#f4f7fc;--bg-lighter:#fafbfd;--bg-blue-grad:linear-gradient(135deg,#f4f7fc 0%,#e8eff8 100%);--text:#2c3e50;--text-light:#5a6d80;--text-muted:#8a9bb0;--white:#fff;--border:#e2e8f0;--shadow:0 4px 24px rgba(0,0,0,.06);--radius:8px;--radius-lg:12px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;background:rgba(14,32,66,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav.scrolled{background:rgba(10,26,58,.97);box-shadow:0 2px 20px rgba(0,0,0,.25)}
+.nav-logo{display:flex;align-items:center;gap:10px}.nav-logo img{height:40px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:.92rem;font-weight:500;color:#fff;transition:color .2s;position:relative;padding:4px 0}
+.nav.scrolled .nav-links a{color:#fff}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav.scrolled .nav-links a.active{color:var(--orange)}
+.nav-links a.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--orange);border-radius:1px}
+/* ===== 导航下拉菜单 ===== */
+.nav-dropdown{position:relative}
+.dropdown-trigger{cursor:pointer;display:flex;align-items:center;gap:4px}
+.dropdown-trigger::after{content:'';display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;transition:transform .2s}
+.nav-dropdown:hover .dropdown-trigger::after{transform:rotate(180deg)}
+.nav-dropdown:hover .dropdown-trigger{color:var(--orange)}
+.nav.scrolled .nav-dropdown:hover .dropdown-trigger{color:var(--blue)}
+.dropdown-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:4px;background:var(--white);border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.1);border:1px solid var(--border);opacity:0;visibility:hidden;transition:opacity .15s,visibility .15s;z-index:1001;padding:8px 0;min-width:140px}
+.nav-dropdown:hover .dropdown-panel{opacity:1;visibility:visible}
+.dropdown-panel a.dropdown-item{display:block;padding:10px 20px;font-size:.92rem;font-weight:500;color:var(--text);transition:background .12s,color .12s;white-space:nowrap}
+.dropdown-panel a.dropdown-item:hover{background:var(--bg-light);color:var(--blue)}
+
+/* 移动端 */
+@media(max-width:768px){
+  .dropdown-panel{position:static;box-shadow:none;border:none;padding:0 0 0 16px;margin-top:2px;opacity:1;visibility:visible;transform:none;background:transparent;min-width:0}
+  .dropdown-panel a.dropdown-item{padding:8px 0;font-size:.88rem}
+}
+
+.nav-cta{background:var(--orange);color:#fff!important;padding:8px 20px!important;border-radius:6px;font-weight:600!important}
+.nav-cta:hover{background:var(--orange-hover)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-toggle span{width:26px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s}
+.nav.scrolled .nav-toggle span{background:#fff}
+.page{display:none}.page.active{display:block}
+.section{padding:48px 40px;max-width:1280px;margin:0 auto}
+.section-flush{padding:48px 40px;max-width:100%}.section-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+.section-label{display:inline-block;font-size:.82rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title{font-size:2.4rem;font-weight:800;color:var(--blue);margin-bottom:16px;line-height:1.3}
+.section-subtitle{font-size:1.1rem;color:var(--text-light);max-width:680px;margin-bottom:32px;line-height:1.7}
+.btn{display:inline-block;font-size:.95rem;font-weight:600;padding:12px 28px;border-radius:6px;cursor:pointer;transition:all .25s;border:2px solid transparent}
+.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-primary:hover{background:var(--blue-light);border-color:var(--blue-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(18,53,112,.2)}
+.btn-outline{background:transparent;color:#fff;border-color:#fff}
+.btn-outline:hover{background:#fff;color:var(--blue);transform:translateY(-1px)}
+.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn-orange:hover{background:var(--orange-hover)}
+.hero{position:relative;min-height:68vh;max-height:75vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-design{min-height:0;max-height:none;display:block;padding:0;margin-top:72px;cursor:pointer}
+.hero-design img{width:100%;height:auto;display:block}
+.hero-bg{position:absolute;inset:0;z-index:0}.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:rgba(18,53,112,.58);z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;padding:40px 40px 0;max-width:900px}
+.hero-title{font-size:3.8rem;font-weight:900;color:#fff;line-height:1.2;letter-spacing:.03em;text-shadow:0 2px 12px rgba(0,0,0,.15);white-space:nowrap}
+.hero-title span{display:block}
+.hero-sub-en{font-size:1.9rem;color:rgba(255,255,255,.72);letter-spacing:.28em;text-transform:uppercase;margin:20px 0 28px;font-weight:500}
+.hero-desc{font-size:1.05rem;color:rgba(255,255,255,.88);margin-bottom:40px;line-height:1.8;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Hero Stats Grid */
+.hero-stats{display:grid;grid-template-columns:repeat(6,1fr);gap:0;max-width:1280px;margin:0 auto;margin-top:48px}
+.hs-item{text-align:center;padding:28px 24px;border-right:1px solid rgba(255,255,255,.15)}
+.hs-item:last-child{border-right:none}
+.hs-num{font-size:2rem;font-weight:800;color:var(--orange);line-height:1.2;margin-bottom:6px}
+.hs-label{font-size:.82rem;color:rgba(255,255,255,.7);font-weight:500;text-align:left}
+@media(max-width:768px){.hero-stats{grid-template-columns:repeat(3,1fr)}.hs-item:nth-child(3n){border-right:none}.hs-num{font-size:1.5rem}}
+.hero-btns{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.data-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.data-card{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;box-shadow:var(--shadow);transition:transform .25s;border:1px solid var(--border)}
+.data-card:hover{transform:translateY(-4px);border-color:var(--blue)}
+.data-card .dc-icon{font-size:1.8rem;margin-bottom:10px}
+.data-card .dc-num{font-size:1.8rem;font-weight:800;color:var(--blue)}
+.data-card .dc-label{font-size:.84rem;color:var(--text-muted);margin-top:6px}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.service-card{position:relative;overflow:hidden;background:#fff;border-radius:var(--radius-lg);padding:36px 28px;box-shadow:var(--shadow);border:1px solid var(--border);transition:all .3s;cursor:pointer}
+.service-card::before{content:'';position:absolute;inset:0;z-index:0;opacity:.06;transition:opacity .3s}
+.service-card:nth-child(1)::before{background:linear-gradient(135deg,#123570 0%,#1a4d8f 40%,#2980b9 100%)}
+.service-card:nth-child(2)::before{background:linear-gradient(135deg,#0d2548 0%,#123570 50%,#1e5a9e 100%)}
+.service-card:nth-child(3)::before{background:linear-gradient(135deg,#1a4d8f 0%,#123570 30%,#0d3b6e 100%)}.service-card:nth-child(4)::before{background:linear-gradient(135deg,#0d3b6e 0%,#123570 50%,#1a4d8f 100%)}
+.service-card:hover::before{opacity:.12}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(18,53,112,.1);border-color:var(--blue)}
+.service-card .sc-icon,.service-card h3,.service-card p,.service-card .sc-link{position:relative;z-index:1}
+.service-card .sc-icon{width:56px;height:56px;background:var(--bg-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;color:var(--blue)}
+.service-card h3{font-size:1.25rem;font-weight:700;color:var(--blue);margin-bottom:10px}
+.service-card p{font-size:.95rem;color:var(--text-light);line-height:1.7}
+.service-card .sc-link{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:600;font-size:.88rem;margin-top:16px;transition:gap .2s}
+.service-card .sc-link:hover{gap:10px}
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.industry-card{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.industry-card:hover{transform:translateY(-5px);border-color:var(--blue)}
+.industry-card .ic-icon{font-size:2.4rem;margin-bottom:14px}
+.industry-card h4{font-size:1.05rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.industry-card p{font-size:.86rem;color:var(--text-light);line-height:1.6;margin-bottom:4px}
+.ic-tags{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s,opacity .25s,margin .25s;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:0}
+.industry-card:hover .ic-tags{max-height:180px;opacity:1;margin-top:12px}
+.ic-tags span{display:inline-block;background:rgba(0,102,204,.07);color:var(--blue);font-size:.78rem;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.customer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.customer-card{background:var(--bg-lighter);border-radius:var(--radius-lg);padding:32px 24px;text-align:center;transition:transform .25s;border:1px solid transparent}
+.customer-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:var(--shadow)}
+.customer-card .cc-icon{font-size:2rem;margin-bottom:12px}
+.customer-card h4{font-size:1.05rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.customer-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why-card{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;border:1px solid var(--border);transition:all .25s;border-top:3px solid var(--blue)}
+.why-card:nth-child(2){border-top-color:var(--orange)}.why-card:nth-child(3){border-top-color:#27ae60}.why-card:nth-child(4){border-top-color:var(--blue-light)}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.why-card .wc-icon{font-size:2rem;margin-bottom:12px}
+.why-card h4{font-size:1.05rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.why-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.service-tabs{display:flex;gap:8px;margin-bottom:40px;background:var(--bg-light);border-radius:14px;padding:6px}
+.service-tab{padding:14px 24px;border:1px solid transparent;background:#fff;border-radius:10px;font-size:.95rem;font-weight:600;color:var(--text-light);cursor:pointer;transition:all .25s;white-space:nowrap}
+.service-tab.active{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(18,53,112,.25);border-color:var(--blue)}
+.service-tab:hover:not(.active){color:var(--blue);border-color:var(--border);background:var(--bg-white)}
+.tab-content{display:none}.tab-content.active{display:block}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92rem}
+.data-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-weight:600}
+.data-table td{padding:12px 16px;border-bottom:1px solid var(--border);white-space:nowrap}
+.data-table td:last-child{white-space:normal}
+.data-table tr:nth-child(even){background:var(--bg-lighter)}
+.data-table tr:hover{background:var(--bg-light)}
+.process-flow{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:32px 0}
+.process-step{text-align:center;padding:20px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);min-width:140px}
+.process-step .ps-num{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.process-step h4{font-size:.9rem;color:var(--blue);font-weight:700}
+.process-step p{font-size:.78rem;color:var(--text-muted);margin-top:4px}
+.process-arrow{font-size:1.5rem;color:var(--orange);padding:0 8px;font-weight:700}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:24px 0}
+.case-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.case-card:hover{transform:translateY(-4px)}.case-card .cc-img{height:140px;background:var(--bg-blue-grad);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.case-card .cc-body{padding:20px}.case-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px;font-weight:700}
+.case-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.case-card .cc-tag{display:inline-block;background:rgba(219,123,27,.1);color:var(--orange);font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-top:8px}
+.case-highlights{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}.case-stat{background:var(--bg-light);border-radius:8px;padding:10px 14px;text-align:center;min-width:64px;border:1px solid var(--border)}.case-stat-num{font-size:1.15rem;font-weight:800;color:var(--blue);line-height:1.2}.case-stat-label{font-size:.7rem;color:var(--text-muted);margin-top:2px}.case-desc{font-size:.875rem;color:#666;margin:8px 0 0;line-height:1.6}
+.sla-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}
+.sla-card{text-align:center;padding:20px;background:var(--bg-light);border-radius:var(--radius);border:1px solid var(--border)}
+.sla-card .sla-num{font-size:1.8rem;font-weight:800;color:var(--orange)}
+.sla-card .sla-label{font-size:.84rem;color:var(--text-light);margin-top:4px}
+
+.about-hero{background:var(--bg-blue-grad);padding:60px 40px 80px}
+.about-banner{position:relative;height:50vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-banner .ab-bg{position:absolute;inset:0;z-index:0}.about-banner .ab-bg img{width:100%;height:100%;object-fit:cover}
+.about-banner .ab-overlay{position:absolute;inset:0;background:rgba(18,53,112,.5);z-index:1}
+.about-banner .ab-content{position:relative;z-index:2;text-align:center;padding:0 40px}
+.about-banner .ab-title{font-size:2.6rem;font-weight:900;color:#fff;line-height:1.2}
+.about-banner .ab-sub{font-size:.9rem;color:rgba(255,255,255,.6);letter-spacing:.22em;text-transform:uppercase;margin-top:16px;font-weight:500}
+.svc-page-hero{position:relative;height:45vh;overflow:hidden}
+.svc-hero-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;visibility:hidden}
+.svc-hero-slide.active{opacity:1;visibility:visible}
+.svc-hero-slide .ab-bg{position:absolute;inset:0;z-index:0}
+.svc-hero-slide .ab-bg img{width:100%;height:100%;object-fit:cover}
+.svc-hero-slide .ab-overlay{position:absolute;inset:0;background:rgba(18,53,112,.5);z-index:1}
+.svc-hero-slide .ab-content{position:relative;z-index:2;text-align:center;padding:0 40px}
+.svc-hero-slide .ab-title{font-size:2.6rem;font-weight:900;color:#fff;line-height:1.2}
+.svc-hero-slide .ab-sub{font-size:.9rem;color:rgba(255,255,255,.6);letter-spacing:.22em;text-transform:uppercase;margin-top:16px;font-weight:500}
+.svc-hero-slide .ab-desc{font-size:1.05rem;color:rgba(255,255,255,.82);margin-top:14px;line-height:1.7}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text p{font-size:.98rem;color:var(--text-light);line-height:1.9;margin-bottom:16px}
+.about-data{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-data .ad-card{background:var(--blue);color:#fff;padding:28px 20px;border-radius:var(--radius-lg);text-align:center}
+.about-data .ad-num{font-size:2rem;font-weight:900}.about-data .ad-label{font-size:.82rem;opacity:.85;margin-top:6px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.team-stat{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;box-shadow:var(--shadow);border-left:4px solid var(--blue)}
+.team-stat:nth-child(2){border-left-color:var(--orange)}.team-stat:nth-child(3){border-left-color:#27ae60}
+.team-stat .ts-num{font-size:1.6rem;font-weight:800;color:var(--blue)}.team-stat .ts-label{font-size:.84rem;color:var(--text-light);margin-top:6px}
+.office-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.office-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.office-card img{width:100%;height:180px;object-fit:cover}
+.office-card .oc-body{padding:20px}.office-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:6px}
+.office-card p{font-size:.84rem;color:var(--text-light);line-height:1.6}
+.timeline{position:relative;padding:40px 0}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
+.timeline-item{display:flex;align-items:flex-start;margin-bottom:40px;position:relative}
+.timeline-item:nth-child(odd){flex-direction:row}.timeline-item:nth-child(even){flex-direction:row-reverse}
+.timeline-item .tl-content{width:45%;padding:24px;background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.timeline-item .tl-year{font-size:1.4rem;font-weight:900;color:var(--orange)}
+.timeline-item .tl-desc{font-size:.88rem;color:var(--text-light);margin-top:8px;line-height:1.6}
+.timeline-item .tl-dot{position:absolute;left:50%;top:12px;width:16px;height:16px;background:var(--blue);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px var(--blue);transform:translateX(-50%);z-index:2}
+.culture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.culture-card{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;text-align:center;box-shadow:var(--shadow);border-top:4px solid var(--blue);transition:transform .25s}
+.culture-card:hover{transform:translateY(-4px)}.culture-card:nth-child(2){border-top-color:var(--orange)}.culture-card:nth-child(3){border-top-color:var(--blue-light)}
+.culture-card h3{font-size:1.15rem;color:var(--blue);margin-bottom:10px}.culture-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.resources-tabs{display:flex;gap:0;margin-bottom:32px;border-bottom:2px solid var(--border)}
+.resources-tab{padding:12px 28px;font-size:.95rem;font-weight:600;cursor:pointer;color:var(--text-light);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .25s;background:none;border-top:none;border-left:none;border-right:none}
+.resources-tab.active{color:var(--blue);border-bottom-color:var(--orange)}
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.news-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.news-card:hover{transform:translateY(-4px)}.news-card .nc-img{height:180px;background:var(--bg-blue-grad);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.news-card .nc-img img{width:100%;height:100%;object-fit:cover}.news-card .nc-body{padding:20px}
+.news-card .nc-date{font-size:.78rem;color:var(--orange);font-weight:600;margin-bottom:6px}
+.news-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px;line-height:1.4}
+.news-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:40px}
+.pagination button{min-width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:#fff;font-weight:600;cursor:pointer;color:var(--text);transition:all .2s;padding:0 12px}
+.pagination button.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.pagination button:hover:not(.active):not(:disabled){border-color:var(--orange);color:var(--orange)}
+.pagination button:disabled{opacity:.4;cursor:not-allowed}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:18px 24px;background:#fff;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:.95rem;color:var(--blue);transition:background .2s}
+.faq-q:hover{background:var(--bg-lighter)}.faq-q .arrow{transition:transform .3s;font-size:.8rem}
+.faq-q.open .arrow{transform:rotate(180deg)}
+.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s;font-size:.9rem;color:var(--text-light);line-height:1.7;background:var(--bg-lighter)}
+.faq-a.open{padding:16px 24px;max-height:300px}
+.cta-section{background:#f0f4f9;padding:80px 0}
+.cta-section .section-title{text-align:center;color:#1a3a6c;font-size:2rem;margin-bottom:8px}
+.cta-section .section-subtitle{text-align:center;margin:0 auto 36px;color:#6b7c93;font-size:.9rem;max-width:600px}
+.cta-form-expanded{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:0 auto}
+.cta-form-expanded form{display:contents}
+.cta-form-expanded input,.cta-form-expanded select,.cta-form-expanded textarea{width:100%;height:44px;padding:0 16px;font-size:.9rem;color:#333;background:#fff;border:1px solid #dce3ec;border-radius:6px;outline:none;font-family:inherit;box-sizing:border-box;transition:border-color .2s}
+.cta-form-expanded input:focus,.cta-form-expanded select:focus,.cta-form-expanded textarea:focus{border-color:#1a3a6c;box-shadow:0 0 0 2px rgba(26,58,108,.1)}
+.cta-form-expanded textarea{grid-column:1/-1;height:80px;padding:12px 16px;resize:vertical}
+.cta-form-expanded .submit-btn{grid-column:1/-1;justify-self:center;width:220px;height:44px;background:#1a3a6c;color:#fff;font-size:1rem;font-weight:700;border:none;border-radius:6px;cursor:pointer;transition:background .3s}
+.cta-form-expanded .submit-btn:hover{background:#122a50}
+.footer{background:var(--blue-dark);color:rgba(255,255,255,.8);padding:60px 40px 30px}
+.footer-design{padding:0}.footer-design img{width:100%;height:auto;display:block}
+.footer-hotmap a{position:absolute;display:block;color:transparent;background:transparent;text-decoration:none;cursor:pointer;border-radius:4px;transition:background .2s}
+.footer-hotmap a:hover{background:rgba(255,255,255,.09);color:transparent}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.footer-col h4{color:#fff;font-size:1rem;font-weight:700;margin-bottom:20px}
+.footer-col a{display:block;color:rgba(255,255,255,.65);font-size:.88rem;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--orange)}.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-logo img{height:36px}.footer-desc{font-size:.86rem;line-height:1.7;margin-bottom:16px}.footer-addrs{display:flex;flex-direction:column;gap:8px}.footer-addrs span{color:rgba(255,255,255,.65);font-size:.84rem}
+.footer-bottom{max-width:1280px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;font-size:.82rem;flex-wrap:wrap;gap:12px}
+.footer-bottom a{color:rgba(255,255,255,.5)}
+@media(min-width:1200px){.footer-addrs{flex-direction:row;flex-wrap:wrap;gap:0 20px}}.svc-banner{position:relative;width:100%;height:260px;overflow:hidden;border-radius:var(--radius-lg);margin-bottom:32px}
+.svc-banner img{width:100%;height:100%;object-fit:cover}
+.svc-banner .svc-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,53,112,.82) 0%,rgba(18,53,112,.35) 100%)}
+.svc-banner .svc-text{position:absolute;left:40px;top:50%;transform:translateY(-50%);color:#fff;max-width:500px}
+.svc-banner .svc-text h2{font-size:2rem;font-weight:800;line-height:1.3}
+.svc-banner .svc-text p{font-size:1.05rem;opacity:.9;margin-top:8px}
+.careers-banner{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);padding:140px 40px 80px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.careers-banner h1{font-size:2.6rem;font-weight:900;position:relative;z-index:1}
+.careers-banner p{font-size:1.15rem;opacity:.9;margin-top:12px;position:relative;z-index:1}
+.why-join-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why-join-card{text-align:center;padding:32px 20px;background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow);transition:transform .25s}
+.why-join-card:hover{transform:translateY(-6px)}.why-join-card .wj-icon{font-size:2.2rem;margin-bottom:14px}
+.why-join-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px}
+.why-join-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.growth-path{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:32px 0}
+.growth-stage{text-align:center;padding:24px 20px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);min-width:150px;border-top:3px solid var(--blue)}
+.growth-stage:nth-child(2){border-top-color:var(--orange)}.growth-stage:nth-child(3){border-top-color:#27ae60}.growth-stage:nth-child(4){border-top-color:var(--blue-light)}
+.growth-stage .gs-title{font-size:.95rem;font-weight:700;color:var(--blue);margin-bottom:6px}
+.growth-stage .gs-time{font-size:.78rem;color:var(--text-muted)}.growth-stage .gs-desc{font-size:.8rem;color:var(--text-light);margin-top:6px;line-height:1.5}
+.growth-arrow{font-size:1.5rem;color:var(--orange);padding:0 8px;font-weight:700}
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.city-card{background:#fff;border-radius:var(--radius-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.city-card:hover{transform:translateY(-4px)}.city-card .ct-icon{font-size:2.2rem;margin-bottom:12px}
+.city-card h4{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.city-card p{font-size:.84rem;color:var(--text-light);line-height:1.6}
+.job-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.job-card{background:#fff;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);position:relative;transition:transform .2s}
+.job-card:hover{transform:translateY(-3px);border-color:var(--blue)}
+.job-card .job-tags{position:absolute;top:16px;right:16px;display:flex;gap:6px}
+.job-card .job-tag{font-size:.7rem;font-weight:700;padding:2px 10px;border-radius:10px;color:#fff}
+.job-card .job-tag.hot{background:#e74c3c}.job-card .job-tag.urgent{background:var(--orange)}
+.job-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px;margin-right:60px}
+.job-card .job-meta{font-size:.82rem;color:var(--text-muted);line-height:1.8}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.benefit-item{display:flex;align-items:center;gap:14px;padding:20px;background:var(--bg-light);border-radius:var(--radius)}
+.benefit-item .bf-icon{font-size:2rem;flex-shrink:0}
+.benefit-item .bf-text strong{display:block;color:var(--blue);font-size:.95rem}
+.benefit-item .bf-text span{font-size:.82rem;color:var(--text-light)}
+.global-map{text-align:center;margin:24px 0}.global-map img{border-radius:var(--radius-lg);max-height:400px}
+.map-locations{display:flex;justify-content:center;gap:48px;margin-top:28px;flex-wrap:wrap}
+.map-loc{text-align:center;padding:16px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
+.map-loc .ml-city{font-size:1.1rem;font-weight:700;color:var(--blue)}.map-loc .ml-port{font-size:.82rem;color:var(--text-muted);margin-top:4px}
+.map-stats{display:flex;justify-content:center;gap:48px;margin-top:24px;flex-wrap:wrap}
+.map-stat{text-align:center}.map-stat .ms-num{font-size:1.6rem;font-weight:800;color:var(--blue)}
+.map-stat .ms-label{font-size:.82rem;color:var(--text-muted)}
+.partner-section{background:linear-gradient(135deg,#123570 0%,#1A3A6F 100%);padding:60px 0}.partner-section .section-inner{max-width:1280px;margin:0 auto}
+.partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px;margin-top:28px}
+.partner-card{background:#fff;border-radius:12px;padding:18px 14px;display:flex;align-items:center;justify-content:center;min-height:76px;transition:transform .2s,box-shadow .2s}.partner-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.partner-card img{max-height:34px;max-width:100%;object-fit:contain}
+.partner-text-name{font-size:.85rem;font-weight:700;color:#1A3A6F;text-align:center}
+@media(max-width:768px){.partner-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}.partner-section{padding:40px 20px}}
+.section-divider{max-width:1280px;margin:0 auto;height:1px;background:var(--border)}
+.float-sidebar{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:999;display:flex;flex-direction:column;gap:10px}
+.float-btn{width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:1.2rem;transition:all .25s;color:var(--blue)}
+.float-btn:hover{background:var(--blue);color:#fff;transform:scale(1.12)}
+.float-btn.back-top{opacity:0;pointer-events:none;transition:opacity .3s}
+.float-btn.back-top.visible{opacity:1;pointer-events:auto}
+.float-popup{display:none;position:absolute;right:68px;top:0;background:#fff;padding:16px 20px;border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(0,0,0,.15);white-space:nowrap;font-size:.9rem;color:var(--text);z-index:1000}
+.float-popup.show{display:block}.float-popup p{margin:4px 0;color:var(--text-light)}
+.share-panel{display:flex;gap:12px;align-items:center;margin-top:12px}
+.share-btn{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:1rem;transition:all .2s;background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+.share-btn:hover{background:var(--orange);color:#fff;transform:scale(1.1)}
+@media(max-width:1024px){
+.hero-title{font-size:2.6rem}.section-title{font-size:2rem}
+.service-grid{grid-template-columns:repeat(2,1fr)}.industry-grid{grid-template-columns:repeat(2,1fr)}
+.customer-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}
+.data-cards{grid-template-columns:repeat(3,1fr)}.about-grid{grid-template-columns:1fr}
+.culture-grid{grid-template-columns:repeat(2,1fr)}.team-grid{grid-template-columns:1fr 1fr}
+.office-grid{grid-template-columns:repeat(2,1fr)}.city-grid{grid-template-columns:repeat(2,1fr)}
+.footer-grid{grid-template-columns:1fr 1fr 1fr}.news-grid{grid-template-columns:1fr}
+.case-grid{grid-template-columns:1fr}.sla-grid{grid-template-columns:repeat(2,1fr)}
+.why-join-grid{grid-template-columns:repeat(2,1fr)}.job-grid{grid-template-columns:1fr}
+.benefits-grid{grid-template-columns:repeat(2,1fr)}.cta-form-expanded{grid-template-columns:1fr}.cta-form-expanded .submit-btn{width:100%}
+.svc-banner{height:200px}.svc-banner .svc-text h2{font-size:1.5rem}
+.process-flow{flex-direction:column;gap:8px}.process-arrow{transform:rotate(90deg)}
+.growth-path{flex-direction:column;gap:8px}.growth-arrow{transform:rotate(90deg)}
+.timeline::before{left:28px}.timeline-item,.timeline-item:nth-child(even){flex-direction:row}
+.timeline-item .tl-content{width:calc(100% - 60px);margin-left:56px}.timeline-item .tl-dot{left:28px}
+}
+@media(max-width:900px){
+.data-cards{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+.nav{padding:0 20px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.nav-links a{color:var(--text)!important}.nav-links.open{display:flex}.nav-toggle{display:flex}
+.section{padding:32px 20px}.section-flush{padding:24px 20px}
+.hero{min-height:60vh;max-height:65vh}.hero-title{font-size:2.2rem}.hero-desc{font-size:.9rem}
+.data-cards{grid-template-columns:1fr 1fr}
+.industry-grid,.customer-grid,.why-grid,.why-join-grid,.city-grid{grid-template-columns:1fr}
+.team-grid,.office-grid{grid-template-columns:1fr}.culture-grid,.sla-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}.service-tabs{flex-wrap:wrap}.service-tab{padding:10px 16px;font-size:.88rem}
+.cta-form-expanded{grid-template-columns:1fr}.svc-banner{height:160px}.svc-banner .svc-text{left:20px}
+.svc-banner .svc-text h2{font-size:1.25rem}
+.map-locations{flex-direction:column;align-items:center}
+}
+/* ===== Service Page Redesign ===== */
+.svc-section{padding:72px 0}
+.svc-container{max-width:1200px;margin:0 auto;padding:0 40px}
+.svc-label{display:inline-block;font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;background:rgba(219,123,27,.08);padding:4px 12px;border-radius:4px}
+.svc-title{font-size:36px;font-weight:800;letter-spacing:-.8px;line-height:1.15;margin-bottom:14px;color:var(--blue);padding-left:12px}
+.svc-sub{font-size:16px;color:var(--text-light);max-width:640px;line-height:1.7;margin-bottom:40px}
+
+.svc-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .25s}
+.svc-card:hover{box-shadow:0 12px 36px rgba(0,0,0,.06);transform:translateY(-4px);border-color:transparent}
+.svc-card-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.svc-card-icon.blue{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff}
+.svc-card-icon.orange{background:linear-gradient(135deg,var(--orange),#e89542);color:#fff}
+.svc-card-icon svg{width:24px;height:24px}
+.svc-card h3{font-size:16px;font-weight:700;color:var(--blue);margin-bottom:8px}
+.svc-card p{font-size:13px;color:var(--text-light);line-height:1.65}
+.svc-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc-metric{background:#fff;border:1px solid var(--border);border-radius:12px;padding:32px 20px;text-align:center;transition:all .2s}
+.svc-metric:hover{box-shadow:0 8px 28px rgba(0,0,0,.05);transform:translateY(-2px)}
+.svc-metric-num{font-size:40px;font-weight:800;color:var(--blue);letter-spacing:-1.5px;line-height:1}
+.svc-metric-label{font-size:13px;color:var(--text-light);margin-top:8px;font-weight:600}
+/* 降本提效橙色指标 */
+.svc-metrics-orange .svc-metric-num{color:var(--orange)}
+
+.svc-table-wrap{overflow-x:auto}
+.svc-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.svc-table th{background:var(--blue);color:#fff;padding:14px 18px;font-size:13px;text-align:left;font-weight:600}
+.svc-table td{padding:14px 18px;font-size:13px;border-top:1px solid var(--border);color:var(--text-light)}
+.svc-table tr:last-child td{font-weight:700;color:var(--blue);background:var(--bg-light)}
+.svc-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.svc-feat{display:flex;gap:14px;align-items:flex-start;background:var(--bg-light);border-radius:12px;padding:22px;transition:all .2s}
+.svc-feat:hover{background:#eef2f8}
+.svc-feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff;color:var(--blue);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.svc-feat-icon svg{width:20px;height:20px}
+.svc-feat h5{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:4px}
+.svc-feat p{font-size:12px;color:var(--text-light);line-height:1.55;margin:0}
+.svc-cta{background:linear-gradient(160deg,var(--blue) 0%,var(--blue-dark) 100%);color:#fff;text-align:center;padding:80px 40px;position:relative;overflow:hidden;border-radius:var(--radius-lg);margin-top:48px}
+.svc-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.1),transparent 40%)}
+.svc-cta h2{font-size:36px;font-weight:800;letter-spacing:-.8px;position:relative}
+.svc-cta p{font-size:16px;opacity:.9;margin:14px 0 28px;position:relative}
+.svc-cta .btn{position:relative}
+.svc-img-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 32px}
+.svc-img-row img{width:100%;height:220px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
+.svc-img-row-3{grid-template-columns:1fr 1fr 1fr}
+.svc-img-row-3 img{height:180px}
+.svc-partners{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.svc-partners img{height:36px}
+.svc-banner{padding-top:120px;padding-bottom:0}
+@media(max-width:992px){.svc-grid-3,.svc-grid-2{grid-template-columns:1fr}.svc-metrics{grid-template-columns:repeat(2,1fr)}.svc-title{font-size:28px}.svc-img-row,.svc-img-row-3{grid-template-columns:1fr}.svc-feat-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.svc-metrics{grid-template-columns:1fr}.svc-container{padding:0 20px}}
+
+
+.svc-card-row{display:flex;align-items:flex-start;gap:20px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .25s}
+.svc-card-row:hover{box-shadow:0 12px 36px rgba(0,0,0,.06);transform:translateY(-4px);border-color:transparent}
+.svc-card-row .svc-card-icon{flex-shrink:0;margin-bottom:0}
+.svc-card-row h3{font-size:16px;font-weight:700;color:var(--blue);margin-bottom:6px}
+.svc-card-row p{font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:0}
+.svc-card-row .adv-badge{display:inline-block;background:#1a365d;color:#fff;font-size:.75rem;font-weight:600;border-radius:10px;padding:2px 8px;margin-right:6px}
+@media(max-width:768px){.warehouse-ring-metrics{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.warehouse-ring-metrics{grid-template-columns:1fr!important}}
+@media(max-width:768px){.warehouse-ring-metrics+div>div{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.warehouse-ring-metrics+div>div{grid-template-columns:1fr!important}}
+/* ===== 设计稿预览 ===== */
+.design-preview-fab{background:linear-gradient(135deg,#1a3a5c,#123570);color:#f0a500}
+.design-preview-fab:hover{background:linear-gradient(135deg,#f0a500,#e89542);color:#fff}
+.design-preview-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:24px}
+.design-preview-modal.show{display:flex}
+.dpm-backdrop{position:absolute;inset:0;background:rgba(10,22,44,.72);backdrop-filter:blur(3px)}
+.dpm-panel{position:relative;width:min(1080px,96vw);max-height:88vh;background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.35)}
+.dpm-header{display:flex;align-items:center;gap:12px;padding:18px 26px;background:linear-gradient(135deg,#1a3a5c,#123570);color:#fff}
+.dpm-header h3{margin:0;font-size:1.15rem;font-weight:800}
+.dpm-sub{font-size:.78rem;opacity:.75;font-weight:500}
+.dpm-close{margin-left:auto;width:34px;height:34px;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.2rem;line-height:1;cursor:pointer;transition:background .2s}
+.dpm-close:hover{background:var(--orange)}
+.dpm-body{overflow-y:auto;padding:26px;background:#f4f6fb}
+.dpm-group{margin-bottom:30px}
+.dpm-group:last-child{margin-bottom:0}
+.dpm-group-title{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:800;color:#1a3a5c;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;padding:6px 14px;background:#fff;border-radius:20px;border:1px solid #dde3ec;box-shadow:0 2px 8px rgba(18,53,112,.06)}
+.dpm-group-title::before{content:"";width:8px;height:8px;border-radius:50%;background:#f0a500}
+.dpm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.dpm-item{margin:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(18,53,112,.08);border:1px solid #e4e9f1;transition:transform .25s,box-shadow .25s;cursor:zoom-in}
+.dpm-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(18,53,112,.16)}
+.dpm-item img{width:100%;height:auto;max-height:340px;object-fit:contain;background:#eef1f6;display:block}
+.dpm-item figcaption{padding:12px 16px;font-size:.86rem;font-weight:700;color:#1a3a5c;display:flex;align-items:center;justify-content:space-between}
+.dpm-item figcaption em{font-style:normal;font-weight:600;font-size:.72rem;color:#f0a500;background:rgba(240,165,0,.1);padding:2px 10px;border-radius:12px}
+@media(max-width:768px){.dpm-grid{grid-template-columns:1fr}.design-preview-modal{padding:12px}.dpm-header{padding:14px 18px;flex-wrap:wrap}.dpm-body{padding:16px}}
+
+/* ===== 设计稿视觉要素轻量对齐 ===== */
+/* 首页数据区：大字号深蓝底白字（对应设计稿大 Banner 数据） */
+.hero-stats{background:rgba(12,32,66,.42);border-radius:16px;padding:18px 8px;backdrop-filter:blur(2px)}
+.hs-num{font-size:2.5rem;letter-spacing:-.5px}
+/* 资源中心图文卡片：日期徽章化 + hover 阴影 */
+.news-card .nc-date{display:inline-block;background:rgba(240,165,0,.1);color:#d97706;padding:3px 10px;border-radius:12px}
+.news-card:hover{box-shadow:0 16px 40px rgba(18,53,112,.12)}
+/* FAQ 手风琴：展开态橙色左边框（对应设计稿常见问题展开） */
+.faq-q{border-left:3px solid transparent}
+.faq-q.open{border-left-color:#f0a500;background:#fdf7ee}
+.faq-a.open{background:#fdfaf3}
+/* 物流查询：白卡+阴影+橙色按钮（对应设计稿订单查询） */
+#res-tracking > div{background:#fff;border:1px solid #e4e9f1;border-radius:16px;box-shadow:0 10px 32px rgba(18,53,112,.08);padding:36px}
+#res-tracking input[type="text"]{border-color:#dde3ec;box-shadow:0 2px 8px rgba(18,53,112,.04)}
+#res-tracking input[type="text"]:focus{outline:none;border-color:#f0a500}
+#res-tracking .btn{box-shadow:0 6px 18px rgba(240,165,0,.3)}
+/* 联系我们：联系方式卡片化 + 表单按钮橙色（对应设计稿联系我们） */
+#page-contact section .section-inner > div > div:first-child > div[style*="line-height"],#page-contact section:nth-of-type(1) div[style*="line-height"]{background:#fff;border:1px solid #e4e9f1;border-radius:14px;padding:22px 26px;box-shadow:0 6px 22px rgba(18,53,112,.06)}
+/* 办公地点卡片 hover */
+.office-card{transition:transform .25s,box-shadow .25s}
+.office-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(18,53,112,.14)}
+/* CTA 表单按钮橙色强调 */
+.cta-form-expanded .submit-btn{background:linear-gradient(135deg,#f0a500,#e89542);border:none;color:#fff;font-weight:700;box-shadow:0 8px 22px rgba(240,165,0,.28)}
+.cta-form-expanded .submit-btn:hover{background:linear-gradient(135deg,#e89542,#d97706)}
+
+.home-design-wrap .hd-hot{pointer-events:auto;position:absolute;display:block;background:transparent}
+.home-design-wrap .hd-hot:hover{background:rgba(255,152,0,.18)}
+.contact-design-wrap .hd-hot{pointer-events:auto;position:absolute;display:block;background:transparent}
+.contact-design-wrap .hd-hot:hover{background:rgba(255,152,0,.18)}
+
+/* ===== 交互增强 v6：按钮反馈 / 表单交互 / 滚动动效 ===== */
+/* 热区反馈 */
+.home-design-wrap .hd-hot,.contact-design-wrap .hd-hot{transition:background .18s ease,transform .12s ease}
+.home-design-wrap .hd-hot:active,.contact-design-wrap .hd-hot:active{background:rgba(255,152,0,.34);transform:scale(.985)}
+/* 通用按钮反馈 */
+.btn,.btn-orange,.btn-outline,.btn-primary,.submit-btn,.nav-cta,.share-btn,.design-preview-fab,.float-btn,.service-tab,.resources-tab,.faq-q{transition:transform .12s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease}
+.btn:active,.btn-orange:active,.btn-outline:active,.btn-primary:active,.submit-btn:active,.nav-cta:active,.share-btn:active,.design-preview-fab:active,.float-btn:active,.service-tab:active,.resources-tab:active,.faq-q:active{transform:translateY(1px) scale(.99)}
+/* 联系我们右栏“获取专属物流方案”真实表单层 */
+.ct-form-cover{position:absolute;left:50.3%;top:32.7%;width:24.2%;height:14.6%;background:#ffffff;border-radius:.73vw;pointer-events:none;z-index:2}
+.ct-form{position:absolute;left:51.1%;top:33.5%;width:22.1%;z-index:3;pointer-events:auto}
+.ct-form .ct-field{display:block;width:100%;box-sizing:border-box;height:1.85vw;padding:.35vw .75vw;font-size:.78vw;line-height:1.2;color:#1b2c4f;background:#fff;border:1px solid #e2e6ed;border-radius:.42vw;outline:none;margin-bottom:.55vw;transition:border-color .18s ease,box-shadow .18s ease;font-family:inherit}
+.ct-form .ct-field::placeholder{color:#9aa5b5;opacity:1}
+.ct-form .ct-field:focus{border-color:#f0a500;box-shadow:0 0 0 .21vw rgba(240,165,0,.18)}
+.ct-form .ct-ta{height:3.1vw;resize:none}
+.ct-form select.ct-field:invalid{color:#9aa5b5}
+.ct-form .ct-field.ct-invalid{border-color:#e23c3c}
+.ct-form .ct-field.ct-invalid:focus{box-shadow:0 0 0 .21vw rgba(226,60,60,.15)}
+.ct-submit{display:block;width:6.35vw;height:1.7vw;margin-top:.68vw;background:#13346d;color:#fff;font-size:.78vw;font-weight:700;border:none;border-radius:.42vw;cursor:pointer;transition:background .18s ease,transform .12s ease,opacity .18s ease;font-family:inherit}
+.ct-submit:hover{background:#0d2a5c}
+.ct-submit:active{transform:translateY(1px)}
+.ct-submit.loading{opacity:.75;cursor:default}
+.ct-msg{display:none;margin-top:.5vw;font-size:.72vw;line-height:1.3}
+.ct-msg.err{color:#e23c3c}
+.ct-msg.ok{color:#1a9e5c}
+.ct-msg.show{display:block}
+/* 滚动淡入上浮动效 */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:768px){
+.ct-form .ct-field{height:3.2vw;font-size:1.4vw;padding:.6vw 1.2vw;border-radius:.8vw;margin-bottom:1vw}
+.ct-form .ct-ta{height:5.6vw}
+.ct-submit{width:11vw;height:3vw;font-size:1.4vw;border-radius:.8vw}
+.ct-msg{font-size:1.3vw}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav" id="navbar">
+  <div class="nav-logo"><img src="skye_logo_white.png" alt="SKYE Logo"></div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="#" class="active" data-page="home">首页</a>
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-trigger" data-page="services">核心服务</a>
+      <div class="dropdown-panel">
+        <a href="#" data-page="services" data-tab="0" class="dropdown-item">末端派送</a>
+        <a href="#" data-page="services" data-tab="1" class="dropdown-item">海外仓储</a>
+        <a href="#" data-page="services" data-tab="2" class="dropdown-item">头程运输</a>
+        <a href="#" data-page="services" data-tab="3" class="dropdown-item">综合解决方案</a>
+      </div>
+    </div>
+    <a href="#" data-page="about">关于世盖易</a>
+    <a href="#" data-page="careers">加入我们</a>
+    <a href="#" data-page="resources">资源中心</a>
+    <a href="#" class="nav-cta" data-page="contact">联系我们</a>
+  </div>
+</nav>
+
+<div class="page active" id="page-home" style="background:rgba(14,32,66,1)">
+
+<!-- ============ 首页：设计师整图方案（整图视觉 + 透明热区层） ============ -->
+<div class="home-design-wrap" style="position:relative;width:100%;line-height:0;margin-top:72px;background:rgba(14,32,66,1)">
+  <img src="home_design_cropped.webp?v=6" alt="世盖易官网首页" style="width:100%;height:auto;display:block">
+  <!-- 透明热区层 -->
+  <div style="position:absolute;inset:0;pointer-events:none">
+    <a class="hd-hot" style="left:2.5%;top:2.94%;width:6%;height:1.54%" onclick="switchPage('contact');return false;" title="了解世盖易"></a>
+    <a class="hd-hot" style="left:4.7%;top:13.7%;width:8.3%;height:1.27%" onclick="switchPage('contact');return false;" title="预约专属顾问"></a>
+    <a class="hd-hot" style="left:19.8%;top:14.21%;width:8.2%;height:1.27%" onclick="switchPage('services',0);return false;" title="物流轨迹查询"></a>
+    <a class="hd-hot" style="left:18.8%;top:19.59%;width:9.3%;height:1.79%" onclick="switchPage('contact');return false;" title="预约专属顾问"></a>
+    <a class="hd-hot" style="left:28.9%;top:19.08%;width:13.3%;height:2.05%" onclick="switchPage('services',0);return false;" title="物流轨迹查询"></a>
+    <a class="hd-hot" style="left:85.9%;top:17.54%;width:3.9%;height:1.41%" onclick="switchPage('services',0);return false;" title="查询"></a>
+    <a class="hd-hot" style="left:18%;top:56.97%;width:10%;height:2.69%" onclick="switchPage('services',2);return false;" title="干线运输"></a>
+    <a class="hd-hot" style="left:30%;top:56.97%;width:10%;height:2.69%" onclick="switchPage('services');return false;" title="清关服务"></a>
+    <a class="hd-hot" style="left:42%;top:56.97%;width:10%;height:2.69%" onclick="switchPage('services');return false;" title="提柜服务"></a>
+    <a class="hd-hot" style="left:54%;top:56.97%;width:10%;height:2.69%" onclick="switchPage('services');return false;" title="拼箱服务"></a>
+    <a class="hd-hot" style="left:66%;top:56.97%;width:10%;height:2.69%" onclick="switchPage('services',0);return false;" title="末端派送"></a>
+    <a class="hd-hot" style="left:40%;top:60.18%;width:7%;height:1.41%" onclick="switchPage('contact');return false;" title="申请演示"></a>
+    <a class="hd-hot" style="left:50%;top:60.18%;width:8%;height:1.41%" onclick="switchPage('services');return false;" title="了解更多"></a>
+    <a class="hd-hot" style="left:3%;top:94.88%;width:19%;height:5.12%" onclick="switchPage('services',1);return false;" title="跨境电商卖家"></a>
+    <a class="hd-hot" style="left:25%;top:94.88%;width:19%;height:5.12%" onclick="switchPage('services',2);return false;" title="外贸工厂 & 出海品牌商"></a>
+    <a class="hd-hot" style="left:47%;top:94.88%;width:19%;height:5.12%" onclick="switchPage('services',0);return false;" title="贸易分销客户"></a>
+    <a class="hd-hot" style="left:69%;top:94.88%;width:19%;height:5.12%" onclick="switchPage('services',3);return false;" title="货代及物流伙伴"></a>
+  </div>
+</div>
+
+</div><!-- /page-home -->
+
+<div class="page" id="page-services">
+<div class="svc-page-hero">
+<div class="svc-hero-slide active" data-hero="0"><div class="ab-bg"><img loading="lazy" src="service_lastmile_trucks.webp?v=1" alt="末端派送"></div><div class="ab-overlay"></div><div class="ab-content"><h1 class="ab-title">末端派送</h1><p class="ab-sub">LAST MILE DELIVERY</p><p class="ab-desc">本土卡派资源覆盖全美 48 州，智能规划运输路线、匹配最优运力，最后一公里使命必达</p></div></div>
+<div class="svc-hero-slide" data-hero="1"><div class="ab-bg"><img loading="lazy" src="service_warehouse_banner.webp?v=1" alt="海外仓储"></div><div class="ab-overlay"></div><div class="ab-content"><h1 class="ab-title">海外仓储</h1><p class="ab-sub">OVERSEAS WAREHOUSING</p><p class="ab-desc">自营仓储布局欧美核心区位，支撑多渠道备货与全品类履约</p></div></div>
+<div class="svc-hero-slide" data-hero="2"><div class="ab-bg"><img loading="lazy" src="service_headhaul_ship.webp?v=1" alt="头程运输"></div><div class="ab-overlay"></div><div class="ab-content"><h1 class="ab-title">头程运输</h1><p class="ab-sub">FIRST MILE TRANSPORT</p><p class="ab-desc">多种头程运输方案选择，灵活匹配不同预算、时效需求，打通国内出货至海外市场全链路</p></div></div>
+<div class="svc-hero-slide" data-hero="3"><div class="ab-bg"><img loading="lazy" src="service_lastmile_trucks.webp?v=1" alt="综合解决方案"></div><div class="ab-overlay"></div><div class="ab-content"><h1 class="ab-title">综合解决方案</h1><p class="ab-sub">INTEGRATED SOLUTIONS</p><p class="ab-desc">国际快递 + 简化跨境链路 + 数字化系统能力，全链路一体化物流解决方案。</p></div></div>
+</div>
+<section class="section" style="padding:0">
+<div class="service-tabs" id="serviceTabs">
+  <button class="service-tab active" data-idx="0">末端派送</button>
+  <button class="service-tab" data-idx="1">海外仓储</button>
+  <button class="service-tab" data-idx="2">头程运输</button>
+  <button class="service-tab" data-idx="3">综合解决方案</button>
+</div>
+<div class="tab-content active" id="tab-lastmile">
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">卡车派送服务类型</div>
+<h2 class="svc-title">多样化末端卡派方案，支持<span>中大件商品</span></h2>
+
+<div class="svc-feat-grid" style="margin-top:24px">
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/></svg></div>
+  <div><h5>整车运输（FTL）</h5><p>大批量货物独占整车运力，直达不中转，时效最稳，安全性最高。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg></div>
+  <div><h5>零担运输（LTL）</h5><p>中小批量拼车运输，按实际占用空间 / 重量计费，成本经济。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+  <div><h5>FBA 专属卡派</h5><p>亚马逊 FBA 入仓，含预约入仓服务，优先处理。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+  <div><h5>尾板车派送</h5><p>有卸货条件的地址，自带升降尾板，无需叉车。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+  <div><h5>升降车派送</h5><p>无卸货条件的地址，配备液压升降设备。</p></div>
+</div>
+</div>
+</div>
+</div><div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">本土快递派送</div>
+<h2 class="svc-title">整合本土快递资源，<span>数字化系统全程管控</span></h2>
+
+<div class="svc-grid-3">
+  <div class="svc-card">
+    <div class="svc-card-icon" style="background:linear-gradient(135deg,#123570,#1a4d8f);color:#fff;box-shadow:0 4px 14px rgba(18,53,112,.25)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+    <h3 class="svc-card-title">轨迹清晰透明</h3>
+    <p>全程轨迹真实、无断链、无假轨迹。</p>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-icon" style="background:linear-gradient(135deg,#0d9488,#0f766e);color:#fff;box-shadow:0 4px 14px rgba(13,148,136,.25)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+    <h3 class="svc-card-title">自定义唯一识别码</h3>
+    <p>自定义Reference ID，灵活适配业务场景。</p>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-icon" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;box-shadow:0 4px 14px rgba(124,58,237,.25)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+    <h3 class="svc-card-title">实时计费，精准出账</h3>
+    <p>实时计费、同步更新，支持明细导出与对账。</p>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-icon" style="background:linear-gradient(135deg,#d97706,#b45309);color:#fff;box-shadow:0 4px 14px rgba(217,119,6,.25)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <h3 class="svc-card-title">精准测价，提前决策</h3>
+    <p>输入关键参数，系统秒级生成精准预估价并展示费用明细，方便用户提前规划。</p>
+  </div>
+  <div class="svc-card">
+    <div class="svc-card-icon" style="background:linear-gradient(135deg,#e11d48,#be123c);color:#fff;box-shadow:0 4px 14px rgba(225,29,72,.25)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <h3 class="svc-card-title">异常申诉，线上理赔</h3>
+    <p>提供电子化全流程理赔服务，支持异常费用一键线上申诉，全程可跟踪，高效透明。</p>
+  </div>
+</div>
+
+</div>
+</div>
+<div class="svc-section">
+  <div class="svc-container">
+  <div class="svc-label">本土快递服务</div>
+  <h2 class="svc-title">安全合规运营，<span>交付稳定可靠</span></h2>
+  <div class="svc-feat-grid">
+    <div class="svc-feat">
+      <div class="svc-card-icon" style="background:rgba(13,148,136,.08);color:#0d9488;border-radius:50%;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <h4>地址备案</h4><p>提前完成资质认证与派送绑定，保障入仓合规、预约顺畅。</p>
+    </div>
+    <div class="svc-feat">
+      <div class="svc-card-icon" style="background:rgba(5,150,105,.08);color:#059669;border-radius:50%;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12l2 2 4-4"/></svg></div>
+      <h4>签收与回单</h4><p>支持纸质签收回单与电子签收，流程规范可追溯。</p>
+    </div>
+    <div class="svc-feat">
+      <div class="svc-card-icon" style="background:rgba(124,58,237,.08);color:#7c3aed;border-radius:50%;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h4>运力协调</h4><p>实时统筹全网运力，智能匹配最优方案，提升时效、降。</p>
+    </div>
+    <div class="svc-feat">
+      <div class="svc-card-icon" style="background:rgba(217,119,6,.08);color:#d97706;border-radius:50%;margin-bottom:8px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg></div>
+      <h4>逆向物流</h4><p>涵盖退货接收、专业质检及重新上架，闭环管理。</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="svc-section" style="background:var(--bg-lighter)">
+  <div class="svc-container">
+    <div class="svc-label">本土卡车派送</div>
+    <h2 class="svc-title">海量卡车资源，<span>动态计价一键发车</span></h2>
+    
+    <div class="svc-grid-3" style="margin-top:32px">
+      <div class="svc-card">
+        <div class="svc-card-icon" style="background:#0d9488;color:#fff;border-radius:50%;width:40px;height:40px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3 class="svc-card-title">自定义唯一识别码</h3>
+        <p>智能调度多渠道自动比价优选方案。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon" style="background:#7c3aed;color:#fff;border-radius:50%;width:40px;height:40px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3 class="svc-card-title">实时测价，费用透明</h3>
+        <p>支持动态实时计价，费用明细一目了然，杜绝隐形收费。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon" style="background:#123570;color:#fff;border-radius:50%;width:40px;height:40px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="3" y="11" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <h3 class="svc-card-title">线上一键下单</h3>
+        <p>全程线上操作，便捷高效，省时更省心。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon" style="background:#059669;color:#fff;border-radius:50%;width:40px;height:40px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 class="svc-card-title">全程保运，安心无忧</h3>
+        <p>全程货物保障，出险快速理赔，运输更安心。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon" style="background:#d97706;color:#fff;border-radius:50%;width:40px;height:40px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><polyline points="8.5 2 15.5 12 22 2 15.5 12 22 22 8.5 12 2 22 8.5 12 2 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg></div>
+        <h3 class="svc-card-title">海量运力资源</h3>
+        <p>整合全网优质本土卡车资源，运力充足，保障派送时效稳定。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">美国本土快递产品矩阵</div>
+<h2 class="svc-title">深度合作主流快递，<span>产品时效清晰可查</span></h2>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>渠道</th><th>产品名称</th><th>运输方式</th><th>时效</th><th>重量限制</th><th>适用场景</th></tr></thead>
+<tbody>
+<tr><td>FedEx</td><td>Ground Multiweight</td><td>地面</td><td>3-5 个工作日</td><td>—</td><td>一票多箱批量发货，如 FBA 备货、大件组合商品</td></tr>
+<tr><td>FedEx</td><td>Home Delivery</td><td>地面</td><td>1-5 个工作日</td><td>最高 70 磅</td><td>住宅地址配送，含周六</td></tr>
+<tr><td>FedEx</td><td>Ground</td><td>地面</td><td>1-5 个工作日</td><td>最高 150 磅</td><td>商业地址经济配送</td></tr>
+<tr><td>FedEx</td><td>Ground Economy</td><td>地面 + USPS</td><td>2-7 个工作日</td><td>最高 70 磅</td><td>SmartPost 经济型</td></tr>
+<tr><td>UPS</td><td>Hundredweight Service</td><td>陆运 / 空运</td><td>3-5 个工作日</td><td>空运 100 磅 / 陆运 200 磅起</td><td>美国 50 州及 PR，百磅重服务适用于一票多箱批量发货</td></tr>
+<tr><td>UPS</td><td>Ground</td><td>陆运</td><td>1-5 个工作日（85% 包裹 3 天内送达）</td><td>最高 150 磅；最长 108 英寸</td><td>最经济实惠，覆盖全美 50 州（Commercial / Residential 均可）</td></tr>
+<tr><td>UPS</td><td>2nd Day Air</td><td>空运</td><td>第二工作日 12:00 / 17:00 前</td><td>最高 150 磅</td><td>时效与成本的平衡选择</td></tr>
+<tr><td>UPS</td><td>Next Day Air</td><td>空运</td><td>次日 10:30 / 中午前</td><td>最高 150 磅</td><td>紧急订单次日达</td></tr>
+<tr><td>UPS</td><td>Next Day Air Saver</td><td>空运</td><td>次日工作结束前</td><td>最高 150 磅</td><td>次日达经济版</td></tr>
+<tr><td>USPS</td><td>Ground Advantage</td><td>地面</td><td>2-7 个工作日</td><td>—</td><td>经济可靠的全国配送，轻小件派送</td></tr>
+<tr><td>USPS</td><td>Ground Advantage Return</td><td>地面</td><td>2-7 个工作日</td><td>—</td><td>轻小件逆向退件服务</td></tr>
+</tbody></table>
+</div>
+
+
+</div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">加拿大 / 欧洲末端派送</div>
+<h2 class="svc-title">覆盖北美欧洲市场，提升<span>本地化配送体验</span></h2>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>地区</th><th>渠道</th><th>产品名称</th><th>运输方式</th><th>时效</th><th>重量限制</th><th>特点</th></tr></thead>
+<tbody>
+<tr><td>加拿大</td><td>UPS</td><td>Standard to Canada</td><td>陆运</td><td>2-7 个工作日</td><td>最高 150 磅</td><td>美加之间经济陆运，指定日期保证递送</td></tr>
+<tr><td>加拿大</td><td>FedEx</td><td>International Ground</td><td>地面</td><td>2-7 个工作日</td><td>最高 150 磅</td><td>100% 商业和住宅地址覆盖</td></tr>
+<tr><td>加拿大</td><td>FedEx</td><td>International Priority</td><td>空运</td><td>1-3 个工作日</td><td>最高 150 磅</td><td>加拿大全境快速送达</td></tr>
+<tr><td>欧洲</td><td>FedEx</td><td>Europe First</td><td>空运</td><td>次日上午 9:00-10:00</td><td>—</td><td>16,000+ 欧洲邮编，德法英意等主要市场</td></tr>
+<tr><td>欧洲</td><td>FedEx</td><td>Regional Economy</td><td>空运 / 地面</td><td>2-5 个工作日</td><td>—</td><td>EU 特定区域</td></tr>
+<tr><td>欧洲</td><td>UPS</td><td>Worldwide Express</td><td>空运</td><td>1-3 个工作日</td><td>—</td><td>欧洲主要国家</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">分段式采购模式</div>
+<h2 class="svc-title">按需分段采购，<span>跨境物流服务灵活组合</span></h2>
+
+<div class="svc-grid-3" style="margin-top:24px">
+<div class="svc-card">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+  <h3>纯尾程采购</h3>
+  <p>已有头程和海外仓资源，仅需末端派送服务。直接使用 SKYE 尾程渠道，享受协议价卡折扣，系统对接一键下单。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+  <h3>仓配一体</h3>
+  <p>海外仓 + 尾程打包采购。库内操作与末端派送一站式服务，费用合并结算，售后统一对接。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+  <h3>头程 + 仓配全链路</h3>
+  <p>头程运输 + 海外仓 + 末端派送全包。端到端一站式服务，全链路可视追踪，责任边界清晰。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+  <h3>定制化方案</h3>
+  <p>按客户需求定制，专属价卡，个性化 SOP，API 深度对接。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">运力资源</div>
+<h2 class="svc-title">多元运力池，<span>旺季多渠道分流保时效</span></h2>
+
+<div class="svc-grid-3" style="margin-top:24px">
+<div class="svc-card">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+  <h3>快递渠道 100+</h3>
+  <p>全美 48 州 + 阿拉斯加 / 夏威夷全覆盖，旺季多渠道分流保时效。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+  <h3>卡车承运商 20+</h3>
+  <p>优质合作卡司 20+，美国本土全境覆盖，优选具有价格竞争力的承运商。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+  <h3>区域物流网络</h3>
+  <p>UniUni / GOFO / YWE / Xmiles 等，热门城市邮编覆盖，轻小件经济方案。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="svc-section" style="background:#eef4fb;padding:48px 0;">
+  <div class="svc-container">
+    <div class="svc-label">合作渠道</div>
+    <h2 class="svc-title">整合本土运力，最后一公里高效履约</h2>
+    <div style="margin-top:24px">
+      <div style="font-size:.82rem;color:var(--orange);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;text-align:center">尾程合作快递</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-bottom:28px">
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1rem;color:#660099;letter-spacing:1px">FedEx</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1rem;color:#004B87;letter-spacing:1px">USPS</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1rem;color:#351C15;letter-spacing:1px">UPS</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1rem;color:#2D8CFF;letter-spacing:1px">GOFO</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1rem;color:#FF9900;letter-spacing:1px">Amazon</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1rem;color:#1A1A1A;letter-spacing:1px">UniUni</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1rem;color:#D40511;letter-spacing:1px">DHL</span></div>
+      </div>
+      <div style="font-size:.82rem;color:var(--orange);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;text-align:center">尾程合作卡派</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center">
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:700;font-size:.9rem;color:#333;letter-spacing:.5px">TForce Freight</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:700;font-size:.9rem;color:#333;letter-spacing:.5px">CEVA Logistics</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:700;font-size:.9rem;color:#333;letter-spacing:.5px">Roadrunner</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:700;font-size:.9rem;color:#333;letter-spacing:.5px">XPO Logistics</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:700;font-size:.9rem;color:#333;letter-spacing:.5px">SAIA</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:700;font-size:.9rem;color:#333;letter-spacing:.5px">St. George</span></div>
+        <div style="background:#fff;border:1px solid #e0e5eb;border-radius:10px;padding:14px 22px;display:flex;align-items:center;justify-content:center"><span style="font-weight:700;font-size:.9rem;color:#333;letter-spacing:.5px">R+L Carriers</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="tab-content" id="tab-warehouse">
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">可承接业务</div>
+<h2 class="svc-title">兼顾零售批发，<span>承接各类业务订单</span></h2>
+<div class="svc-grid-3" style="margin-top:24px">
+<div class="svc-card" style="text-align:left">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+  <h3 style="font-size:1rem;color:var(--blue);margin-bottom:8px">一件代发 <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:20px;background:var(--orange);color:#fff;font-size:.72rem;font-weight:700;vertical-align:middle">核心主推</span></h3>
+  <p style="color:#6b7c93;font-size:.9rem;line-height:1.5">卖家将货物存储在海外仓，产生订单后由仓库拣货、打包、发货，系统自动同步订单与库存。</p>
+</div>
+<div class="svc-card" style="text-align:left">
+  <div class="svc-card-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+  <h3 style="font-size:1rem;color:var(--blue);margin-bottom:8px">FBA 中转</h3>
+  <p style="color:#6b7c93;font-size:.9rem;line-height:1.5">先大批量送至海外仓，再根据 FBA 库存情况分批转运至亚马逊 FBA 仓，补货灵活可控。</p>
+</div>
+<div class="svc-card" style="text-align:left">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+  <h3 style="font-size:1rem;color:var(--blue);margin-bottom:8px">大货中转</h3>
+  <p style="color:#6b7c93;font-size:.9rem;line-height:1.5">利用海外仓作为临时存储与中转节点，分批配送到不同销售渠道，库存周转更灵活。</p>
+</div>
+</div>
+<div class="svc-grid-3" style="margin-top:16px">
+  <div class="svc-card" style="text-align:left">
+    <div class="svc-card-icon blue" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+    <h3 style="font-size:1rem;color:var(--blue);margin-bottom:8px">B2C/B2B 订单履约</h3>
+    <p style="color:#6b7c93;font-size:.9rem;line-height:1.5">支持单件包裹重量≥150lbs，围长大于165IN的超大件产品B2C履约、B2B门店履约</p>
+  </div>
+  <div class="svc-card" style="text-align:left">
+    <div class="svc-card-icon orange" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    <h3 style="font-size:1rem;color:var(--blue);margin-bottom:8px">在线询价，覆盖全美 48 州</h3>
+    <p style="color:#6b7c93;font-size:.9rem;line-height:1.5">在线下单和预约，覆盖全美 48 州，支持商业保险投保</p>
+  </div>
+  <div class="svc-card" style="text-align:left">
+    <div class="svc-card-icon blue" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+    <h3 style="font-size:1rem;color:var(--blue);margin-bottom:8px">丰富卡车资源</h3>
+    <p style="color:#6b7c93;font-size:.9rem;line-height:1.5">拥有自营车队，合作卡车公司包括Pilot Freight，FedEx Freight，ABF Freight, CEVA 等</p>
+  </div>
+</div>
+</div>
+</div><div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">仓群分布</div>
+<h2 class="svc-title">五大海外仓群，<span>构筑欧美履约网络</span></h2>
+
+<!-- 美/德地图切换区 -->
+<div style="text-align:center;margin:28px 0 12px;position:relative">
+  <!-- 切换按钮 -->
+  <button id="mapToggleBtn" onclick="toggleWarehouseMap()"
+    style="position:absolute;bottom:50px;left:50%;transform:translateX(-50%);z-index:10;background:#5a6d80;color:#fff;border:none;border-radius:20px;padding:6px 18px;font-size:.82rem;font-weight:600;cursor:pointer;letter-spacing:.5px;transition:background .2s"
+    onmouseover="this.style.background='#123570'" onmouseout="this.style.background='#5a6d80'">切换德国地图</button>
+
+  <!-- 美国地图 SVG -->
+  <svg id="usMap" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;border-radius:12px;box-shadow:var(--shadow);display:block">
+    <rect width="800" height="500" fill="#eef1f5" rx="12"/>
+    <g stroke="#c8cdd5" stroke-width="0.8" fill="#dfe3e9">
+      <path d="M120,80 L195,55 L260,58 L310,42 L355,60 L370,42 L385,68 L400,45 L430,40 L450,55 L465,40 L485,60 L520,68 L555,50 L585,30 L630,22 L680,28 L720,40 L740,70 L745,100 L735,125 L720,140 L700,155 L680,170 L660,185 L635,200 L610,220 L590,235 L570,250 L545,270 L520,275 L490,265 L465,250 L440,230 L420,215 L400,200 L380,215 L360,235 L340,250 L310,270 L280,275 L255,260 L230,245 L210,255 L190,270 L165,280 L140,275 L115,255 L100,240 L85,225 L75,205 L70,185 L75,160 L85,130 L100,100 Z"/>
+      <path d="M590,235 L610,220 L635,200 L660,185 L680,170 L700,155 L720,140 L735,270 L720,290 L695,300 L670,295 L650,280 L630,270 L610,255 Z"/>
+      <path d="M280,275 L310,270 L340,250 L360,235 L380,215 L400,200 L410,280 L395,310 L370,335 L340,350 L310,340 L290,320 L275,300 Z"/>
+      <path d="M75,160 L85,130 L100,100 L120,80 L125,160 L120,200 L105,240 L85,225 L75,205 Z"/>
+      <path d="M640,50 L660,35 L690,22 L710,12 L730,18 L740,40 L745,70 L720,40 L680,28 Z"/>
+      <path d="M430,55 L450,55 L465,40 L430,40 Z"/>
+      <path d="M485,60 L520,68 L510,80 L480,72 Z"/>
+    </g>
+    <g transform="translate(110,175)">
+      <circle cx="0" cy="0" r="7" fill="#db7b1b" stroke="#fff" stroke-width="2.5"/>
+      <rect x="-52" y="-28" width="104" height="22" rx="4" fill="#123570"/>
+      <text x="0" y="-13" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">洛杉矶仓储群</text>
+      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#999">美西枢纽</text>
+    </g>
+    <g transform="translate(680,165)">
+      <circle cx="0" cy="0" r="7" fill="#db7b1b" stroke="#fff" stroke-width="2.5"/>
+      <rect x="-52" y="-28" width="104" height="22" rx="4" fill="#123570"/>
+      <text x="0" y="-13" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">新泽西仓储群</text>
+      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#999">美东枢纽</text>
+    </g>
+    <g transform="translate(550,310)">
+      <circle cx="0" cy="0" r="7" fill="#db7b1b" stroke="#fff" stroke-width="2.5"/>
+      <rect x="-80" y="-28" width="160" height="22" rx="4" fill="#123570"/>
+      <text x="0" y="-13" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">亚特兰大/萨凡纳仓储群</text>
+      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#999">美东南门户</text>
+    </g>
+    <g transform="translate(340,310)">
+      <circle cx="0" cy="0" r="7" fill="#db7b1b" stroke="#fff" stroke-width="2.5"/>
+      <rect x="-52" y="-28" width="104" height="22" rx="4" fill="#123570"/>
+      <text x="0" y="-13" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">休斯顿仓储群</text>
+      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#999">美南枢纽</text>
+    </g>
+    <g stroke="#db7b1b" stroke-width="1" stroke-dasharray="5,3" fill="none" opacity="0.35">
+      <line x1="110" y1="175" x2="680" y2="165"/>
+      <line x1="110" y1="175" x2="340" y2="310"/>
+      <line x1="680" y1="165" x2="550" y2="310"/>
+      <line x1="340" y1="310" x2="550" y2="310"/>
+    </g>
+    <text x="30" y="430" font-size="11" fill="#c0c8d4" font-style="italic">太平洋</text>
+    <text x="740" y="420" font-size="11" fill="#c0c8d4" font-style="italic">大西洋</text>
+  </svg>
+
+  <!-- 德国地图 SVG（默认隐藏） -->
+  <svg id="deMap" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;border-radius:12px;box-shadow:var(--shadow);display:none">
+    <rect width="800" height="500" fill="#eef1f5" rx="12"/>
+    <!-- 德国及周边国家轮廓 -->
+    <g stroke="#c8cdd5" stroke-width="0.8" fill="#dfe3e9">
+      <!-- 德国 -->
+      <path d="M280,80 L360,65 L440,72 L500,62 L540,80 L570,95 L580,120 L565,155 L545,180 L520,210 L490,235 L460,250 L420,265 L380,278 L340,290 L300,300 L260,295 L225,280 L200,260 L185,240 L175,215 L180,190 L195,165 L215,140 L240,115 Z"/>
+      <!-- 法国 -->
+      <path d="M80,150 L120,130 L160,140 L185,160 L180,190 L175,215 L185,240 L200,260 L170,285 L140,300 L110,310 L85,325 L65,335 L50,320 L40,290 L35,260 L40,230 L50,200 Z"/>
+      <!-- 荷兰/比利时/卢森堡 -->
+      <path d="M175,215 L185,190 L195,165 L215,140 L240,115 L260,100 L250,85 L225,75 L200,70 L180,72 L160,85 L150,105 L140,125 L120,130 Z"/>
+      <path d="M175,215 L185,240 L200,260 L215,250 L210,230 Z"/>
+      <!-- 波兰 -->
+      <path d="M570,95 L580,120 L565,155 L545,180 L520,210 L555,200 L590,195 L620,185 L650,170 L670,150 L680,130 L660,110 L630,95 L600,90 Z"/>
+      <!-- 奥地利/瑞士 -->
+      <path d="M380,278 L420,265 L460,250 L490,235 L520,210 L500,245 L470,270 L440,290 L410,310 L385,320 L360,315 L340,305 L360,290 Z"/>
+      <path d="M200,260 L225,280 L260,295 L240,310 L215,320 L190,315 L170,305 L185,280 Z"/>
+      <!-- 捷克 -->
+      <path d="M490,235 L520,210 L545,180 L520,195 L490,210 L465,225 Z"/>
+      <!-- 丹麦 -->
+      <path d="M340,60 L360,65 L370,55 L385,40 L400,35 L415,30 L430,38 L425,55 L410,70 L380,72 L360,65 Z"/>
+      <path d="M440,72 L455,55 L475,48 L500,55 L500,72 Z"/>
+    </g>
+    <!-- 科隆标注点 -->
+    <g transform="translate(280,175)">
+      <circle cx="0" cy="0" r="7" fill="#db7b1b" stroke="#fff" stroke-width="2.5"/>
+      <rect x="-52" y="-28" width="104" height="22" rx="4" fill="#123570"/>
+      <text x="0" y="-13" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">科隆仓储群</text>
+      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#999">德国枢纽</text>
+    </g>
+    <!-- 德国区域连线 -->
+    <g stroke="#db7b1b" stroke-width="1" stroke-dasharray="5,3" fill="none" opacity="0.35">
+      <line x1="280" y1="175" x2="440" y2="310"/>
+      <line x1="280" y1="175" x2="160" y2="280"/>
+      <line x1="160" y1="280" x2="440" y2="310"/>
+    </g>
+    <!-- 区域标注 -->
+    <text x="130" y="440" font-size="11" fill="#c0c8d4" font-style="italic">北大西洋</text>
+    <text x="600" y="450" font-size="11" fill="#c0c8d4" font-style="italic">东欧</text>
+    <!-- 周边城市标注 -->
+    <text x="160" y="340" font-size="9" fill="#aaa">法国</text>
+    <text x="100" y="80" font-size="9" fill="#aaa">英国</text>
+    <text x="610" y="120" font-size="9" fill="#aaa">波兰</text>
+  </svg>
+</div>
+
+<!-- 美国仓群表 -->
+<div class="svc-table-wrap" style="margin-top:32px">
+<table class="svc-table">
+<thead><tr><th>仓群</th><th>面积</th><th>距港口 / 机场</th><th>核心功能</th></tr></thead>
+<tbody>
+<tr><td>美国加利福尼亚州仓群 (CA)</td><td>550,000 平方英尺</td><td>临近洛杉矶港与 LAX 国际机场</td><td>美西枢纽，一件代发 / FBA 中转 / B 端备货</td></tr>
+<tr><td>美国新泽西州仓群 (NJ)</td><td>350,000 平方英尺</td><td>毗邻纽瓦克港与 EWR 国际机场</td><td>美东枢纽，覆盖纽约 / 波士顿 / 费城</td></tr>
+<tr><td>美国佐治亚州仓群 (GA)</td><td>150,000 平方英尺</td><td>紧邻萨凡纳港，海运高效直达</td><td>美东南门户，承接萨凡纳港海运货物</td></tr>
+<tr><td>美国得克萨斯州仓群 (TX)</td><td>150,000 平方英尺</td><td>靠近休斯顿港与 IAH 国际机场</td><td>美南枢纽，连通墨西哥湾港口</td></tr>
+<tr><td>德国科隆仓</td><td>215,000 平方英尺</td><td>依托科隆、杜塞尔多夫空港，辐射西欧</td><td>覆盖德国与西欧，提供欧盟境内尾程派送</td></tr>
+</tbody></table>
+  </div>
+</div>
+
+</div>
+<div class="svc-section"><div class="svc-container">
+<div class="svc-label" style="text-align:center;margin-bottom:8px">履约时效</div>
+<h2 class="svc-title">可量化的履约，<span>可信赖的交付</span></h2>
+<div class="warehouse-ring-metrics" style="margin:12px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+  <div style="text-align:center">
+    <div style="position:relative;width:140px;height:140px;margin:0 auto">
+      <svg viewBox="0 0 120 120" width="140" height="140">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ecf2" stroke-width="10"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="var(--blue)" stroke-width="10"
+          stroke-dasharray="308 314" stroke-dashoffset="0" stroke-linecap="round"
+          transform="rotate(-90 60 60)"/>
+        <text x="60" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="var(--blue)">&gt;98%</text>
+      </svg>
+    </div>
+    <div style="font-size:.88rem;color:var(--blue);font-weight:700;margin-top:4px">上架及时率</div>
+    <div style="font-size:.72rem;color:var(--text-muted)">收货后24H内完成上架</div>
+  </div>
+  <div style="text-align:center">
+    <div style="position:relative;width:140px;height:140px;margin:0 auto">
+      <svg viewBox="0 0 120 120" width="140" height="140">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ecf2" stroke-width="10"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="var(--blue)" stroke-width="10"
+          stroke-dasharray="313 314" stroke-dashoffset="0" stroke-linecap="round"
+          transform="rotate(-90 60 60)"/>
+        <text x="60" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="var(--blue)">&gt;99.7%</text>
+      </svg>
+    </div>
+    <div style="font-size:.88rem;color:var(--blue);font-weight:700;margin-top:4px">出库准时率</div>
+    <div style="font-size:.72rem;color:var(--text-muted)">订单下达48H内完成出库</div>
+  </div>
+  <div style="text-align:center">
+    <div style="position:relative;width:140px;height:140px;margin:0 auto">
+      <svg viewBox="0 0 120 120" width="140" height="140">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ecf2" stroke-width="10"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="var(--blue)" stroke-width="10"
+          stroke-dasharray="314 314" stroke-dashoffset="0" stroke-linecap="round"
+          transform="rotate(-90 60 60)"/>
+        <text x="60" y="55" text-anchor="middle" font-size="22" font-weight="800" fill="var(--blue)">&gt;99.95%</text>
+      </svg>
+    </div>
+    <div style="font-size:.88rem;color:var(--blue);font-weight:700;margin-top:4px">库存准确率</div>
+    <div style="font-size:.72rem;color:var(--text-muted)">系统账实一致实时同步</div>
+  </div>
+  <div style="text-align:center">
+    <div style="position:relative;width:140px;height:140px;margin:0 auto">
+      <svg viewBox="0 0 120 120" width="140" height="140">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ecf2" stroke-width="10"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="var(--blue)" stroke-width="10"
+          stroke-dasharray="298 314" stroke-dashoffset="0" stroke-linecap="round"
+          transform="rotate(-90 60 60)"/>
+        <text x="60" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="var(--blue)">&gt;95%</text>
+      </svg>
+    </div>
+    <div style="font-size:.88rem;color:var(--blue);font-weight:700;margin-top:4px">48H上网及时率</div>
+    <div style="font-size:.72rem;color:var(--text-muted)">出库48H内揽收上网</div>
+  </div>
+</div>
+</div></div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">服务品类分级</div>
+<h2 class="svc-title">分级仓储方案，<span>精准匹配货型</span></h2>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>品类级别</th><th>代表品类</th><th>仓储方案</th></tr></thead>
+<tbody>
+<tr><td>小件</td><td>五金工具、箱包、3C、家居装饰品等</td><td>标准货架存储，适配快速拣货出库</td></tr>
+<tr><td>中大件</td><td>家具、户外用品、宠物用品、健身器材、汽配等</td><td>托盘级标准化仓储，适配批量存取与尾程调拨</td></tr>
+<tr><td>超大件</td><td>组合家具、机器设备等</td><td>独立重型作业专区，配备叉车完成装卸操作</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<!-- 6大优势 -->
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">核心优势</div>
+<h2 class="svc-title">多维仓配能力，<span>履约高效可控</span></h2>
+<div class="svc-feat-grid" style="margin-top:24px">
+  <div class="svc-feat"><h4>黄金区位</h4><p>四大仓群紧邻核心港口与机场，卸柜入仓时效领先行业。</p></div>
+  <div class="svc-feat"><h4>专业仓储</h4><p>S/M/L/XL多级货型精准匹配，重型叉车专区、托盘级管理。</p></div>
+  <div class="svc-feat"><h4>尾程履约</h4><p>每日固定揽收班次，UPS/USPS/FedEx/UniUni/GOFO多运力智能路由。</p></div>
+  <div class="svc-feat"><h4>灵活操作</h4><p>一件代发、FBA中转、B端送仓、贴换标、退件处理等多元化增值服务。</p></div>
+  <div class="svc-feat"><h4>收费透明</h4><p>报价清晰明确、精减收费项，全程无隐形费用。</p></div>
+  <div class="svc-feat"><h4>极速响应</h4><p>一对一专属客服，7&times;24小时快速响应，出问题第一时间解决。</p></div>
+</div>
+</div>
+</div>
+
+<!-- 库内操作流程 -->
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">库内操作流程</div>
+<h2 class="svc-title">标准化作业流，<span>全链路可视可控</span></h2>
+<div style="margin-top:24px;text-align:center">
+  <img loading="lazy" src="warehouse_workflow.png" alt="库内操作流程" style="max-width:100%;border-radius:12px;box-shadow:var(--shadow)">
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+<div class="tab-content" id="tab-headhaul">
+<div class="svc-section" style="background:var(--bg-lighter);padding:72px 0">
+<div class="svc-container">
+<div class="svc-label">服务环节</div>
+<h2 class="svc-title">从干线运输到尾程派送，<span>全程一站式服务</span></h2>
+
+<div class="svc-grid-3" style="margin-top:24px">
+<div class="svc-card">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+  <h3>干线运输</h3>
+  <p>快船干线（美森/以星/长荣定提）、经济普船、全域航线覆盖，卡航及铁路运输多种方式灵活组合。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+  <h3>清关服务</h3>
+  <p>华人清关团队，7x24H 全天候服务，货物到港前 5 个工作日完成预报清关，ISF/AMS/ACE 全合规。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+  <h3>提柜服务</h3>
+  <p>充足储备运力，大促旺季不缺车。提柜直送 Amazon/Walmart/Wayfair/TikTok/第三方海外仓/私人地址。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+  <h3>拆柜服务</h3>
+  <p>自营海外仓 + 华人操作团队，国内外一体化标准流程，运力资源丰富，操作效率高。</p>
+</div>
+<div class="svc-card">
+  <div class="svc-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+  <h3>尾程派送</h3>
+  <p>深度聚合 USPS/UPS/FedEx/DHL 等主流官方渠道 + 美国本土区域专线，全重量、全场景、全区域无盲区派送。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">专线产品</div>
+<h2 class="svc-title">多种专线选择，<span>按需规划出海备货方案</span></h2>
+
+<div class="svc-table-wrap" style="margin-bottom:48px">
+<table class="svc-table">
+<thead><tr><th>专线产品</th><th>方式</th><th>时效</th><th>产品特性</th></tr></thead>
+<tbody>
+<tr><td>美国 FBA 海快专线</td><td>海运 + 末端派送</td><td>18-22 天</td><td>中大件 FBA 入仓，支持带电产品，合规稳定可追踪</td></tr>
+<tr><td>美国 FBA 海卡专线</td><td>海运 + 卡车派送</td><td>22-28 天</td><td>超大件 / 托盘货首选，多快船渠道可选，覆盖全美 FBA</td></tr>
+<tr><td>美国 FBA 空派专线</td><td>空运 + 快递 / 卡车</td><td>5-8 天</td><td>分层方案可选，满足紧急补货，带电货物可承接</td></tr>
+<tr><td>FBA 整柜直送专线</td><td>海运直送 FBA 仓</td><td>18-22 天</td><td>大批量免中转，自有清关团队，整柜直清直派</td></tr>
+<tr><td>海运整柜・自营仓派送</td><td>海运直达 SKE 自营仓</td><td>18-22 天</td><td>支持 B2B2C 模式，港到港 / 港到门，仓位充足成本可控</td></tr>
+<tr><td>中欧卡航 / 铁路专线</td><td>中欧卡航、铁路</td><td>18-25 天</td><td>合规 DDP 清关方案，通达欧盟全境及英国，支持海外仓备货</td></tr>
+</tbody></table>
+</div>
+
+</div>
+</div>
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">运输方式详解</div>
+<h2 class="svc-title">海运 / 空运多方案组合，<span>按货量时效灵活匹配</span></h2>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<div style="font-size:1.05rem;font-weight:700;color:var(--blue);margin-bottom:12px">海运方案</div>
+<table class="svc-table">
+<thead><tr><th>海运线路</th><th>起运港</th><th>目的港</th><th>航程</th></tr></thead>
+<tbody>
+<tr><td>美西线</td><td>深圳 / 宁波 / 上海</td><td>洛杉矶 / 长滩</td><td>12-16 天</td></tr>
+<tr><td>美东线</td><td>深圳 / 宁波 / 上海</td><td>纽约 / 萨凡纳</td><td>35-40 天</td></tr>
+<tr><td>美中线</td><td>深圳 / 宁波 / 上海</td><td>休斯顿 / 芝加哥</td><td>32-35 天</td></tr>
+</tbody></table>
+</div>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>海运产品</th><th>运输方式</th><th>适用场景</th></tr></thead>
+<tbody>
+<tr><td>海派</td><td>海运整柜 / 拼柜 + UPS / FedEx 末端派送</td><td>中小件散货，FBA 补货、海外仓备货</td></tr>
+<tr><td>海卡</td><td>海运整柜 / 拼柜 + 末端卡车派送</td><td>大件货物、整柜大宗、FBA 入仓，靠近码头派送服务优</td></tr>
+<tr><td>整柜</td><td>20GP / 40GP / 40HQ 整箱直达</td><td>大批量备货</td></tr>
+<tr><td>拼箱</td><td>共享集装箱空间，按体积计费</td><td>中小批量，不足整柜（同地址可拼柜核算）</td></tr>
+</tbody></table>
+</div>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>海运时效参考</th><th>海派</th><th>海卡</th></tr></thead>
+<tbody>
+<tr><td>国内集货 + 报关</td><td>每周发货，周六截单</td><td>每周发货，周六截单</td></tr>
+<tr><td>海上运输</td><td>12-35 天（视航线）</td><td>12-35 天（视航线）</td></tr>
+<tr><td>清关 + 提柜</td><td>3-5 天</td><td>3-5 天</td></tr>
+<tr><td>末端派送</td><td>3-5 个工作日</td><td>2-5 个工作日</td></tr>
+<tr><td>全程合计</td><td>20-30 天</td><td>18-45 天</td></tr>
+</tbody></table>
+</div>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<div style="font-size:1.05rem;font-weight:700;color:var(--orange);margin-bottom:12px">空运方案</div>
+<table class="svc-table">
+<thead><tr><th>空运产品</th><th>运输方式</th><th>全程时效</th><th>适用场景</th></tr></thead>
+<tbody>
+<tr><td>空派</td><td>空运直飞 / 转飞 + UPS / FedEx 末端派送</td><td>7-15 天</td><td>紧急补货、高价值商品、季节性爆款</td></tr>
+<tr><td>空卡</td><td>空运直飞 / 转飞 + 卡车派送</td><td>7-15 天</td><td>大批量空派货物，时效有要求但预算有限</td></tr>
+</tbody></table>
+</div>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>空运时效参考</th><th>空派（直飞）</th><th>空派（转飞）</th></tr></thead>
+<tbody>
+<tr><td>国内集货 + 报关</td><td>2-3 个工作日</td><td>2-3 个工作日</td></tr>
+<tr><td>空中运输</td><td>1-2 个工作日</td><td>2-4 个工作日</td></tr>
+<tr><td>清关 + 提货</td><td>1-2 个工作日</td><td>1-2 个工作日</td></tr>
+<tr><td>末端派送</td><td>3-5 个工作日</td><td>4-6 个工作日</td></tr>
+<tr><td>全程合计</td><td>7-12 个工作日</td><td>9-15 个工作日</td></tr>
+</tbody></table>
+</div>
+
+</div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">产品能力</div>
+<h2 class="svc-title">丰富配套资源，全方位保障跨境货运稳定</h2>
+
+<div class="svc-feat-grid" style="margin-top:24px">
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+  <div><h5>灵活的运输组合模式</h5><p>支持整箱 FCL、拼箱 LCL、头程转运入仓；提供海派、海卡、整柜直送多元派送方案。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+  <div><h5>多区域上门提货服务</h5><p>覆盖深圳、东莞、广州、义乌等地，提供上门提货、货物揽收服务。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+  <div><h5>稳定的舱位资源保障</h5><p>与多家主流船企深度合作，舱位充足，船期灵活可调。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+  <div><h5>定制化解决方案</h5><p>依据货物品类、出货需求量身打造物流方案，提供合规稳妥的跨境运输服务。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+  <div><h5>灵活的贸易条款选择</h5><p>支持 DDP、DDU 多种贸易交付条款。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+  <div><h5>全方位增值服务</h5><p>涵盖货物保险、仓储运营、物流轨迹可视化追踪等一站式配套服务。</p></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">服务流程</div>
+<h2 class="svc-title">标准化作业节点，<span>全链路透明可控</span></h2>
+<div style="margin-top:24px"><img loading="lazy" src="headhaul_process_flow.png" style="max-width:100%" alt="头程运输服务流程"></div>
+</div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">合作伙伴</div>
+<h2 class="svc-title">整合全球优质运力，<span>构建稳定供应链网络</span></h2>
+
+<div class="svc-feat" style="margin-top:32px"><h4 style="color:var(--orange);font-size:1rem">合作船东</h4></div>
+<div class="partner-grid" style="margin-top:16px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">Matson</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">ZIM</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">CMA CGM</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">OOCL</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">COSCO SHIPPING</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">合德海运</div>
+</div>
+
+<div class="svc-feat" style="margin-top:28px"><h4 style="color:var(--orange);font-size:1rem">合作航司</h4></div>
+<div class="partner-grid" style="margin-top:16px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">國泰 Cathay Pacific</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">长荣航空 EVA AIR</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">中華航空 China Airlines</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">Cargolux</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">NCA 日本货物航空</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">Korean Air 大韩航空</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">中国南方航空</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">Air China 中国国际航空</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">Atlas Air</div>
+</div>
+
+<div class="svc-feat" style="margin-top:28px"><h4 style="color:var(--orange);font-size:1rem">合作快递</h4></div>
+<div class="partner-grid" style="margin-top:16px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">USPS</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">UPS</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">FedEx Express</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">UniUni</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">GOFO</div>
+<div class="partner-item" style="background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:16px 8px;text-align:center;font-weight:700;font-size:.82rem;color:var(--blue)">Amazon Shipping</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class="tab-content" id="tab-solution">
+
+<!-- ===== 国际快递 ===== -->
+<div class="svc-section">
+  <div class="svc-label">国际快递</div>
+  <h2 class="svc-title">门到门速递，保障急件稳定交付</h2>
+
+  <div style="margin-top:24px">
+    <!-- 适合产品类型 - 3卡片 首页风格 -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px">
+      <div style="position:relative;overflow:hidden;background:#fff;border-radius:16px;padding:36px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #e8ecf2;transition:all .3s;cursor:default">
+        <div style="position:absolute;inset:0;z-index:0;opacity:.06;background:linear-gradient(135deg,#123570 0%,#1a4d8f 40%,#2980b9 100%)"></div>
+        <div style="position:relative;z-index:1">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#f97316,#ea580c);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 4px 14px rgba(249,115,22,.25)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="14" height="10" rx="1.5"/><path d="M16 8h2.5l2.5 3.5v3.5h-5"/><circle cx="6" cy="17.5" r="2"/><circle cx="16" cy="17.5" r="2"/></svg>
+          </div>
+          <h4 style="font-size:1.25rem;font-weight:700;color:var(--blue);margin:0 0 10px">紧急补货</h4>
+          <p style="font-size:.95rem;color:var(--text-light);line-height:1.7;margin:0">FBA 紧急补货场景，时效优先，快速响应库存告急</p>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;background:#fff;border-radius:16px;padding:36px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #e8ecf2;transition:all .3s;cursor:default">
+        <div style="position:absolute;inset:0;z-index:0;opacity:.06;background:linear-gradient(135deg,#0d2548 0%,#123570 50%,#1e5a9e 100%)"></div>
+        <div style="position:relative;z-index:1">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 4px 14px rgba(37,99,235,.25)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7v5c0 5.5 4 9 9 11 5-2 9-5.5 9-11V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h4 style="font-size:1.25rem;font-weight:700;color:var(--blue);margin:0 0 10px">高值商品</h4>
+          <p style="font-size:.95rem;color:var(--text-light);line-height:1.7;margin:0">精密仪器、贵重货品，全程专人跟进安全派送</p>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;background:#fff;border-radius:16px;padding:36px 28px;box-shadow:0 2px 12px rgba(0,0,0,.04);border:1px solid #e8ecf2;transition:all .3s;cursor:default">
+        <div style="position:absolute;inset:0;z-index:0;opacity:.06;background:linear-gradient(135deg,#1a4d8f 0%,#123570 30%,#0d3b6e 100%)"></div>
+        <div style="position:relative;z-index:1">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,#1e3a5f,#0d2548);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 4px 14px rgba(13,37,72,.25)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h4 style="font-size:1.25rem;font-weight:700;color:var(--blue);margin:0 0 10px">小包专线</h4>
+          <p style="font-size:.95rem;color:var(--text-light);line-height:1.7;margin:0">独立品集货，灵活拼箱，适合中小件多批次发货</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心优势 - 4张扁图标卡 加大权重 -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px">
+      <div style="background:#fff;border:1px solid #e8ecf2;border-radius:14px;padding:24px 20px;display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(249,115,22,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:var(--blue)">极速时效</div>
+          <div style="font-size:.82rem;color:var(--text-secondary);margin-top:4px">最快3个工作日</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #e8ecf2;border-radius:14px;padding:24px 20px;display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(37,99,235,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:var(--blue)">安全优先</div>
+          <div style="font-size:.82rem;color:var(--text-secondary);margin-top:4px">全程专人跟进</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #e8ecf2;border-radius:14px;padding:24px 20px;display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(22,163,74,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.8"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15"/></svg>
+        </div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:var(--blue)">灵活保障</div>
+          <div style="font-size:.82rem;color:var(--text-secondary);margin-top:4px">灵活调整保障</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #e8ecf2;border-radius:14px;padding:24px 20px;display:flex;align-items:center;gap:16px">
+        <div style="width:48px;height:48px;border-radius:10px;background:rgba(26,58,108,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:var(--blue)">全球网络</div>
+          <div style="font-size:.82rem;color:var(--text-secondary);margin-top:4px">UPS/FedEx 支持</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 服务特色 + 参考时效 - 三列对齐 -->
+    <div style="margin-top:20px;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:14px 0">
+      <!-- 服务特色行 -->
+      <div style="display:grid;grid-template-columns:72px 1fr 1fr 1fr;gap:12px;align-items:center;padding:10px 0;border-top:1px dashed #e8ecf2">
+        <span style="font-size:.8rem;font-weight:600;color:var(--text-secondary);letter-spacing:.05em">服务特色</span>
+        <span style="font-size:.82rem;color:var(--text-secondary)"><span style="color:#16a34a;font-weight:700;margin-right:4px">&#10003;</span>优先安排、装机、清关</span>
+        <span style="font-size:.82rem;color:var(--text-secondary)"><span style="color:#16a34a;font-weight:700;margin-right:4px">&#10003;</span>门到门服务, 无需自送</span>
+        <span style="font-size:.82rem;color:var(--text-secondary)"><span style="color:#16a34a;font-weight:700;margin-right:4px">&#10003;</span>一手账号, 优于官方直发</span>
+      </div>
+      <!-- 参考时效行 -->
+      <div style="display:grid;grid-template-columns:72px 1fr 1fr 1fr;gap:12px;align-items:center;padding:10px 0;border-top:1px dashed #e8ecf2">
+        <span style="font-size:.8rem;font-weight:600;color:var(--text-secondary);letter-spacing:.05em">参考时效</span>
+        <span style="font-size:.82rem;color:var(--text-secondary)">日韩/东南亚 <b style="color:var(--orange)">2-4 天</b></span>
+        <span style="font-size:.82rem;color:var(--text-secondary)">美加/加拿大 <b style="color:var(--orange)">3-5 天</b></span>
+        <span style="font-size:.82rem;color:var(--text-secondary)">欧洲主要国家 <b style="color:var(--orange)">3-5 天</b></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Y2 简化跨境链路 -->
+<div class="svc-section">
+  <div style="padding-bottom:48px">
+    <div class="svc-label" style="color:var(--orange);font-size:.88rem;letter-spacing:0">Y2 直发模式</div>
+    <h2 class="svc-title" style="margin:8px 0 4px">简化跨境链路，轻量出海低成本开拓海外</h2>
+
+    <!-- Y2 业务流程图 -->
+    <table style="margin:28px auto 0;border-collapse:collapse">
+      <tr style="vertical-align:middle">
+        <td style="padding:6px 2px"><div style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:11px 20px;border-radius:10px;font-size:.9rem;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(37,99,235,.2)">Y2 订单</div></td>
+        <td style="padding:6px 0"><svg width="40" height="20" viewBox="0 0 40 20"><line x1="2" y1="10" x2="32" y2="10" stroke="#f97316" stroke-width="2"/><polygon points="32,4 40,10 32,16" fill="#f97316"/></svg></td>
+        <td style="padding:6px 2px"><div style="background:#fff;border:1.5px solid #e0e5ec;color:var(--blue);padding:11px 18px;border-radius:10px;font-size:.88rem;font-weight:600;white-space:nowrap">选择头程</div></td>
+        <td style="padding:6px 0"><svg width="40" height="20" viewBox="0 0 40 20"><line x1="2" y1="10" x2="32" y2="10" stroke="#f97316" stroke-width="2"/><polygon points="32,4 40,10 32,16" fill="#f97316"/></svg></td>
+        <td style="padding:6px 2px"><div style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:11px 18px;border-radius:10px;font-size:.88rem;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(37,99,235,.2)">下单头程</div></td>
+        <td style="padding:6px 0"><svg width="40" height="20" viewBox="0 0 40 20"><line x1="2" y1="10" x2="32" y2="10" stroke="#f97316" stroke-width="2"/><polygon points="32,4 40,10 32,16" fill="#f97316"/></svg></td>
+        <td style="padding:6px 2px"><div style="background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;padding:11px 20px;border-radius:10px;font-size:.9rem;font-weight:700;white-space:nowrap;box-shadow:0 2px 8px rgba(249,115,22,.2)">完成发货</div></td>
+      </tr>
+      <tr style="vertical-align:middle">
+        <td style="padding:2px 2px 6px 2px;text-align:center">
+          <svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="10" stroke="#f97316" stroke-width="2"/><polygon points="2,6 8,14 14,6" fill="#f97316"/></svg>
+        </td>
+        <td></td>
+        <td style="padding:6px 2px"><div style="background:#fff;border:1.5px solid #e0e5ec;color:var(--blue);padding:11px 18px;border-radius:10px;font-size:.88rem;font-weight:600;white-space:nowrap">尾程比价</div></td>
+        <td style="padding:6px 0"><svg width="40" height="20" viewBox="0 0 40 20"><line x1="2" y1="10" x2="32" y2="10" stroke="#f97316" stroke-width="2"/><polygon points="32,4 40,10 32,16" fill="#f97316"/></svg></td>
+        <td style="padding:6px 2px"><div style="background:#fff;border:1.5px solid #e0e5ec;color:var(--blue);padding:11px 18px;border-radius:10px;font-size:.88rem;font-weight:600;white-space:nowrap">下单尾程</div></td>
+        <td style="padding:6px 0"><svg width="40" height="20" viewBox="0 0 40 20"><line x1="2" y1="10" x2="32" y2="10" stroke="#f97316" stroke-width="2"/><polygon points="32,4 40,10 32,16" fill="#f97316"/></svg></td>
+        <td style="padding:6px 2px"><div style="background:#fff;border:1.5px solid #e0e5ec;color:var(--blue);padding:11px 18px;border-radius:10px;font-size:.88rem;font-weight:600;white-space:nowrap;display:inline-block">回传尾程面单</div><svg width="36" height="28" viewBox="0 0 36 28" style="vertical-align:top;margin-left:2px"><polyline points="2,24 2,8 28,8 28,2" stroke="#f97316" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polygon points="22,0 30,2 22,6" fill="#f97316"/></svg></td>
+      </tr>
+    </table>
+
+    <div class="svc-grid-3" style="margin-top:24px">
+      <div class="svc-card">
+        <div class="svc-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 class="svc-card-title">零库存备货</h3>
+        <p>无海外仓租金及库存积压风险，资金占用低。适合中小卖家及需快速测品、迭代的商家。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3 class="svc-card-title">履约时效</h3>
+        <p>整体物流时效最快约14个工作日。备货至目标市场约9个工作日，尾程配送最快5个工作日。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3 class="svc-card-title">平台支持</h3>
+        <p>提供统一物流面单和尾程服务，需使用指定面单和渠道发货，确保轨迹全程可追踪。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">香港红单渠道产品</div>
+<h2 class="svc-title">香港 UPS 红单 / 蓝单，<span>兼顾时效与服务竞争力</span></h2>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>渠道</th><th>产品名称</th><th>目的地</th><th>时效</th><th>适用场景</th></tr></thead>
+<tbody>
+<tr><td>UPS 红单</td><td>Worldwide Express（红单特快）</td><td>美国</td><td>2-3 个工作日</td><td>时效最快，价格高</td></tr>
+<tr><td>UPS 红单</td><td>Worldwide Saver（红单）</td><td>欧美国家</td><td>3-5 个工作日</td><td>时效与空派持平，价格居中</td></tr>
+<tr><td>UPS 蓝单</td><td>Worldwide Expedited（蓝单）</td><td>美国</td><td>5-7 个工作日</td><td>经济线路</td></tr>
+</tbody></table>
+</div>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>计费项目</th><th>红单（Worldwide Express / Saver）</th><th>蓝单（Worldwide Expedited）</th></tr></thead>
+<tbody>
+<tr><td>单件计费重量 &lt; 22kg</td><td>按 0.5kg 进位计费</td><td>按 1kg 进位计费</td></tr>
+<tr><td>22kg &lt; 单件计费重量 &lt; 24kg</td><td>按 1kg 进位计费</td><td>按 1kg 进位计费</td></tr>
+</tbody></table>
+</div>
+
+<div style="margin-top:16px;padding:14px 18px;background:#eef4fb;border-radius:10px;font-size:.88rem;color:var(--blue);line-height:1.7">
+<span style="color:var(--orange);font-weight:700">计费说明：</span>红单在轻小件（&lt;22kg）场景下采用 0.5kg 进位制，相比蓝单的 1kg 进位制更为精细，对于单件重量在 0.5-1kg、1.5-2kg 等区间的包裹可节省显著费用。建议客户根据货物重量分布选择最优渠道。
+</div>
+
+<div class="svc-feat-grid" style="margin-top:24px">
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+  <div><h5>航空网络密度</h5><p>香港国际机场是全球最繁忙的货运机场之一，每周数百班全货机飞往全球主要城市，舱位充足。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+  <div><h5>清关效率</h5><p>UPS 自主清关，进出口清关手续简便快捷，无需复杂报关文件。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+  <div><h5>敏感货处理能力</h5><p>可承接普货、带电产品（不含纯电池）、化妆品（配套少量液体 / 膏体）、成人用品等。</p></div>
+</div>
+<div class="svc-feat">
+  <div class="svc-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+  <div><h5>时效稳定</h5><p>香港 UPS 红单至美国 / 欧洲主要市场 3-5 个工作日送达。</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">国际快递操作全流程</div>
+<h2 class="svc-title">七大核心环节环环相扣，<span>确保货物安全准时送达</span></h2>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<tbody>
+<tr>
+<td style="text-align:center;padding:14px 8px"><span style="display:block;font-size:1.1rem;font-weight:700;color:var(--blue)">① 客户下单</span><span style="font-size:.78rem;color:#6b7c93">在线提交订单，系统生成运单号推送至仓库</span></td>
+<td style="text-align:center;padding:14px 8px"><span style="display:block;font-size:1.1rem;font-weight:700;color:var(--blue)">② 上门取件</span><span style="font-size:.78rem;color:#6b7c93">快递员上门揽收，核对货物信息与运单一致</span></td>
+<td style="text-align:center;padding:14px 8px"><span style="display:block;font-size:1.1rem;font-weight:700;color:var(--blue)">③ 分拣与打包</span><span style="font-size:.78rem;color:#6b7c93">按目的地分类、加固包装、贴标</span></td>
+<td style="text-align:center;padding:14px 8px"><span style="display:block;font-size:1.1rem;font-weight:700;color:var(--blue)">④ 出口报关</span><span style="font-size:.78rem;color:#6b7c93">提交出口报关文件，完成海关申报与放行</span></td>
+</tr>
+<tr>
+<td style="text-align:center;padding:14px 8px"><span style="display:block;font-size:1.1rem;font-weight:700;color:var(--blue)">⑤ 国际运输</span><span style="font-size:.78rem;color:#6b7c93">通过香港 UPS 红单渠道空运至目的国</span></td>
+<td style="text-align:center;padding:14px 8px"><span style="display:block;font-size:1.1rem;font-weight:700;color:var(--blue)">⑥ 进口清关</span><span style="font-size:.78rem;color:#6b7c93">UPS 自主清关，快速放行</span></td>
+<td style="text-align:center;padding:14px 8px"><span style="display:block;font-size:1.1rem;font-weight:700;color:var(--blue)">⑦ 末端派送</span><span style="font-size:.78rem;color:#6b7c93">最后一公里配送至消费者，完成签收闭环</span></td>
+<td style="text-align:center;padding:14px 8px;background:#f7f9fc"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div style="margin-top:16px;padding:14px 18px;background:#eef4fb;border-radius:10px;font-size:.88rem;color:var(--blue);line-height:1.7">
+<span style="color:var(--orange);font-weight:700">核心解决：</span>小批量试单（几件样品即可从香港发出）、紧急补货（最快 1-3 天到货救急）、高价值商品（安全性与时效有保障）、带电货出口（内地受限品类经香港红单合规出运）。
+</div>
+</div>
+</div>
+
+<!-- ===== 数字化系统能力 ===== -->
+<div class="svc-section">
+  <div class="svc-label">数字化系统能力</div>
+  <h2 class="svc-title">自研数字管理系统，管控履约全流程</h2>
+  <div style="margin-top:40px; text-align:center">
+    <img loading="lazy" src="system_arch.png" alt="数字化系统架构" style="width:96%; height:auto; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.08)">
+  </div>
+</div>
+
+<!-- 数据驱动六大模块 -->
+<div class="svc-section">
+  <div>
+    <div class="svc-label" style="color:var(--orange);font-size:.88rem;letter-spacing:0">数字化系统能力</div>
+    <h2 class="svc-title" style="margin:8px 0 4px">全流程数据支撑，驱动业务高效运转</h2>
+    <div class="svc-grid-2" style="margin-top:24px">
+      <div class="svc-card-row">
+        <div class="svc-card-icon" style="background:linear-gradient(135deg,#0d9488,#0f766e);color:#fff;box-shadow:0 4px 14px rgba(13,148,136,.25)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/><line x1="15" y1="13" x2="15" y2="17"/><line x1="11" y1="13" x2="19" y2="13"/></svg></div>
+        <div class="svc-card-body">
+          <h3>数据驱动结算</h3>
+          <p>自动解析账单，计算附加费与异常费用，实现精细化核算</p>
+          <div><span class="adv-badge">优势</span>告别背对背核对，费用规则透明可解释</div>
+        </div>
+      </div>
+      <div class="svc-card-row">
+        <div class="svc-card-icon" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;box-shadow:0 4px 14px rgba(124,58,237,.25)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="19" cy="19" r="3"/><line x1="7.5" y1="10.5" x2="16.5" y2="6.5"/><line x1="7.5" y1="13.5" x2="16.5" y2="17.5"/></svg></div>
+        <div class="svc-card-body">
+          <h3>数据驱动系统对接</h3>
+          <p>全流程系统化对接，支持高并发下单与轨迹追踪</p>
+          <div><span class="adv-badge">优势</span>系统能力随业务增长弹性扩展，高效稳定</div>
+        </div>
+      </div>
+      <div class="svc-card-row">
+        <div class="svc-card-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490);color:#fff;box-shadow:0 4px 14px rgba(8,145,178,.25)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="5" cy="19" r="2"/><line x1="8.5" y1="11" x2="7" y2="7"/><line x1="15" y1="11" x2="17" y2="7"/><line x1="15" y1="13" x2="17" y2="17"/><line x1="8.5" y1="13" x2="7" y2="17"/></svg></div>
+        <div class="svc-card-body">
+          <h3>数据驱动渠道</h3>
+          <p>基于历史数据动态评估价格、时效与稳定性，推荐最优方案</p>
+          <div><span class="adv-badge">优势</span>无需反复测试，系统智能匹配"性价比最优"</div>
+        </div>
+      </div>
+      <div class="svc-card-row">
+        <div class="svc-card-icon" style="background:linear-gradient(135deg,#e11d48,#be123c);color:#fff;box-shadow:0 4px 14px rgba(225,29,72,.25)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="12" y1="7" x2="12" y2="13"/></svg></div>
+        <div class="svc-card-body">
+          <h3>数据驱动客服</h3>
+          <p>AI 识别高频问题，优先智能解决方案，人机协同</p>
+          <div><span class="adv-badge">优势</span>减少等待与扯皮，问题一次解决，体验更佳</div>
+        </div>
+      </div>
+      <div class="svc-card-row">
+        <div class="svc-card-icon" style="background:linear-gradient(135deg,#d97706,#b45309);color:#fff;box-shadow:0 4px 14px rgba(217,119,6,.25)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="svc-card-body">
+          <h3>数据驱动风控</h3>
+          <p>分析轨迹与异常行为，自动识别高风险订单并触发审核</p>
+          <div><span class="adv-badge">优势</span>系统能力随业务增长弹性扩展，高效稳定</div>
+        </div>
+      </div>
+      <div class="svc-card-row">
+        <div class="svc-card-icon" style="background:linear-gradient(135deg,#4f46e5,#4338ca);color:#fff;box-shadow:0 4px 14px rgba(79,70,229,.25)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="8"/><path d="M4 10c0 4.5 3.5 11 8 11s8-6.5 8-11"/><line x1="2" y1="10" x2="22" y2="10"/><circle cx="12" cy="10" r="2"/></svg></div>
+        <div class="svc-card-body">
+          <h3>数据驱动海外仓</h3>
+          <p>订单与库存实时联动，智能分仓优化履约流程</p>
+          <div><span class="adv-badge">优势</span>库存周转更快，全流程一体化管理</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="svc-section">
+<div class="svc-container">
+<div class="svc-label">服务保障体系</div>
+<h2 class="svc-title">六大保障标准，<span>让每一票货都安心</span></h2>
+
+<div class="svc-table-wrap" style="margin-top:24px">
+<table class="svc-table">
+<thead><tr><th>保障项</th><th>标准</th></tr></thead>
+<tbody>
+<tr><td>赔付标准 · 库内责任</td><td>按货物货值 + 头程物流费赔付，最高不超过 100USD / 件</td></tr>
+<tr><td>赔付标准 · 尾程责任</td><td>以承运商赔付为准，我司协助开查索赔（时效 60 个自然日）</td></tr>
+<tr><td>未上网赔付</td><td>包裹超过 10 个自然日未上网，可申请赔付（最高 100USD / 件）</td></tr>
+<tr><td>客服响应</td><td>专属客服群，快速响应异常处理</td></tr>
+<tr><td>账单透明</td><td>系统自动生成账单，明细可查</td></tr>
+<tr><td>合规运营</td><td>安全 0 事故，合规 0 风险</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<!-- CTA -->
+
+</div>
+</section>
+</div><!-- /page-services -->
+<div class="page" id="page-about">
+
+<div class="about-banner">
+  <div class="ab-bg"><img loading="lazy" src="warehouse_aerial.jpeg" alt="世盖易"></div>
+  <div class="ab-overlay"></div>
+  <div class="ab-content">
+    <h1 class="ab-title">全球贸易，高效触达</h1>
+    <p class="ab-sub">GLOBAL TRADE, EFFICIENT FULFILLMENT</p>
+  </div>
+</div>
+<div class="about-hero"><div class="section" style="padding:0"><div class="about-grid">
+<div class="about-text"><div class="section-label">关于世盖易</div><h2 class="section-title" style="color:var(--blue)">数据驱动，头仓配一体化</h2>
+<p>深圳市世盖易科技有限公司（简称：世盖易 SKYE）成立于 2016 年，是一家以数据驱动为核心的全球头仓配一体化跨境物流服务商。总部坐落于深圳，在宁波、美国、厦门、福州、成都、长沙均设有分公司；自营美国海外仓 120 万平方英尺，自营德国海外仓 20 万平方英尺，与欧美主流卡车车队、头部快递公司建立深度合作。业务涵盖头程运输、海外仓储、末端派送、国际快递等，服务网络覆盖欧美核心国家及地区，在跨境电商 B2C、传统贸易 B2B 领域口碑卓越。</p>
+<p>SKYE 始终秉持以专业高效的服务，成就客户价值，助力企业安心出海的使命，严守"安全 0 事故，合规 0 风险"的运营底线，依托自研全链路物流系统，用专业、高效、稳定、可靠的服务陪伴企业安心出海、稳健增长，共筑长远价值。</p></div>
+<div class="about-data"><div class="ad-card"><div class="ad-num">10+年</div><div class="ad-label">行业深耕</div></div><div class="ad-card"><div class="ad-num">142.5万+</div><div class="ad-label">平方英尺仓储</div></div><div class="ad-card"><div class="ad-num">500+</div><div class="ad-label">服务客户</div></div><div class="ad-card"><div class="ad-num">150+人</div><div class="ad-label">全球团队</div></div></div>
+</div></div></div>
+
+<section class="section"><h2 class="section-title" style="text-align:center">发展历程</h2>
+<div class="timeline">
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2016 破局创新</div><div class="tl-desc">公司成立，确立美国跨境物流战略布局图</div></div></div>
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2017 拓筑尾程</div><div class="tl-desc">全面启动美国尾程派送战略布局</div></div></div>
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2019 服务升级</div><div class="tl-desc">与美国主流快递建立深度合作，自研LMS系统上线</div></div></div>
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2022 版图扩容</div><div class="tl-desc">美国洛杉矶自营海外仓正式运营，扩大市场份额</div></div></div>
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2023 履约升级</div><div class="tl-desc">增加美国尾程商派资源，全渠道资源覆盖，履约升级</div></div></div>
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2024 仓网精进</div><div class="tl-desc">美国子公司成立，新增泽西仓、德州仓、佐治亚仓，完成海外仓四仓布局</div></div></div>
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2025 全链启航</div><div class="tl-desc">企业高速发展，成立宁波分公司，全面启动头仓全配链路</div></div></div>
+<div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-year">2026 纵深布局</div><div class="tl-desc">启动欧洲（德国）海外仓布局，拓展本土直客赛道；全国增设多地分公司，扩招业务高管团队</div></div></div>
+</div></section>
+
+<section class="section-flush" style="background:var(--bg-lighter)"><div class="section-inner">
+<h2 class="section-title" style="text-align:center">企业文化</h2>
+<div class="culture-grid"><div class="culture-card"><h3>使命</h3><p>通过专业高效的服务成就客户价值，助力企业出海</p></div><div class="culture-card"><h3>愿景</h3><p>成为全球企业最值得信赖的本土化物流成长伙伴</p></div><div class="culture-card"><h3>价值观</h3><p>高效、拼搏、诚信、客户为先</p></div></div>
+</div></section>
+
+<section class="section"><div class="section-label">核心团队</div><h2 class="section-title" style="text-align:center">专业的人，做专业的事</h2>
+<div class="team-grid" style="margin-top:32px">
+<div class="team-stat"><div class="ts-num">70%</div><div class="ts-label">核心骨干来自头部物流与科技企业</div></div>
+<div class="team-stat"><div class="ts-num">150+人</div><div class="ts-label">覆盖客服/产品/IT/风控等全职能</div></div>
+<div class="team-stat"><div class="ts-num">中美本土团队</div><div class="ts-label">深耕两地高效协同</div></div>
+</div></section>
+
+<section class="section-flush" style="background:var(--bg-lighter)"><div class="section-inner">
+<div class="section-label">全球布局</div><h2 class="section-title" style="text-align:center">全球办公网络</h2>
+<div class="world-map-wrap" style="margin-top:28px;max-width:960px;margin-left:auto;margin-right:auto">
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <rect width="900" height="480" fill="#eef1f5" rx="12"/>
+  <g stroke="#c8cdd5" stroke-width="0.8" fill="#dfe3e9">
+    <path d="M90,35 L250,30 L260,80 L230,105 L205,125 L185,165 L160,175 L125,160 L100,115 L80,80 Z"/>
+    <path d="M165,190 L225,185 L210,235 L195,305 L175,340 L155,305 L150,255 L145,225 Z"/>
+    <path d="M365,50 L455,40 L475,65 L465,100 L445,130 L415,140 L385,125 L370,95 L360,75 Z"/>
+    <path d="M375,150 L465,145 L475,195 L455,265 L430,325 L400,320 L375,275 L365,215 Z"/>
+    <path d="M470,40 L580,25 L660,23 L710,30 L750,45 L765,65 L755,100 L730,115 L705,130 L675,140 L640,150 L600,160 L560,165 L520,155 L485,125 L470,90 Z"/>
+    <path d="M745,90 L760,85 L770,95 L755,110 Z"/>
+    <path d="M685,180 L720,173 L735,190 L715,195 L690,195 Z"/>
+    <path d="M700,205 L725,200 L730,215 L710,220 Z"/>
+    <path d="M695,270 L755,260 L775,285 L760,325 L730,340 L700,330 Z"/>
+  </g>
+  <g fill="rgba(18,53,112,0.1)" stroke="rgba(18,53,112,0.25)" stroke-width="1.2" stroke-dasharray="5,3">
+    <path d="M105,45 L215,45 L200,120 L110,120 Z"/>
+    <path d="M390,50 L450,50 L440,115 L395,115 Z"/>
+  </g>
+  <g transform="translate(150,90)">
+    <circle cx="0" cy="0" r="5" fill="#db7b1b" stroke="#fff" stroke-width="2.2"/>
+    <text x="0" y="-14" text-anchor="middle" font-size="12" font-weight="700" fill="#123570">洛杉矶</text>
+    <text x="0" y="17" text-anchor="middle" font-size="9" fill="#999">美国</text>
+  </g>
+  <g transform="translate(425,72)">
+    <circle cx="0" cy="0" r="5" fill="#db7b1b" stroke="#fff" stroke-width="2.2"/>
+    <text x="0" y="-14" text-anchor="middle" font-size="12" font-weight="700" fill="#123570">德国</text>
+    <text x="0" y="17" text-anchor="middle" font-size="9" fill="#999">欧洲</text>
+  </g>
+  <g transform="translate(688,120)">
+    <circle cx="0" cy="0" r="5" fill="#db7b1b" stroke="#fff" stroke-width="2.2"/>
+    <text x="0" y="-14" text-anchor="middle" font-size="12" font-weight="700" fill="#123570">深圳</text>
+    <text x="0" y="17" text-anchor="middle" font-size="9" fill="#999">中国</text>
+  </g>
+  <g transform="translate(718,105)">
+    <circle cx="0" cy="0" r="5" fill="#db7b1b" stroke="#fff" stroke-width="2.2"/>
+    <text x="0" y="-14" text-anchor="middle" font-size="12" font-weight="700" fill="#123570">宁波</text>
+    <text x="0" y="17" text-anchor="middle" font-size="9" fill="#999">中国</text>
+  </g>
+</svg>
+<div class="office-grid" style="margin-top:40px">
+<div class="office-card"><img loading="lazy" src="office_shenzhen.webp?v=1" alt="深圳总部"><div class="oc-body"><h4>深圳总部</h4><p>龙岗区坂田街道，集商务、技术研发、运营管理于一体</p></div></div>
+<div class="office-card"><img loading="lazy" src="office_ningbo.webp?v=1" alt="宁波运营中心"><div class="oc-body"><h4>宁波运营中心</h4><p>鄞州区，专注关务操作、客户服务与头程调度</p></div></div>
+<div class="office-card"><img loading="lazy" src="office_usa.png" alt="加州办公室"><div class="oc-body"><h4>加州办公室</h4><p>整合本地资源，统筹美国仓储运营与本土商务拓展</p></div></div>
+</div>
+</div></div></section>
+
+
+</div><!-- /page-about -->
+<div class="page" id="page-careers">
+<div class="careers-banner"><h1>加入世盖易，助力出海企业开拓全球市场</h1><p>我们寻找对技术与物流有热情的伙伴</p></div>
+
+<section class="section"><h2 class="section-title" style="text-align:center">热招岗位</h2>
+<div style="max-width:1000px;margin:32px auto 0">
+
+<div style="margin-bottom:40px"><h3 style="font-size:1.1rem;color:var(--blue);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)">深圳区域</h3>
+<div class="job-grid">
+<div class="job-card"><div class="job-tags"><span class="job-tag hot">热招</span></div><h4>头程海运销售</h4><div class="job-meta">深圳 · 销售部</div></div>
+<div class="job-card"><div class="job-tags"><span class="job-tag hot">热招</span></div><h4>海外仓销售</h4><div class="job-meta">深圳 · 销售部</div></div>
+<div class="job-card"><div class="job-tags"><span class="job-tag hot">热招</span></div><h4>销售总监</h4><div class="job-meta">深圳 · 销售部</div></div>
+<div class="job-card"><h4>欧洲尾程产品专员</h4><div class="job-meta">深圳</div></div>
+<div class="job-card"><h4>商业分析师</h4><div class="job-meta">深圳 · 数据部</div></div>
+<div class="job-card"><h4>招聘专员</h4><div class="job-meta">深圳 · 人力行政部</div></div>
+<div class="job-card"><h4>品牌视觉设计</h4><div class="job-meta">深圳 · 市场部</div></div>
+<div class="job-card"><h4>财务人员 / 税务专员</h4><div class="job-meta">深圳 · 财务部</div></div>
+</div></div>
+
+<div style="margin-bottom:40px"><h3 style="font-size:1.1rem;color:var(--blue);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)">宁波区域</h3>
+<div class="job-grid">
+<div class="job-card"><h4>跨境物流销售</h4><div class="job-meta">宁波 · 销售部</div></div>
+<div class="job-card"><h4>招聘专员</h4><div class="job-meta">宁波 · 人力行政部</div></div>
+</div></div>
+
+<div style="margin-bottom:40px"><h3 style="font-size:1.1rem;color:var(--blue);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)">更多城市（上海、广州、杭州、北京、成都、武汉、青岛等）</h3>
+<div class="job-grid">
+<div class="job-card"><div class="job-tags"><span class="job-tag urgent">急</span></div><h4>分公司销售负责人（合伙人）</h4><div class="job-meta">全国多城 · 销售部</div></div>
+<div class="job-card"><h4>跨境物流销售</h4><div class="job-meta">全国多城 · 销售部</div></div>
+<div class="job-card"><h4>招聘专员</h4><div class="job-meta">全国多城 · 人力行政部</div></div>
+</div></div>
+
+</div></section>
+<section class="section"><h2 class="section-title" style="text-align:center">与我们同行，共启全球机遇</h2>
+<div class="why-join-grid" style="margin-top:32px">
+<div class="why-join-card"><div class="wj-icon">&#x1F310;</div><h4>全球化舞台</h4><p>面向跨境履约与全球物流场景，服务全球出海企业，在跨境物流第一线快速成长。</p></div>
+<div class="why-join-card"><div class="wj-icon">&#x1F4CA;</div><h4>数据与技术驱动</h4><p>深入物流系统、供应链协同与数据驱动项目，让前沿技术真正赋能业务成长。</p></div>
+<div class="why-join-card"><div class="wj-icon">&#x1F680;</div><h4>高速增长</h4><p>业务持续高速增长，岗位空间开放，鼓励主动思考，参与从1到N的建设。</p></div>
+<div class="why-join-card"><div class="wj-icon">&#x1F91D;</div><h4>务实协作</h4><p>扁平组织、结果导向。不讲Title只讲价值，鼓励全员推进业务落地。</p></div>
+</div></section>
+
+<section class="section-flush" style="background:var(--bg-lighter)"><div class="section-inner">
+<h2 class="section-title" style="text-align:center">清晰的职业上升通道</h2>
+<div class="growth-path">
+<div class="growth-stage"><div class="gs-title">初级专员</div><div class="gs-time">0-2年</div><div class="gs-desc">系统培训+导师带教</div></div><div class="growth-arrow">&rarr;</div>
+<div class="growth-stage"><div class="gs-title">业务骨干</div><div class="gs-time">2-4年</div><div class="gs-desc">独立负责业务模块</div></div><div class="growth-arrow">&rarr;</div>
+<div class="growth-stage"><div class="gs-title">团队主管</div><div class="gs-time">4-6年</div><div class="gs-desc">管理团队与核心指标</div></div><div class="growth-arrow">&rarr;</div>
+<div class="growth-stage"><div class="gs-title">部门负责人</div><div class="gs-time">6年+</div><div class="gs-desc">统筹业务线</div></div>
+</div></div></section>
+
+<section class="section-flush" style="background:var(--bg-lighter)"><div class="section-inner">
+<h2 class="section-title" style="text-align:center">团队风采</h2>
+<div class="city-grid" style="margin-top:32px">
+<div class="city-card"><div class="ct-icon">&#x1F4DA;</div><h4>知识分享会</h4><p>每月举办跨部门知识分享，涵盖业务进阶、AI应用等主题，鼓励知识碰撞与思维升级。</p></div>
+<div class="city-card"><div class="ct-icon">&#x1F3C6;</div><h4>年度评优表彰</h4><p>设立「年度之星」「创新突破」「最佳协作」等荣誉奖项，每份付出都会被看见、被肯定。</p></div>
+<div class="city-card"><div class="ct-icon">&#x1F389;</div><h4>季度团建</h4><p>每季度组织全员团建活动，从户外拓展到密室逃脱，凝聚团队力量，在欢笑中加深默契。</p></div>
+</div></div></section>
+
+<section class="section-flush" style="background:var(--bg-lighter)"><div class="section-inner">
+<h2 class="section-title" style="text-align:center">薪酬福利</h2>
+<div class="benefits-grid" style="margin-top:32px">
+<div class="benefit-item"><div class="bf-icon">&#x1F4B0;</div><div class="bf-text"><strong>有竞争力的薪酬</strong><span>年终奖 + 绩效奖金 + 期权计划</span></div></div>
+<div class="benefit-item"><div class="bf-icon">&#x1F3E5;</div><div class="bf-text"><strong>全面保障</strong><span>五险一金 + 补充商业保险 + 年度体检</span></div></div>
+<div class="benefit-item"><div class="bf-icon">&#x2708;</div><div class="bf-text"><strong>跨境差旅机会</strong><span>美国轮岗 / 海外仓考察 / 行业展会</span></div></div>
+<div class="benefit-item"><div class="bf-icon">&#x1F4DA;</div><div class="bf-text"><strong>学习成长</strong><span>培训补贴 + 技术大会 + 图书报销</span></div></div>
+</div></div></section>
+
+<section class="section"><div style="text-align:center;padding:48px;background:var(--bg-blue-grad);border-radius:var(--radius-lg)">
+<h2 style="color:var(--blue);margin-bottom:12px">投递简历</h2><p style="color:var(--text-light);margin-bottom:24px;font-size:1.05rem">发送简历至 <strong style="color:var(--orange)">hr@skyeglobal.com</strong></p>
+<a href="mailto:hr@skyeglobal.com" class="btn btn-primary" style="font-size:1.05rem;padding:14px 40px">投递简历</a></div></section>
+
+</div><!-- /page-careers -->
+<div class="page" id="page-resources">
+<div class="subpage-banner" style="position:relative;margin-top:72px;overflow:hidden;line-height:0">
+<img loading="lazy" src="res_head_design.webp?v=1" alt="资源中心" style="width:100%;display:block">
+</div>
+<section class="section">
+<div class="resources-tabs" id="resourcesTabs">
+<button class="resources-tab active" data-idx="0">公司新闻</button>
+<button class="resources-tab" data-idx="1">行业资讯</button>
+<button class="resources-tab" data-idx="2">物流查询</button>
+<button class="resources-tab" data-idx="3">常见问题</button>
+</div>
+<div class="tab-content active" id="res-news">
+<div class="news-grid">
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_award.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-07-30</div><h4>扎根产业带斩获「汕品出海」奖项，世盖易助力国货走向全球</h4><p>世盖易亮相潮汕电商产业博览会，依托一站式跨境物流解决方案，赋能潮汕产业带国货扬帆出海。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_warehouse_interior.png"></div><div class="nc-body"><div class="nc-date">2026-07-28</div><h4>官宣｜世盖易德国 20000㎡高标仓正式启用，构筑欧洲稳定本土履约底盘</h4><p>世盖易科隆海外仓全新落地，完善欧洲履约网络，为跨境卖家提供稳定高效的欧盟本土仓储派送服务。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_sports_event.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-04-30</div><h4>挥杆聚知己，跨境共前行｜「世盖」杯高尔夫精英赛圆满落幕</h4><p>「世盖」杯高尔夫精英赛顺利举办，汇聚跨境从业者，搭建交流平台，共谋行业发展新机遇。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_decade.png"></div><div class="nc-body"><div class="nc-date">2026-04-24</div><h4>10年深耕，数据驱动！这家头仓配一体化跨境物流服务商，让跨境出海更安心</h4><p>十年深耕跨境赛道，世盖易打造数字化头仓配一体化体系，为出海企业提供可靠的全链路物流支撑。</p></div></div>
+</div>
+<div class="pagination">
+<button class="page-nav" disabled>Previous</button>
+<button class="active">1</button>
+<button class="page-nav" disabled>Next</button>
+</div></div>
+<div class="tab-content" id="res-industry">
+<div class="news-grid">
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="cargo_ship.png"></div><div class="nc-body"><div class="nc-date">2026-07-30</div><h4>美国 301 关税落地，拆解成本变化和跨境卖家应对方案（附关税豁免税号）</h4><p>美国对华 12.5% 附加关税正式生效，世盖易拆解新政细则，提供合规降本实操方案。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="dmytro-demidko-eBWzFKahEaU-unsplash.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-07-23</div><h4>中国卖家霸榜亚马逊，GMV 却不足三成，该往何处发力？（附 2026 美国零售百强榜）</h4><p>亚马逊中国卖家数量占优但营收偏低，本文剖析行业现状，分享多渠道、品牌化破局思路。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="warehouse_scanning.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-07-01</div><h4>卖家避坑指南｜拒绝「暴雷」！海外仓入仓一定要预约，否则…</h4><p>海外仓送货无预约易出现拒收、滞柜、延误损失，一文讲清预约规则与避坑要点。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="fedex_truck.png"></div><div class="nc-body"><div class="nc-date">2026-07-01</div><h4>美线必看：5H/9H/1H/7H 查什么？扣多久？抢救方案是什么？</h4><p>详解美线四大海关扣留代码查验内容、滞留时长，配套完整扣货应急处理方案。</p></div></div>
+</div>
+<div class="pagination">
+<button class="page-nav" disabled>Previous</button>
+<button class="active">1</button>
+<button class="page-nav" disabled>Next</button>
+</div></div>
+<div class="tab-content" id="res-tracking">
+<div style="max-width:600px;margin:40px auto;text-align:center">
+<img loading="lazy" src="logistics_tracking.png" style="max-height:200px;margin:0 auto 24px">
+<h3 style="color:var(--blue);margin-bottom:16px">物流轨迹查询</h3>
+<div style="display:flex;gap:12px"><input type="text" placeholder="运单号/参考号" style="flex:1;padding:14px 18px;border:2px solid var(--border);border-radius:8px;font-size:.92rem"><button class="btn btn-primary" onclick="alert('查询功能需要对接后端API')">查询</button></div>
+<p style="color:var(--text-muted);font-size:.82rem;margin-top:12px">支持 UPS / FedEx / USPS / UniUni / GOFO 等渠道</p></div></div>
+<div class="tab-content" id="res-faq">
+<div style="max-width:800px;margin:24px auto">
+<div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">服务覆盖哪些国家和地区？<span class="arrow">&#x25BC;</span></div><div class="faq-a">深耕欧美市场，依托美国四大自营仓群和德国海外仓，可派送美国全境 48 州、德国及欧盟主流国家；末端可触达全球 200 + 国家与地区，实现欧美本地快速履约。</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">如何开通世盖易物流服务？<span class="arrow">&#x25BC;</span></div><div class="faq-a">可官网留言表单提交入驻需求，或直接对接商务客户经理；由专属运营顾问对接资质审核、系统 API 调试，常规 ERP / 店铺系统完成对接开通，即可下单发货。</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">仓储费用如何计算？<span class="arrow">&#x25BC;</span></div><div class="faq-a">海外仓租金按立方英尺 / 天、托盘 / 天两种模式计费；入库贴标、分拣、打包、换标、组装等操作费按件收取；超大件、异形货、长期囤货可申请阶梯优惠，详细报价咨询商务获取。</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">支持哪些电商平台与系统对接？<span class="arrow">&#x25BC;</span></div><div class="faq-a">已打通 Amazon、Walmart、TikTok Shop、Temu、Shopify、Wayfair 等欧美主流跨境平台，同时支持市面主流跨境 ERP 系统，通过 API 一键授权自动同步订单、回传物流轨迹，全链路数据互通。</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">头程有哪些运输渠道，时效怎么样？<span class="arrow">&#x25BC;</span></div><div class="faq-a">中美航线提供海卡、海快、空派、整柜直送；中欧可走海运整柜、卡航铁路；配备本土清关团队提前 5 天预报关，时效稳定可控，后台可实时追踪货物位置。</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">可以做一件代发和 B 端大货中转吗？<span class="arrow">&#x25BC;</span></div><div class="faq-a">支持 DTC 电商一件代发，48 小时出库；同时承接 B 端外贸整柜备货、大批量货物仓内换装中转，可满足托盘入仓、大宗货物暂存调拨需求。</div></div>
+</div></div>
+</section>
+
+</div><!-- /page-resources -->
+<div class="page" id="page-contact">
+<!-- ============ 联系我们：设计稿整图方案（整图视觉 + 透明热区层） ============ -->
+<div class="contact-design-wrap" style="position:relative;width:100%;line-height:0;margin-top:72px;background:rgba(14,32,66,1)">
+  <img loading="lazy" src="contact_design_full.webp?v=4" alt="联系我们" style="width:100%;height:auto;display:block">
+  <!-- 透明热区层 -->
+  <div style="position:absolute;inset:0;pointer-events:none">
+    <!-- 顶部导航 -->
+    <a class="hd-hot" style="left:20%;top:0.6%;width:15%;height:5.2%" onclick="switchPage('home');return false;" title="SKYE Logo 返回首页"></a>
+    <a class="hd-hot" style="left:58.5%;top:2.5%;width:5%;height:1.9%" onclick="switchPage('home');return false;" title="首页"></a>
+    <a class="hd-hot" style="left:63%;top:2.5%;width:6.5%;height:1.9%" onclick="switchPage('services');return false;" title="核心服务"></a>
+    <a class="hd-hot" style="left:69.5%;top:2.5%;width:6%;height:1.9%" onclick="switchPage('about');return false;" title="关于世盖易"></a>
+    <a class="hd-hot" style="left:75.5%;top:2.5%;width:4.5%;height:1.9%" onclick="switchPage('careers');return false;" title="加入我们"></a>
+    <a class="hd-hot" style="left:79.5%;top:2.5%;width:5%;height:1.9%" onclick="switchPage('resources');return false;" title="资源中心"></a>
+    <a class="hd-hot" style="left:84.5%;top:2.5%;width:6.5%;height:1.9%" onclick="switchPage('contact');return false;" title="联系我们"></a>
+    <!-- 业务对接邮箱（左栏） -->
+    <a class="hd-hot" style="left:26%;top:37.5%;width:26%;height:1.2%" onclick="window.location.href='mailto:sales@skyeglobal.com';return false;" title="商务合作 sales@skyeglobal.com"></a>
+    <a class="hd-hot" style="left:26%;top:38.8%;width:26%;height:1.2%" onclick="window.location.href='mailto:support@skyeglobal.com';return false;" title="客户支持 support@skyeglobal.com"></a>
+    <a class="hd-hot" style="left:26%;top:40.1%;width:26%;height:1.2%" onclick="window.location.href='mailto:hr@skyeglobal.com';return false;" title="人才招聘 hr@skyeglobal.com"></a>
+    <!-- 表单提交按钮（右栏） -->
+    <a class="hd-hot" style="left:48.5%;top:45.2%;width:9%;height:1.5%" onclick="alert('感谢提交！我们将尽快与您联系。');return false;" title="提交·获取方案"></a>
+    <!-- Footer Logo -->
+    <a class="hd-hot" style="left:38%;top:82.2%;width:24%;height:2%" onclick="switchPage('home');return false;" title="返回首页"></a>
+    <!-- Footer 社交图标 -->
+    <a class="hd-hot" style="left:75%;top:82.1%;width:16%;height:1.8%" onclick="alert('社交平台账号建设中，敬请期待');return false;" title="社交平台"></a>
+    <!-- Footer 网站导航 -->
+    <a class="hd-hot" style="left:12%;top:89.0%;width:12%;height:0.9%" onclick="switchPage('home');return false;" title="首页"></a>
+    <a class="hd-hot" style="left:12%;top:90.0%;width:12%;height:0.9%" onclick="switchPage('about');return false;" title="关于世盖易"></a>
+    <a class="hd-hot" style="left:12%;top:91.0%;width:12%;height:0.9%" onclick="switchPage('careers');return false;" title="加入我们"></a>
+    <a class="hd-hot" style="left:12%;top:92.0%;width:12%;height:0.9%" onclick="switchPage('resources');return false;" title="资源中心"></a>
+    <!-- Footer 核心服务 -->
+    <a class="hd-hot" style="left:30%;top:89.0%;width:12%;height:0.9%" onclick="switchPage('services',0);return false;" title="末端派送"></a>
+    <a class="hd-hot" style="left:30%;top:90.0%;width:12%;height:0.9%" onclick="switchPage('services',1);return false;" title="海外仓储"></a>
+    <a class="hd-hot" style="left:30%;top:91.0%;width:12%;height:0.9%" onclick="switchPage('services',2);return false;" title="头程运输"></a>
+    <!-- Footer 联系方式 -->
+    <a class="hd-hot" style="left:46%;top:89.0%;width:16%;height:0.9%" onclick="window.location.href='mailto:sales@skyeglobal.com';return false;" title="sales@skyeglobal.com"></a>
+    <a class="hd-hot" style="left:46%;top:90.0%;width:16%;height:0.9%" onclick="window.location.href='mailto:support@skyeglobal.com';return false;" title="support@skyeglobal.com"></a>
+    <!-- Footer 隐私政策 / 服务条款 -->
+    <a class="hd-hot" style="left:70%;top:99.2%;width:8%;height:0.7%" onclick="alert('隐私政策页面建设中，敬请期待');return false;" title="隐私政策"></a>
+    <a class="hd-hot" style="left:79%;top:99.2%;width:8%;height:0.7%" onclick="alert('服务条款页面建设中，敬请期待');return false;" title="服务条款"></a>
+  </div>
+<!-- 获取专属物流方案：真实表单层（演示交互，不接后端） -->
+<div class="ct-form-cover" aria-hidden="true"></div>
+<div class="ct-form reveal" id="ctForm">
+  <input type="text" class="ct-field" name="ctName" placeholder="联系人姓名" autocomplete="name">
+  <input type="tel" class="ct-field" name="ctPhone" placeholder="联系电话" autocomplete="tel">
+  <input type="email" class="ct-field" name="ctEmail" placeholder="邮箱地址" autocomplete="email">
+  <select class="ct-field" name="ctIndustry" required><option value="" selected>所属行业</option><option>跨境电商</option><option>外贸出口</option><option>品牌出海</option><option>本地物流企业</option><option>其他</option></select>
+  <select class="ct-field" name="ctBiz" required><option value="" selected>关注业务</option><option>末端派送</option><option>海外仓储</option><option>头程运输</option><option>一件代发</option><option>FBA 中转</option></select>
+  <textarea class="ct-field ct-ta" name="ctDesc" placeholder="需求描述"></textarea>
+  <button type="button" class="ct-submit" id="ctSubmit">提交·获取方案</button>
+  <div class="ct-msg" id="ctMsg"></div>
+</div>
+</div>
+</div><!-- /page-contact -->
+<div class="float-sidebar">
+<button class="float-btn design-preview-fab" id="designPreviewBtn" title="查看设计稿预览"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></button>
+<div style="position:relative">
+<button class="float-btn" id="floatConsult" title="在线咨询" onclick="toggleFloatPopup('consultPopup')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<div class="float-popup" id="consultPopup"><p><strong>在线咨询</strong></p><p>请通过底部表单提交需求<br>或发送邮件至 sales@skyeglobal.com</p></div>
+</div>
+<div style="position:relative">
+<button class="float-btn" id="floatWechat" title="微信咨询" onclick="toggleFloatPopup('wechatPopup')"><svg width="24" height="24" viewBox="0 0 24 24" fill="#07C160"><path d="M8.5 11a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 2C6.477 2 2 6.015 2 10.95c0 2.88 1.629 5.426 4.106 7.013L4.5 22l4.586-2.942c.93.264 1.914.4 2.914.4 5.523 0 10-4.015 10-8.95S17.523 2 12 2z"/></svg></button>
+<div class="float-popup" id="wechatPopup"><p><strong>微信咨询</strong></p><p>搜索关注「世盖易SKYE」</p></div>
+</div>
+<div style="position:relative">
+<button class="float-btn" id="floatEmail" title="电话咨询" onclick="toggleFloatPopup('emailPopup')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></button>
+<div class="float-popup" id="emailPopup"><p><strong>电话咨询</strong></p><p>商务合作邮箱<br>sales@skyeglobal.com</p></div>
+</div>
+<button class="float-btn back-top" id="backTop" title="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button></div>
+
+<footer class="footer footer-design">
+<div style="position:relative">
+<img loading="lazy" src="home_footer_design.webp?v=1" alt="世盖易页脚设计稿">
+<div class="footer-hotmap" style="position:absolute;inset:0;z-index:2">
+<a href="#" data-page="services" data-tab="0" title="末端派送" style="left:35%;top:75.3%;width:10%;height:1.7%"></a>
+<a href="#" data-page="services" data-tab="1" title="海外仓储" style="left:35%;top:77.0%;width:10%;height:1.7%"></a>
+<a href="#" data-page="services" data-tab="2" title="头程运输" style="left:35%;top:78.7%;width:10%;height:1.7%"></a>
+<a href="#" data-page="home" title="首页" style="left:20%;top:75.3%;width:10%;height:1.7%"></a>
+<a href="#" data-page="about" title="关于世盖易" style="left:20%;top:77.0%;width:10%;height:1.7%"></a>
+<a href="#" data-page="careers" title="加入我们" style="left:20%;top:78.7%;width:10%;height:1.7%"></a>
+<a href="#" data-page="resources" title="资源中心" style="left:20%;top:80.4%;width:10%;height:1.7%"></a>
+<a href="mailto:sales@skyeglobal.com" title="sales@skyeglobal.com" style="left:50%;top:75.3%;width:13%;height:1.7%"></a>
+<a href="mailto:support@skyeglobal.com" title="support@skyeglobal.com" style="left:50%;top:77.0%;width:13%;height:1.7%"></a>
+<a href="#" title="LinkedIn 分享" style="left:80%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 LinkedIn 分享');return false"></a>
+<a href="#" title="Facebook 分享" style="left:84.2%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 Facebook 分享');return false"></a>
+<a href="#" title="X 分享" style="left:88.4%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 X 分享');return false"></a>
+<a href="#" title="YouTube 分享" style="left:92.6%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 YouTube 分享');return false"></a>
+<a href="#" title="隐私政策" style="left:70%;top:84.5%;width:7%;height:1.9%"></a>
+<a href="#" title="服务条款" style="left:79%;top:84.5%;width:7%;height:1.9%"></a>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+const pages=document.querySelectorAll('.page');
+const navAs=document.querySelectorAll('.nav-links a[data-page],.nav-dropdown a[data-page],.footer a[data-page]');
+function switchPage(id,tab){
+  pages.forEach(p=>p.classList.remove('active'));
+  const t=document.getElementById('page-'+id);if(t)t.classList.add('active');
+  document.querySelectorAll('.nav-links a[data-page],.dropdown-trigger[data-page]').forEach(a=>a.classList.remove('active'));
+  const m=document.querySelector('.nav-links a[data-page="'+id+'"],.dropdown-trigger[data-page="'+id+'"]');if(m)m.classList.add('active');
+  if(id==='services'&&typeof tab!=='undefined'){
+    document.querySelectorAll('#serviceTabs .service-tab').forEach((tb,i)=>{tb.classList.toggle('active',i===tab)});
+    document.querySelectorAll('#page-services .tab-content').forEach((c,i)=>{c.classList.toggle('active',i===tab)});
+    document.querySelectorAll('.svc-hero-slide').forEach((s,k)=>{s.classList.toggle('active',k===tab)});
+  }
+  if(id==='resources'&&typeof tab!=='undefined'){
+    document.querySelectorAll('#resourcesTabs .resources-tab').forEach((tb,i)=>{tb.classList.toggle('active',i===tab)});
+    document.querySelectorAll('#page-resources .tab-content').forEach((c,i)=>{c.classList.toggle('active',i===tab)});
+  }
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+navAs.forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();switchPage(this.dataset.page,this.dataset.tab!==undefined?parseInt(this.dataset.tab):undefined)})});
+document.querySelectorAll('.service-card[data-page]').forEach(c=>{c.addEventListener('click',function(){switchPage(this.dataset.page,parseInt(this.dataset.tab))})});
+document.querySelectorAll('.hero-btns a[data-page]').forEach(b=>{b.addEventListener('click',function(e){e.preventDefault();switchPage(this.dataset.page)})});
+document.querySelectorAll('.hero-design[data-page]').forEach(h=>{h.addEventListener('click',function(){switchPage(this.dataset.page)})});
+document.querySelectorAll('#serviceTabs .service-tab').forEach(t=>{t.addEventListener('click',function(){const i=parseInt(this.dataset.idx);document.querySelectorAll('#serviceTabs .service-tab').forEach(tb=>tb.classList.remove('active'));this.classList.add('active');document.querySelectorAll('#page-services .tab-content').forEach((c,j)=>{c.classList.toggle('active',j===i)});document.querySelectorAll('.svc-hero-slide').forEach((s,k)=>{s.classList.toggle('active',k===i)})})});
+document.querySelectorAll('#resourcesTabs .resources-tab').forEach(t=>{t.addEventListener('click',function(){const i=parseInt(this.dataset.idx);document.querySelectorAll('#resourcesTabs .resources-tab').forEach(tb=>tb.classList.remove('active'));this.classList.add('active');document.querySelectorAll('#page-resources .tab-content').forEach((c,j)=>{c.classList.toggle('active',j===i)})})});
+function showShareToast(msg){var t=document.getElementById('shareToast');if(!t){t=document.createElement('div');t.id='shareToast';t.style.cssText='display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;padding:16px 28px;border-radius:10px;font-size:.95rem;z-index:10001;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center;white-space:nowrap';document.body.appendChild(t)}t.textContent=msg;t.style.display='block';clearTimeout(t._tid);t._tid=setTimeout(function(){t.style.display='none'},2000)}function toggleFloatPopup(id){var all=document.querySelectorAll('.float-popup');var t=document.getElementById(id);if(!t)return;var was=t.classList.contains('show');all.forEach(function(p){p.classList.remove('show')});if(!was)t.classList.add('show')}const bt=document.getElementById('backTop');window.addEventListener('scroll',()=>{bt.classList.toggle('visible',window.scrollY>600)});bt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});window.switchPage=switchPage;window.showShareToast=showShareToast;
+})();
+</script>
+
+<script>
+function toggleWarehouseMap(){
+  var us=document.getElementById("usMap");
+  var de=document.getElementById("deMap");
+  var btn=document.getElementById("mapToggleBtn");
+  if(us.style.display==="none"){
+    us.style.display="block"; de.style.display="none";
+    btn.textContent="切换德国地图";
+  }else{
+    us.style.display="none"; de.style.display="block";
+    btn.textContent="切换美国地图";
+  }
+}
+</script>
+
+<!-- 设计稿预览 Modal -->
+<div class="design-preview-modal" id="designPreviewModal" aria-hidden="true">
+  <div class="dpm-backdrop" data-dpm-close></div>
+  <div class="dpm-panel" role="dialog" aria-modal="true" aria-label="官网设计稿预览">
+    <div class="dpm-header">
+      <h3>官网设计稿预览</h3>
+      <span class="dpm-sub">设计师效果图 · 点击图片可放大查看</span>
+      <button class="dpm-close" data-dpm-close title="关闭预览" aria-label="关闭">&#10005;</button>
+    </div>
+    <div class="dpm-body">
+      <div class="dpm-group">
+        <div class="dpm-group-title">首页</div>
+        <div class="dpm-grid">
+          <figure class="dpm-item"><img loading="lazy" src="design-home.webp?v=3" alt="首页设计稿"><figcaption>首页<em>设计稿 1/8</em></figcaption></figure>
+        </div>
+      </div>
+      <div class="dpm-group">
+        <div class="dpm-group-title">资源中心</div>
+        <div class="dpm-grid">
+          <figure class="dpm-item"><img loading="lazy" src="design-res-news.webp?v=3" alt="企业新闻设计稿"><figcaption>企业新闻<em>设计稿 2/8</em></figcaption></figure>
+          <figure class="dpm-item"><img loading="lazy" src="design-res-industry.webp?v=3" alt="行业资讯设计稿"><figcaption>行业资讯<em>设计稿 3/8</em></figcaption></figure>
+          <figure class="dpm-item"><img loading="lazy" src="design-res-tracking.webp?v=3" alt="行业订单查询设计稿"><figcaption>行业订单查询<em>设计稿 4/8</em></figcaption></figure>
+          <figure class="dpm-item"><img loading="lazy" src="design-res-faq.webp?v=3" alt="常见问题设计稿"><figcaption>常见问题<em>设计稿 5/8</em></figcaption></figure>
+          <figure class="dpm-item"><img loading="lazy" src="design-res-faq-open.webp?v=3" alt="常见问题展开设计稿"><figcaption>常见问题（展开）<em>设计稿 6/8</em></figcaption></figure>
+        </div>
+      </div>
+      <div class="dpm-group">
+        <div class="dpm-group-title">联系我们</div>
+        <div class="dpm-grid">
+          <figure class="dpm-item"><img loading="lazy" src="design-contact-cn.webp?v=3" alt="联系我们国内版设计稿"><figcaption>联系我们（国内版）<em>设计稿 7/8</em></figcaption></figure>
+          <figure class="dpm-item"><img loading="lazy" src="design-contact-us.webp?v=3" alt="联系我们国外版设计稿"><figcaption>联系我们（国外版）<em>设计稿 8/8</em></figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('designPreviewBtn');
+  var modal=document.getElementById('designPreviewModal');
+  if(!btn||!modal)return;
+  function openDpm(){modal.querySelectorAll('img').forEach(function(img){img.removeAttribute('loading');if(!img.getAttribute('src')&&img.getAttribute('data-src')){img.setAttribute('src',img.getAttribute('data-src'));}});modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function closeDpm(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  btn.addEventListener('click',openDpm);
+  modal.querySelectorAll('[data-dpm-close]').forEach(function(el){el.addEventListener('click',function(e){if(e.target===el||e.target.closest('[data-dpm-close]'))closeDpm();});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDpm();});
+  modal.querySelectorAll('.dpm-item img').forEach(function(img){
+    img.addEventListener('click',function(){window.open(img.getAttribute('src')||img.getAttribute('data-src'),'_blank');});
+  });
+
+
+})();
+
+<script>
+(function(){
+/* 滚动淡入：进入视口的区块淡入上浮 */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+/* 兜底：load 后 800ms 强制所有未出现 .in 的 .reveal 补上 .in，防止 IO 失效导致内容不可见 */
+function revealAll(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in');});}
+if(document.readyState==='complete'){setTimeout(revealAll,800);}else{window.addEventListener('load',function(){setTimeout(revealAll,800);});}
+/* 联系我们“获取专属物流方案”表单（纯前端演示） */
+var f=document.getElementById('ctForm');if(f){
+  var btn=document.getElementById('ctSubmit'),msg=document.getElementById('ctMsg');
+  var fields=[f.ctName,f.ctPhone,f.ctEmail,f.ctIndustry,f.ctBiz,f.ctDesc];
+  function showMsg(txt,ok){msg.textContent=txt;msg.className='ct-msg '+(ok?'ok':'err')+' show';}
+  function clearErr(){fields.forEach(function(x){x.classList.remove('ct-invalid');});}
+  btn.addEventListener('click',function(){
+    clearErr();
+    var errs=[];
+    if(!f.ctName.value.trim()){errs.push('请填写联系人姓名');f.ctName.classList.add('ct-invalid');}
+    if(!f.ctPhone.value.trim()){errs.push('请填写联系电话');f.ctPhone.classList.add('ct-invalid');}
+    else if(!/^[0-9+\-\s]{6,20}$/.test(f.ctPhone.value.trim())){errs.push('联系电话格式不正确');f.ctPhone.classList.add('ct-invalid');}
+    if(f.ctEmail.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.ctEmail.value.trim())){errs.push('邮箱地址格式不正确');f.ctEmail.classList.add('ct-invalid');}
+    if(!f.ctDesc.value.trim()){errs.push('请填写需求描述');f.ctDesc.classList.add('ct-invalid');}
+    if(errs.length){showMsg(errs.join('；'),false);return;}
+    btn.classList.add('loading');btn.disabled=true;btn.textContent='提交中…';
+    setTimeout(function(){
+      btn.classList.remove('loading');btn.disabled=false;btn.textContent='提交·获取方案';
+      showMsg('提交成功！我们将尽快与您联系（演示，未实际发送）。',true);
+      f.reset();
+      setTimeout(function(){msg.className='ct-msg';},4000);
+    },1200);
+  });
+  fields.forEach(function(x){x.addEventListener('input',function(){x.classList.remove('ct-invalid');});});
+}
+})();
+</script>
+</script>
+</body></html>
