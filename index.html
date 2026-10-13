@@ -1,0 +1,824 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世盖易 SKYE | 全球头仓配一体化跨境物流服务商</title>
+<link rel="preload" as="image" href="home_design_cropped_new_top.webp">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;color:#2c3e50;background:#fff;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;height:auto;display:block}
+:root{--blue:#123570;--blue-dark:#0d2548;--blue-light:#1a4d8f;--orange:#DB7B1B;--orange-hover:#c56d16;--bg-light:#f4f7fc;--bg-lighter:#fafbfd;--bg-blue-grad:linear-gradient(135deg,#f4f7fc 0%,#e8eff8 100%);--text:#2c3e50;--text-light:#5a6d80;--text-muted:#8a9bb0;--white:#fff;--border:#e2e8f0;--shadow:0 4px 24px rgba(0,0,0,.06);--radius:8px;--radius-lg:12px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 max(40px,calc(50% - 600px));height:72px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;background:transparent}
+.nav.scrolled{background:rgba(10,26,58,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.25)}
+.nav-logo{display:flex;align-items:center;gap:10px}.nav-logo img{height:40px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:.95rem;font-weight:500;color:#fff;transition:color .2s;position:relative;padding:4px 0}
+.nav.scrolled .nav-links a{color:#fff}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.nav.scrolled .nav-links a.active{color:var(--orange)}
+.nav-links a.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--orange);border-radius:1px}
+/* ===== 导航下拉菜单 ===== */
+.nav-dropdown{position:relative}
+.dropdown-trigger{cursor:pointer;display:flex;align-items:center;gap:4px}
+.dropdown-trigger::after{content:'';display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;transition:transform .2s}
+.nav-dropdown:hover .dropdown-trigger::after{transform:rotate(180deg)}
+.nav-dropdown:hover .dropdown-trigger{color:var(--orange)}
+.nav.scrolled .nav-dropdown:hover .dropdown-trigger{color:var(--blue)}
+.dropdown-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:4px;background:var(--white);border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.1);border:1px solid var(--border);opacity:0;visibility:hidden;transition:opacity .15s,visibility .15s;z-index:1001;padding:8px 0;min-width:140px}
+.nav-dropdown:hover .dropdown-panel{opacity:1;visibility:visible}
+.dropdown-panel a.dropdown-item{display:block;padding:10px 20px;font-size:.92rem;font-weight:500;color:var(--text);transition:background .12s,color .12s;white-space:nowrap}
+.dropdown-panel a.dropdown-item:hover{background:var(--bg-light);color:var(--blue)}
+.dropdown-panel a.dropdown-group-label{font-weight:700;color:var(--blue);cursor:default;border-bottom:1px solid var(--border);margin:2px 12px 6px;padding:8px 8px 6px;font-size:.92rem}
+.dropdown-panel a.dropdown-group-label:hover{background:transparent;color:var(--blue)}
+.dropdown-panel a.dropdown-sub-item{padding-left:34px;font-size:.88rem}
+
+/* 移动端 */
+@media(max-width:768px){
+  .dropdown-panel{position:static;box-shadow:none;border:none;padding:0 0 0 16px;margin-top:2px;opacity:1;visibility:visible;transform:none;background:transparent;min-width:0}
+  .dropdown-panel a.dropdown-item{padding:8px 0;font-size:.88rem}
+}
+
+.nav-cta{background:var(--orange);color:#fff!important;padding:8px 20px!important;border-radius:6px;font-weight:600!important}
+.nav-cta:hover{background:var(--orange-hover)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-toggle span{width:26px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s}
+.nav.scrolled .nav-toggle span{background:#fff}
+.page{display:none}.page.active{display:block}
+.section{padding:48px 40px;max-width:1280px;margin:0 auto}
+.section-flush{padding:48px 40px;max-width:100%}.section-inner{max-width:1280px;margin:0 auto;padding:0 40px}
+.section-label{display:inline-block;font-size:.82rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title{font-size:2.4rem;font-weight:800;color:var(--blue);margin-bottom:16px;line-height:1.3}
+.section-subtitle{font-size:1.1rem;color:var(--text-light);max-width:680px;margin-bottom:32px;line-height:1.7}
+.btn{display:inline-block;font-size:.95rem;font-weight:600;padding:12px 28px;border-radius:6px;cursor:pointer;transition:all .25s;border:2px solid transparent}
+.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}.inno-cta-btn{margin:28px auto 52px;font-size:1.02rem;padding:14px 38px;border-radius:999px;display:inline-block;text-decoration:none;background:var(--blue);color:#fff;border:1px solid var(--blue);transition:background .2s}.inno-cta-btn:hover{background:var(--blue-dark)}
+.btn-primary:hover{background:var(--blue-light);border-color:var(--blue-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(18,53,112,.2)}
+.btn-outline{background:transparent;color:#fff;border-color:#fff}
+.btn-outline:hover{background:#fff;color:var(--blue);transform:translateY(-1px)}
+.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn-orange:hover{background:var(--orange-hover)}
+.hero{position:relative;min-height:68vh;max-height:75vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-design{min-height:0;max-height:none;display:block;padding:0;margin-top:0;cursor:pointer}
+.hero-design img{width:100%;height:auto;display:block}
+.hero-bg{position:absolute;inset:0;z-index:0}.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:rgba(18,53,112,.58);z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;padding:40px 40px 0;max-width:900px}
+.hero-title{font-size:3.8rem;font-weight:900;color:#fff;line-height:1.2;letter-spacing:.03em;text-shadow:0 2px 12px rgba(0,0,0,.15);white-space:nowrap}
+.hero-title span{display:block}
+.hero-sub-en{font-size:1.9rem;color:rgba(255,255,255,.72);letter-spacing:.28em;text-transform:uppercase;margin:20px 0 28px;font-weight:500}
+.hero-desc{font-size:1.05rem;color:rgba(255,255,255,.88);margin-bottom:40px;line-height:1.8;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Hero Stats Grid */
+.hero-stats{display:grid;grid-template-columns:repeat(6,1fr);gap:0;max-width:1280px;margin:0 auto;margin-top:48px}
+.hs-item{text-align:center;padding:28px 24px;border-right:1px solid rgba(255,255,255,.15)}
+.hs-item:last-child{border-right:none}
+.hs-num{font-size:2rem;font-weight:800;color:var(--orange);line-height:1.2;margin-bottom:6px}
+.hs-label{font-size:.82rem;color:rgba(255,255,255,.7);font-weight:500;text-align:left}
+@media(max-width:768px){.hero-stats{grid-template-columns:repeat(3,1fr)}.hs-item:nth-child(3n){border-right:none}.hs-num{font-size:1.5rem}}
+.hero-btns{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.data-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.data-card{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;box-shadow:var(--shadow);transition:transform .25s;border:1px solid var(--border)}
+.data-card:hover{transform:translateY(-4px);border-color:var(--blue)}
+.data-card .dc-icon{font-size:1.8rem;margin-bottom:10px}
+.data-card .dc-num{font-size:1.8rem;font-weight:800;color:var(--blue)}
+.data-card .dc-label{font-size:.84rem;color:var(--text-muted);margin-top:6px}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.service-card{position:relative;overflow:hidden;background:#fff;border-radius:var(--radius-lg);padding:36px 28px;box-shadow:var(--shadow);border:1px solid var(--border);transition:all .3s;cursor:pointer}
+.service-card::before{content:'';position:absolute;inset:0;z-index:0;opacity:.06;transition:opacity .3s}
+.service-card:nth-child(1)::before{background:linear-gradient(135deg,#123570 0%,#1a4d8f 40%,#2980b9 100%)}
+.service-card:nth-child(2)::before{background:linear-gradient(135deg,#0d2548 0%,#123570 50%,#1e5a9e 100%)}
+.service-card:nth-child(3)::before{background:linear-gradient(135deg,#1a4d8f 0%,#123570 30%,#0d3b6e 100%)}.service-card:nth-child(4)::before{background:linear-gradient(135deg,#0d3b6e 0%,#123570 50%,#1a4d8f 100%)}
+.service-card:hover::before{opacity:.12}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(18,53,112,.1);border-color:var(--blue)}
+.service-card .sc-icon,.service-card h3,.service-card p,.service-card .sc-link{position:relative;z-index:1}
+.service-card .sc-icon{width:56px;height:56px;background:var(--bg-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;color:var(--blue)}
+.service-card h3{font-size:1.25rem;font-weight:700;color:var(--blue);margin-bottom:10px}
+.service-card p{font-size:.95rem;color:var(--text-light);line-height:1.7}
+.service-card .sc-link{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:600;font-size:.88rem;margin-top:16px;transition:gap .2s}
+.service-card .sc-link:hover{gap:10px}
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.industry-card{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.industry-card:hover{transform:translateY(-5px);border-color:var(--blue)}
+.industry-card .ic-icon{font-size:2.4rem;margin-bottom:14px}
+.industry-card h4{font-size:1.05rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.industry-card p{font-size:.86rem;color:var(--text-light);line-height:1.6;margin-bottom:4px}
+.ic-tags{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s,opacity .25s,margin .25s;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:0}
+.industry-card:hover .ic-tags{max-height:180px;opacity:1;margin-top:12px}
+.ic-tags span{display:inline-block;background:rgba(0,102,204,.07);color:var(--blue);font-size:.78rem;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.customer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.customer-card{background:var(--bg-lighter);border-radius:var(--radius-lg);padding:32px 24px;text-align:center;transition:transform .25s;border:1px solid transparent}
+.customer-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:var(--shadow)}
+.customer-card .cc-icon{font-size:2rem;margin-bottom:12px}
+.customer-card h4{font-size:1.05rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.customer-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why-card{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;border:1px solid var(--border);transition:all .25s;border-top:3px solid var(--blue)}
+.why-card:nth-child(2){border-top-color:var(--orange)}.why-card:nth-child(3){border-top-color:#27ae60}.why-card:nth-child(4){border-top-color:var(--blue-light)}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.why-card .wc-icon{font-size:2rem;margin-bottom:12px}
+.why-card h4{font-size:1.05rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.why-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.service-tabs{display:flex;gap:8px;margin-bottom:40px;margin-top:72px;background:var(--bg-light);border-radius:14px;padding:6px}
+.service-tab{padding:14px 24px;border:1px solid transparent;background:#fff;border-radius:10px;font-size:.95rem;font-weight:600;color:var(--text-light);cursor:pointer;transition:all .25s;white-space:nowrap}
+.service-tab.active{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(18,53,112,.25);border-color:var(--blue)}
+.service-tab:hover:not(.active){color:var(--blue);border-color:var(--border);background:var(--bg-white)}
+.tab-content{display:none}.tab-content.active{display:block}
+.svc-tabs-bar{width:100%;max-width:none;margin:0;border-radius:0;padding:10px 40px;justify-content:center;gap:10px}
+.svc-tabs-bar .service-tab{flex:0 0 auto;text-align:center;max-width:none;padding:10px 30px;font-size:.92rem}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92rem}
+.data-table th{background:var(--blue);color:#fff;padding:12px 16px;text-align:left;font-weight:600}
+.data-table td{padding:12px 16px;border-bottom:1px solid var(--border);white-space:nowrap}
+.data-table td:last-child{white-space:normal}
+.data-table tr:nth-child(even){background:var(--bg-lighter)}
+.data-table tr:hover{background:var(--bg-light)}
+.process-flow{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:32px 0}
+.process-step{text-align:center;padding:20px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);min-width:140px}
+.process-step .ps-num{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.process-step h4{font-size:.9rem;color:var(--blue);font-weight:700}
+.process-step p{font-size:.78rem;color:var(--text-muted);margin-top:4px}
+.process-arrow{font-size:1.5rem;color:var(--orange);padding:0 8px;font-weight:700}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:24px 0}
+.case-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.case-card:hover{transform:translateY(-4px)}.case-card .cc-img{height:140px;background:var(--bg-blue-grad);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.case-card .cc-body{padding:20px}.case-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px;font-weight:700}
+.case-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.case-card .cc-tag{display:inline-block;background:rgba(219,123,27,.1);color:var(--orange);font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-top:8px}
+.case-highlights{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}.case-stat{background:var(--bg-light);border-radius:8px;padding:10px 14px;text-align:center;min-width:64px;border:1px solid var(--border)}.case-stat-num{font-size:1.15rem;font-weight:800;color:var(--blue);line-height:1.2}.case-stat-label{font-size:.7rem;color:var(--text-muted);margin-top:2px}.case-desc{font-size:.875rem;color:#666;margin:8px 0 0;line-height:1.6}
+.sla-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}
+.sla-card{text-align:center;padding:20px;background:var(--bg-light);border-radius:var(--radius);border:1px solid var(--border)}
+.sla-card .sla-num{font-size:1.8rem;font-weight:800;color:var(--orange)}
+.sla-card .sla-label{font-size:.84rem;color:var(--text-light);margin-top:4px}
+
+.about-hero{background:var(--bg-blue-grad);padding:60px 40px 80px}
+.about-banner{position:relative;height:50vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-banner .ab-bg{position:absolute;inset:0;z-index:0}.about-banner .ab-bg img{width:100%;height:100%;object-fit:cover}
+.about-banner .ab-overlay{position:absolute;inset:0;background:linear-gradient(rgba(14,32,66,.92) 0%,rgba(18,53,112,.45) 24%,rgba(18,53,112,.5) 100%);z-index:1}
+.about-banner .ab-content{position:relative;z-index:2;text-align:center;padding:0 40px}
+.about-banner .ab-title{font-size:2.6rem;font-weight:900;color:#fff;line-height:1.2}
+.about-banner .ab-sub{font-size:.9rem;color:rgba(255,255,255,.6);letter-spacing:.22em;text-transform:uppercase;margin-top:16px;font-weight:500}
+.svc-page-hero{position:relative;height:45vh;overflow:hidden}
+.svc-hero-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;visibility:hidden}
+.svc-hero-slide.active{opacity:1;visibility:visible}
+.svc-hero-slide .ab-bg{position:absolute;inset:0;z-index:0}
+.svc-hero-slide .ab-bg img{width:100%;height:100%;object-fit:cover}
+.svc-hero-slide .ab-overlay{position:absolute;inset:0;background:rgba(18,53,112,.5);z-index:1}
+.svc-hero-slide .ab-content{position:relative;z-index:2;text-align:center;padding:0 40px}
+.svc-hero-slide .ab-title{font-size:2.6rem;font-weight:900;color:#fff;line-height:1.2}
+.svc-hero-slide .ab-sub{font-size:.9rem;color:rgba(255,255,255,.6);letter-spacing:.22em;text-transform:uppercase;margin-top:16px;font-weight:500}
+.svc-hero-slide .ab-desc{font-size:1.05rem;color:rgba(255,255,255,.82);margin-top:14px;line-height:1.7}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text p{font-size:.98rem;color:var(--text-light);line-height:1.9;margin-bottom:16px}
+.about-data{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-data .ad-card{background:var(--blue);color:#fff;padding:28px 20px;border-radius:var(--radius-lg);text-align:center}
+.about-data .ad-num{font-size:2rem;font-weight:900}.about-data .ad-label{font-size:.82rem;opacity:.85;margin-top:6px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.team-stat{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;box-shadow:var(--shadow);border-left:4px solid var(--blue)}
+.team-stat:nth-child(2){border-left-color:var(--orange)}.team-stat:nth-child(3){border-left-color:#27ae60}
+.team-stat .ts-num{font-size:1.6rem;font-weight:800;color:var(--blue)}.team-stat .ts-label{font-size:.84rem;color:var(--text-light);margin-top:6px}
+.office-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.office-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.office-card img{width:100%;height:180px;object-fit:cover}
+.office-card .oc-body{padding:20px}.office-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:6px}
+.office-card p{font-size:.84rem;color:var(--text-light);line-height:1.6}
+.timeline{position:relative;padding:40px 0}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
+.timeline-item{display:flex;align-items:flex-start;margin-bottom:40px;position:relative}
+.timeline-item:nth-child(odd){flex-direction:row}.timeline-item:nth-child(even){flex-direction:row-reverse}
+.timeline-item .tl-content{width:45%;padding:24px;background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.timeline-item .tl-year{font-size:1.4rem;font-weight:900;color:var(--orange)}
+.timeline-item .tl-desc{font-size:.88rem;color:var(--text-light);margin-top:8px;line-height:1.6}
+.timeline-item .tl-dot{position:absolute;left:50%;top:12px;width:16px;height:16px;background:var(--blue);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px var(--blue);transform:translateX(-50%);z-index:2}
+.culture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.culture-card{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;text-align:center;box-shadow:var(--shadow);border-top:4px solid var(--blue);transition:transform .25s}
+.culture-card:hover{transform:translateY(-4px)}.culture-card:nth-child(2){border-top-color:var(--orange)}.culture-card:nth-child(3){border-top-color:var(--blue-light)}
+.culture-card h3{font-size:1.15rem;color:var(--blue);margin-bottom:10px}.culture-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.resources-tabs{display:flex;gap:0;margin-bottom:32px;border-bottom:2px solid var(--border)}
+.resources-tab{padding:12px 28px;font-size:.95rem;font-weight:600;cursor:pointer;color:var(--text-light);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .25s;background:none;border-top:none;border-left:none;border-right:none}
+.resources-tab.active{color:var(--blue);border-bottom-color:var(--orange)}
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.news-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.news-card:hover{transform:translateY(-4px)}.news-card .nc-img{height:180px;background:var(--bg-blue-grad);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.news-card .nc-img img{width:100%;height:100%;object-fit:cover}.news-card .nc-body{padding:20px}
+.news-card .nc-date{font-size:.78rem;color:var(--orange);font-weight:600;margin-bottom:6px}
+.news-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px;line-height:1.4}
+.news-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:40px}
+.pagination button{min-width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:#fff;font-weight:600;cursor:pointer;color:var(--text);transition:all .2s;padding:0 12px}
+.pagination button.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.pagination button:hover:not(.active):not(:disabled){border-color:var(--orange);color:var(--orange)}
+.pagination button:disabled{opacity:.4;cursor:not-allowed}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:18px 24px;background:#fff;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:.95rem;color:var(--blue);transition:background .2s}
+.faq-q:hover{background:var(--bg-lighter)}.faq-q .arrow{transition:transform .3s;font-size:.8rem}
+.faq-q.open .arrow{transform:rotate(180deg)}
+.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s;font-size:.9rem;color:var(--text-light);line-height:1.7;background:var(--bg-lighter)}
+.faq-a.open{padding:16px 24px;max-height:300px}
+.cta-section{background:#f0f4f9;padding:80px 0}
+.cta-section .section-title{text-align:center;color:#1a3a6c;font-size:2rem;margin-bottom:8px}
+.cta-section .section-subtitle{text-align:center;margin:0 auto 36px;color:#6b7c93;font-size:.9rem;max-width:600px}
+.cta-form-expanded{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:0 auto}
+.cta-form-expanded form{display:contents}
+.cta-form-expanded input,.cta-form-expanded select,.cta-form-expanded textarea{width:100%;height:44px;padding:0 16px;font-size:.9rem;color:#333;background:#fff;border:1px solid #dce3ec;border-radius:6px;outline:none;font-family:inherit;box-sizing:border-box;transition:border-color .2s}
+.cta-form-expanded input:focus,.cta-form-expanded select:focus,.cta-form-expanded textarea:focus{border-color:#1a3a6c;box-shadow:0 0 0 2px rgba(26,58,108,.1)}
+.cta-form-expanded textarea{grid-column:1/-1;height:80px;padding:12px 16px;resize:vertical}
+.cta-form-expanded .submit-btn{grid-column:1/-1;justify-self:center;width:220px;height:44px;background:#1a3a6c;color:#fff;font-size:1rem;font-weight:700;border:none;border-radius:6px;cursor:pointer;transition:background .3s}
+.cta-form-expanded .submit-btn:hover{background:#122a50}
+.footer{background:var(--blue-dark);color:rgba(255,255,255,.8);padding:60px 40px 30px}
+.footer-design{padding:0}.footer-design img{width:100%;height:auto;display:block}
+.footer-hotmap a{position:absolute;display:block;color:transparent;background:transparent;text-decoration:none;cursor:pointer;border-radius:4px;transition:background .2s}
+.footer-hotmap a:hover{background:rgba(255,255,255,.09);color:transparent}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.footer-col h4{color:#fff;font-size:1rem;font-weight:700;margin-bottom:20px}
+.footer-col a{display:block;color:rgba(255,255,255,.65);font-size:.88rem;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--orange)}.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-logo img{height:36px}.footer-desc{font-size:.86rem;line-height:1.7;margin-bottom:16px}.footer-addrs{display:flex;flex-direction:column;gap:8px}.footer-addrs span{color:rgba(255,255,255,.65);font-size:.84rem}
+.footer-bottom{max-width:1280px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;font-size:.82rem;flex-wrap:wrap;gap:12px}
+.footer-bottom a{color:rgba(255,255,255,.5)}
+@media(min-width:1200px){.footer-addrs{flex-direction:row;flex-wrap:wrap;gap:0 20px}}.svc-banner{position:relative;width:100%;aspect-ratio:3840/841;overflow:hidden;margin-bottom:0}
+.svc-banner img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.svc-banner .svc-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,53,112,.82) 0%,rgba(18,53,112,.35) 100%)}
+.svc-banner .svc-text{position:absolute;left:40px;top:50%;transform:translateY(-50%);color:#fff;max-width:500px}
+.svc-banner .svc-text h2{font-size:2rem;font-weight:800;line-height:1.3}
+.svc-banner .svc-text p{font-size:1.05rem;opacity:.9;margin-top:8px}
+.careers-banner{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);padding:140px 40px 80px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.careers-banner h1{font-size:2.6rem;font-weight:900;position:relative;z-index:1}
+.careers-banner p{font-size:1.15rem;opacity:.9;margin-top:12px;position:relative;z-index:1}
+.why-join-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why-join-card{text-align:center;padding:32px 20px;background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow);transition:transform .25s}
+.why-join-card:hover{transform:translateY(-6px)}.why-join-card .wj-icon{font-size:2.2rem;margin-bottom:14px}
+.why-join-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px}
+.why-join-card p{font-size:.86rem;color:var(--text-light);line-height:1.6}
+.growth-path{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:32px 0}
+.growth-stage{text-align:center;padding:24px 20px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);min-width:150px;border-top:3px solid var(--blue)}
+.growth-stage:nth-child(2){border-top-color:var(--orange)}.growth-stage:nth-child(3){border-top-color:#27ae60}.growth-stage:nth-child(4){border-top-color:var(--blue-light)}
+.growth-stage .gs-title{font-size:.95rem;font-weight:700;color:var(--blue);margin-bottom:6px}
+.growth-stage .gs-time{font-size:.78rem;color:var(--text-muted)}.growth-stage .gs-desc{font-size:.8rem;color:var(--text-light);margin-top:6px;line-height:1.5}
+.growth-arrow{font-size:1.5rem;color:var(--orange);padding:0 8px;font-weight:700}
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.city-card{background:#fff;border-radius:var(--radius-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .25s}
+.city-card:hover{transform:translateY(-4px)}.city-card .ct-icon{font-size:2.2rem;margin-bottom:12px}
+.city-card h4{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.city-card p{font-size:.84rem;color:var(--text-light);line-height:1.6}
+.job-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.job-card{background:#fff;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);position:relative;transition:transform .2s}
+.job-card:hover{transform:translateY(-3px);border-color:var(--blue)}
+.job-card .job-tags{position:absolute;top:16px;right:16px;display:flex;gap:6px}
+.job-card .job-tag{font-size:.7rem;font-weight:700;padding:2px 10px;border-radius:10px;color:#fff}
+.job-card .job-tag.hot{background:#e74c3c}.job-card .job-tag.urgent{background:var(--orange)}
+.job-card h4{font-size:1.05rem;color:var(--blue);margin-bottom:8px;margin-right:60px}
+.job-card .job-meta{font-size:.82rem;color:var(--text-muted);line-height:1.8}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.benefit-item{display:flex;align-items:center;gap:14px;padding:20px;background:var(--bg-light);border-radius:var(--radius)}
+.benefit-item .bf-icon{font-size:2rem;flex-shrink:0}
+.benefit-item .bf-text strong{display:block;color:var(--blue);font-size:.95rem}
+.benefit-item .bf-text span{font-size:.82rem;color:var(--text-light)}
+.global-map{text-align:center;margin:24px 0}.global-map img{border-radius:var(--radius-lg);max-height:400px}
+.map-locations{display:flex;justify-content:center;gap:48px;margin-top:28px;flex-wrap:wrap}
+.map-loc{text-align:center;padding:16px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
+.map-loc .ml-city{font-size:1.1rem;font-weight:700;color:var(--blue)}.map-loc .ml-port{font-size:.82rem;color:var(--text-muted);margin-top:4px}
+.map-stats{display:flex;justify-content:center;gap:48px;margin-top:24px;flex-wrap:wrap}
+.map-stat{text-align:center}.map-stat .ms-num{font-size:1.6rem;font-weight:800;color:var(--blue)}
+.map-stat .ms-label{font-size:.82rem;color:var(--text-muted)}
+.partner-section{background:linear-gradient(135deg,#123570 0%,#1A3A6F 100%);padding:60px 0}.partner-section .section-inner{max-width:1280px;margin:0 auto}
+.partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px;margin-top:28px}
+.partner-card{background:#fff;border-radius:12px;padding:18px 14px;display:flex;align-items:center;justify-content:center;min-height:76px;transition:transform .2s,box-shadow .2s}.partner-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.partner-card img{max-height:34px;max-width:100%;object-fit:contain}
+.partner-text-name{font-size:.85rem;font-weight:700;color:#1A3A6F;text-align:center}
+@media(max-width:768px){.partner-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}.partner-section{padding:40px 20px}}
+.section-divider{max-width:1280px;margin:0 auto;height:1px;background:var(--border)}
+.float-sidebar{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:999;display:flex;flex-direction:column;gap:10px}
+.float-btn{width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:1.2rem;transition:all .25s;color:var(--blue)}
+.float-btn:hover{background:var(--blue);color:#fff;transform:scale(1.12)}
+.float-btn.back-top{opacity:0;pointer-events:none;transition:opacity .3s}
+.float-btn.back-top.visible{opacity:1;pointer-events:auto}
+.float-popup{display:none;position:absolute;right:68px;top:0;background:#fff;padding:16px 20px;border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(0,0,0,.15);white-space:nowrap;font-size:.9rem;color:var(--text);z-index:1000}
+.float-popup.show{display:block}.float-popup p{margin:4px 0;color:var(--text-light)}
+.share-panel{display:flex;gap:12px;align-items:center;margin-top:12px}
+.share-btn{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-size:1rem;transition:all .2s;background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+.share-btn:hover{background:var(--orange);color:#fff;transform:scale(1.1)}
+@media(max-width:1024px){
+.hero-title{font-size:2.6rem}.section-title{font-size:2rem}
+.service-grid{grid-template-columns:repeat(2,1fr)}.industry-grid{grid-template-columns:repeat(2,1fr)}
+.customer-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}
+.data-cards{grid-template-columns:repeat(3,1fr)}.about-grid{grid-template-columns:1fr}
+.culture-grid{grid-template-columns:repeat(2,1fr)}.team-grid{grid-template-columns:1fr 1fr}
+.office-grid{grid-template-columns:repeat(2,1fr)}.city-grid{grid-template-columns:repeat(2,1fr)}
+.footer-grid{grid-template-columns:1fr 1fr 1fr}.news-grid{grid-template-columns:1fr}
+.case-grid{grid-template-columns:1fr}.sla-grid{grid-template-columns:repeat(2,1fr)}
+.why-join-grid{grid-template-columns:repeat(2,1fr)}.job-grid{grid-template-columns:1fr}
+.benefits-grid{grid-template-columns:repeat(2,1fr)}.cta-form-expanded{grid-template-columns:1fr}.cta-form-expanded .submit-btn{width:100%}
+.svc-banner{height:auto}.svc-banner .svc-text h2{font-size:1.5rem}
+.process-flow{flex-direction:column;gap:8px}.process-arrow{transform:rotate(90deg)}
+.growth-path{flex-direction:column;gap:8px}.growth-arrow{transform:rotate(90deg)}
+.timeline::before{left:28px}.timeline-item,.timeline-item:nth-child(even){flex-direction:row}
+.timeline-item .tl-content{width:calc(100% - 60px);margin-left:56px}.timeline-item .tl-dot{left:28px}
+}
+@media(max-width:900px){
+.data-cards{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+.nav{padding:0 20px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.nav-links a{color:var(--text)!important}.nav-links.open{display:flex}.nav-toggle{display:flex}
+.section{padding:32px 20px}.section-flush{padding:24px 20px}
+.hero{min-height:60vh;max-height:65vh}.hero-title{font-size:2.2rem}.hero-desc{font-size:.9rem}
+.data-cards{grid-template-columns:1fr 1fr}
+.industry-grid,.customer-grid,.why-grid,.why-join-grid,.city-grid{grid-template-columns:1fr}
+.team-grid,.office-grid{grid-template-columns:1fr}.culture-grid,.sla-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr 1fr}.service-tabs{flex-wrap:wrap}.service-tab{padding:10px 16px;font-size:.88rem}
+.cta-form-expanded{grid-template-columns:1fr}.svc-banner{height:auto}.svc-banner .svc-text{left:20px}
+.svc-banner .svc-text h2{font-size:1.25rem}
+.map-locations{flex-direction:column;align-items:center}
+}
+/* ===== Service Page Redesign ===== */
+.svc-section{padding:72px 0}
+.svc-container{max-width:1200px;margin:0 auto;padding:0 40px}
+.svc-label{display:inline-block;font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;background:rgba(219,123,27,.08);padding:4px 12px;border-radius:4px}
+.svc-title{font-size:36px;font-weight:800;letter-spacing:-.8px;line-height:1.15;margin-bottom:14px;color:var(--blue);padding-left:12px}
+.svc-sub{font-size:16px;color:var(--text-light);max-width:640px;line-height:1.7;margin-bottom:40px}
+
+.svc-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .25s}
+.svc-card:hover{box-shadow:0 12px 36px rgba(0,0,0,.06);transform:translateY(-4px);border-color:transparent}
+.svc-card-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.svc-card-icon.blue{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:#fff}
+.svc-card-icon.orange{background:linear-gradient(135deg,var(--orange),#e89542);color:#fff}
+.svc-card-icon svg{width:24px;height:24px}
+.svc-card h3{font-size:16px;font-weight:700;color:var(--blue);margin-bottom:8px}
+.svc-card p{font-size:13px;color:var(--text-light);line-height:1.65}
+.svc-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc-metric{background:#fff;border:1px solid var(--border);border-radius:12px;padding:32px 20px;text-align:center;transition:all .2s}
+.svc-metric:hover{box-shadow:0 8px 28px rgba(0,0,0,.05);transform:translateY(-2px)}
+.svc-metric-num{font-size:40px;font-weight:800;color:var(--blue);letter-spacing:-1.5px;line-height:1}
+.svc-metric-label{font-size:13px;color:var(--text-light);margin-top:8px;font-weight:600}
+/* 降本提效橙色指标 */
+.svc-metrics-orange .svc-metric-num{color:var(--orange)}
+
+.svc-table-wrap{overflow-x:auto}
+.svc-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.svc-table th{background:var(--blue);color:#fff;padding:14px 18px;font-size:13px;text-align:left;font-weight:600}
+.svc-table td{padding:14px 18px;font-size:13px;border-top:1px solid var(--border);color:var(--text-light)}
+.svc-table tr:last-child td{font-weight:700;color:var(--blue);background:var(--bg-light)}
+.svc-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.svc-feat{display:flex;gap:14px;align-items:flex-start;background:var(--bg-light);border-radius:12px;padding:22px;transition:all .2s}
+.svc-feat:hover{background:#eef2f8}
+.svc-feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff;color:var(--blue);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.svc-feat-icon svg{width:20px;height:20px}
+.svc-feat h5{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:4px}
+.svc-feat p{font-size:12px;color:var(--text-light);line-height:1.55;margin:0}
+.svc-cta{background:linear-gradient(160deg,var(--blue) 0%,var(--blue-dark) 100%);color:#fff;text-align:center;padding:80px 40px;position:relative;overflow:hidden;border-radius:var(--radius-lg);margin-top:48px}
+.svc-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.1),transparent 40%)}
+.svc-cta h2{font-size:36px;font-weight:800;letter-spacing:-.8px;position:relative}
+.svc-cta p{font-size:16px;opacity:.9;margin:14px 0 28px;position:relative}
+.svc-cta .btn{position:relative}
+.svc-img-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 32px}
+.svc-img-row img{width:100%;height:220px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
+.svc-img-row-3{grid-template-columns:1fr 1fr 1fr}
+.svc-img-row-3 img{height:180px}
+.svc-partners{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.svc-partners img{height:36px}
+@media(max-width:992px){.svc-grid-3,.svc-grid-2{grid-template-columns:1fr}.svc-metrics{grid-template-columns:repeat(2,1fr)}.svc-title{font-size:28px}.svc-img-row,.svc-img-row-3{grid-template-columns:1fr}.svc-feat-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.svc-metrics{grid-template-columns:1fr}.svc-container{padding:0 20px}}
+
+
+.svc-card-row{display:flex;align-items:flex-start;gap:20px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;transition:all .25s}
+.svc-card-row:hover{box-shadow:0 12px 36px rgba(0,0,0,.06);transform:translateY(-4px);border-color:transparent}
+.svc-card-row .svc-card-icon{flex-shrink:0;margin-bottom:0}
+.svc-card-row h3{font-size:16px;font-weight:700;color:var(--blue);margin-bottom:6px}
+.svc-card-row p{font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:0}
+.svc-card-row .adv-badge{display:inline-block;background:#1a365d;color:#fff;font-size:.75rem;font-weight:600;border-radius:10px;padding:2px 8px;margin-right:6px}
+@media(max-width:768px){.warehouse-ring-metrics{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.warehouse-ring-metrics{grid-template-columns:1fr!important}}
+@media(max-width:768px){.warehouse-ring-metrics+div>div{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.warehouse-ring-metrics+div>div{grid-template-columns:1fr!important}}
+/* ===== 设计稿预览 ===== */
+.design-preview-fab{background:linear-gradient(135deg,#1a3a5c,#123570);color:#f0a500}
+.design-preview-fab:hover{background:linear-gradient(135deg,#f0a500,#e89542);color:#fff}
+.design-preview-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:24px}
+.design-preview-modal.show{display:flex}
+.dpm-backdrop{position:absolute;inset:0;background:rgba(10,22,44,.72);backdrop-filter:blur(3px)}
+.dpm-panel{position:relative;width:min(1080px,96vw);max-height:88vh;background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.35)}
+.dpm-header{display:flex;align-items:center;gap:12px;padding:18px 26px;background:linear-gradient(135deg,#1a3a5c,#123570);color:#fff}
+.dpm-header h3{margin:0;font-size:1.15rem;font-weight:800}
+.dpm-sub{font-size:.78rem;opacity:.75;font-weight:500}
+.dpm-close{margin-left:auto;width:34px;height:34px;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.2rem;line-height:1;cursor:pointer;transition:background .2s}
+.dpm-close:hover{background:var(--orange)}
+.dpm-body{overflow-y:auto;padding:26px;background:#f4f6fb}
+.dpm-group{margin-bottom:30px}
+.dpm-group:last-child{margin-bottom:0}
+.dpm-group-title{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:800;color:#1a3a5c;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;padding:6px 14px;background:#fff;border-radius:20px;border:1px solid #dde3ec;box-shadow:0 2px 8px rgba(18,53,112,.06)}
+.dpm-group-title::before{content:"";width:8px;height:8px;border-radius:50%;background:#f0a500}
+.dpm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.dpm-item{margin:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(18,53,112,.08);border:1px solid #e4e9f1;transition:transform .25s,box-shadow .25s;cursor:zoom-in}
+.dpm-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(18,53,112,.16)}
+.dpm-item img{width:100%;height:auto;max-height:340px;object-fit:contain;background:#eef1f6;display:block}
+.dpm-item figcaption{padding:12px 16px;font-size:.86rem;font-weight:700;color:#1a3a5c;display:flex;align-items:center;justify-content:space-between}
+.dpm-item figcaption em{font-style:normal;font-weight:600;font-size:.72rem;color:#f0a500;background:rgba(240,165,0,.1);padding:2px 10px;border-radius:12px}
+@media(max-width:768px){.dpm-grid{grid-template-columns:1fr}.design-preview-modal{padding:12px}.dpm-header{padding:14px 18px;flex-wrap:wrap}.dpm-body{padding:16px}}
+
+/* ===== 设计稿视觉要素轻量对齐 ===== */
+/* 首页数据区：大字号深蓝底白字（对应设计稿大 Banner 数据） */
+.hero-stats{background:rgba(12,32,66,.42);border-radius:16px;padding:18px 8px;backdrop-filter:blur(2px)}
+.hs-num{font-size:2.5rem;letter-spacing:-.5px}
+/* 资源中心图文卡片：日期徽章化 + hover 阴影 */
+.news-card .nc-date{display:inline-block;background:rgba(240,165,0,.1);color:#d97706;padding:3px 10px;border-radius:12px}
+.news-card:hover{box-shadow:0 16px 40px rgba(18,53,112,.12)}
+/* FAQ 手风琴：展开态橙色左边框（对应设计稿常见问题展开） */
+.faq-q{border-left:3px solid transparent}
+.faq-q.open{border-left-color:#f0a500;background:#fdf7ee}
+.faq-a.open{background:#fdfaf3}
+/* 物流查询：白卡+阴影+橙色按钮（对应设计稿订单查询） */
+#res-tracking > div{background:#fff;border:1px solid #e4e9f1;border-radius:16px;box-shadow:0 10px 32px rgba(18,53,112,.08);padding:36px}
+#res-tracking input[type="text"]{border-color:#dde3ec;box-shadow:0 2px 8px rgba(18,53,112,.04)}
+#res-tracking input[type="text"]:focus{outline:none;border-color:#f0a500}
+#res-tracking .btn{box-shadow:0 6px 18px rgba(240,165,0,.3)}
+/* 联系我们：联系方式卡片化 + 表单按钮橙色（对应设计稿联系我们） */
+#page-contact section .section-inner > div > div:first-child > div[style*="line-height"],#page-contact section:nth-of-type(1) div[style*="line-height"]{background:#fff;border:1px solid #e4e9f1;border-radius:14px;padding:22px 26px;box-shadow:0 6px 22px rgba(18,53,112,.06)}
+/* 办公地点卡片 hover */
+.office-card{transition:transform .25s,box-shadow .25s}
+.office-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(18,53,112,.14)}
+/* CTA 表单按钮橙色强调 */
+.cta-form-expanded .submit-btn{background:linear-gradient(135deg,#f0a500,#e89542);border:none;color:#fff;font-weight:700;box-shadow:0 8px 22px rgba(240,165,0,.28)}
+.cta-form-expanded .submit-btn:hover{background:linear-gradient(135deg,#e89542,#d97706)}
+
+.home-design-wrap .hd-hot{pointer-events:auto;position:absolute;display:block;background:transparent}
+.home-design-wrap .hd-hot:hover{background:rgba(255,152,0,.18)}
+.contact-design-wrap .hd-hot{pointer-events:auto;position:absolute;display:block;background:transparent}
+.contact-design-wrap .hd-hot:hover{background:rgba(255,152,0,.18)}
+
+/* ===== 交互增强 v6：按钮反馈 / 表单交互 / 滚动动效 ===== */
+/* 热区反馈 */
+.home-design-wrap .hd-hot,.contact-design-wrap .hd-hot{transition:background .18s ease,transform .12s ease}
+.home-design-wrap .hd-hot:active,.contact-design-wrap .hd-hot:active{background:rgba(255,152,0,.34);transform:scale(.985)}
+/* 通用按钮反馈 */
+.btn,.btn-orange,.btn-outline,.btn-primary,.submit-btn,.nav-cta,.share-btn,.design-preview-fab,.float-btn,.service-tab,.resources-tab,.faq-q{transition:transform .12s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease}
+.btn:active,.btn-orange:active,.btn-outline:active,.btn-primary:active,.submit-btn:active,.nav-cta:active,.share-btn:active,.design-preview-fab:active,.float-btn:active,.service-tab:active,.resources-tab:active,.faq-q:active{transform:translateY(1px) scale(.99)}
+/* 联系我们右栏“获取专属物流方案”真实表单层 */
+.ct-form-cover{position:absolute;left:50.3%;top:32.7%;width:24.2%;height:14.6%;background:#ffffff;border-radius:.73vw;pointer-events:none;z-index:2}
+.ct-form{position:absolute;left:51.1%;top:33.5%;width:22.1%;z-index:3;pointer-events:auto}
+.ct-form .ct-field{display:block;width:100%;box-sizing:border-box;height:1.85vw;padding:.35vw .75vw;font-size:.78vw;line-height:1.2;color:#1b2c4f;background:#fff;border:1px solid #e2e6ed;border-radius:.42vw;outline:none;margin-bottom:.55vw;transition:border-color .18s ease,box-shadow .18s ease;font-family:inherit}
+.ct-form .ct-field::placeholder{color:#9aa5b5;opacity:1}
+.ct-form .ct-field:focus{border-color:#f0a500;box-shadow:0 0 0 .21vw rgba(240,165,0,.18)}
+.ct-form .ct-ta{height:3.1vw;resize:none}
+.ct-form select.ct-field:invalid{color:#9aa5b5}
+.ct-form .ct-field.ct-invalid{border-color:#e23c3c}
+.ct-form .ct-field.ct-invalid:focus{box-shadow:0 0 0 .21vw rgba(226,60,60,.15)}
+.ct-submit{display:block;width:6.35vw;height:1.7vw;margin-top:.68vw;background:#13346d;color:#fff;font-size:.78vw;font-weight:700;border:none;border-radius:.42vw;cursor:pointer;transition:background .18s ease,transform .12s ease,opacity .18s ease;font-family:inherit}
+.ct-submit:hover{background:#0d2a5c}
+.ct-submit:active{transform:translateY(1px)}
+.ct-submit.loading{opacity:.75;cursor:default}
+.ct-msg{display:none;margin-top:.5vw;font-size:.72vw;line-height:1.3}
+.ct-msg.err{color:#e23c3c}
+.ct-msg.ok{color:#1a9e5c}
+.ct-msg.show{display:block}
+/* 滚动淡入上浮动效 */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+/* ===== 新设计稿切图直排样式 ===== */
+.img-block{width:100%;line-height:0}
+.img-block img{width:100%;height:auto;display:block}
+.design-full{width:100%;line-height:0;background:#fff}
+.img-block.img-banner img{width:100%}
+.img-block.img-banner{width:100vw;margin-left:calc(50% - 50vw)}
+.img-block.img-wide img{max-width:1400px;margin:0 auto}
+@media (max-width:768px){.img-block.img-wide img{max-width:100%}}
+.page{padding-top:0 !important}
+
+@media (max-width:768px){
+.ct-form .ct-field{height:3.2vw;font-size:1.4vw;padding:.6vw 1.2vw;border-radius:.8vw;margin-bottom:1vw}
+.ct-form .ct-ta{height:5.6vw}
+.ct-submit{width:11vw;height:3vw;font-size:1.4vw;border-radius:.8vw}
+.ct-msg{font-size:1.3vw}
+}
+
+
+/* ===== 各页底部“获取专属物流方案”表单区块 ===== */
+.ct-block-wrap{max-width:1280px;margin:0 auto;padding:64px 20px 0}
+.ct-block{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:0 10px 40px rgba(18,53,112,.08);padding:48px 56px;text-align:center}
+.ct-block-title{font-size:1.7rem;font-weight:800;color:#1A3A6F;margin-bottom:8px}
+.ct-block-sub{font-size:.95rem;color:var(--text-light);margin-bottom:28px}
+.ct-block-form{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:980px;margin:0 auto}
+.ct-block-form .ct-field{display:block;width:100%;box-sizing:border-box;height:44px;padding:0 14px;font-size:.92rem;line-height:1.2;color:#1b2c4f;background:#fff;border:1px solid #e2e6ed;border-radius:8px;outline:none;margin-bottom:0;transition:border-color .18s ease,box-shadow .18s ease;font-family:inherit}
+.ct-block-form select.ct-field{color:#9aa5b5}
+.ct-block-form .ct-field:focus{border-color:#f0a500;box-shadow:0 0 0 3px rgba(240,165,0,.18)}
+.ct-block-form .ct-field.ct-invalid{border-color:#e23c3c}
+.ct-block-form .ct-ta{grid-column:1/-1;height:88px;padding:12px 14px;resize:none}
+.ct-block-submit{display:block;grid-column:1/-1;justify-self:center;min-width:180px;height:46px;margin-top:6px;background:#13346d;color:#fff;font-size:.95rem;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:background .18s ease,transform .12s ease;font-family:inherit}
+.ct-block-submit:hover{background:#0d2a5c}
+.ct-block-submit:active{transform:translateY(1px) scale(.99)}
+@media (max-width:768px){.ct-block{padding:32px 20px}.ct-block-form{grid-template-columns:1fr}.ct-block-title{font-size:1.3rem}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="navbar">
+  <div class="nav-logo"><img src="skye_logo_white.png" alt="SKYE Logo"></div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="#" class="active" data-page="home">首页</a>
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-trigger" data-page="services" data-tab="0">核心业务</a>
+      <div class="dropdown-panel">
+        <a href="#" data-page="services" data-tab="0" class="dropdown-item dropdown-group-label">尾程运输</a>
+        <a href="#" data-page="services" data-tab="0" class="dropdown-item dropdown-sub-item">产品矩阵</a>
+        <a href="#" data-page="services" data-tab="1" class="dropdown-item dropdown-sub-item">服务优势</a>
+        <a href="#" data-page="services" data-tab="2" class="dropdown-item">海外仓储</a>
+        <a href="#" data-page="services" data-tab="3" class="dropdown-item">头程运输</a>
+      </div>
+    </div>
+    <a href="#" data-page="innovation">创新技术</a>
+    <a href="#" data-page="about">关于世盖易</a>
+    <a href="#" data-page="careers">加入我们</a>
+    <a href="#" data-page="resources">资源中心</a>
+    <a href="#" class="nav-cta" data-page="contact">联系我们</a>
+  </div>
+</nav>
+
+<div class="page active" id="page-home" style="background:rgba(14,32,66,1)">
+
+<!-- ============ 首页：设计师整图方案（整图视觉 + 透明热区层） ============ -->
+<div class="home-design-wrap" style="position:relative;width:100%;line-height:0;margin-top:0;background:rgba(14,32,66,1)">
+  <img src="home_design_cropped_new_top.webp" alt="世盖易官网首页" width="1920" height="2631" decoding="async" style="width:100%;height:auto;display:block"><img src="home_design_cropped_new_bottom.webp" alt="世盖易官网首页" width="1920" height="2632" loading="lazy" decoding="async" style="width:100%;height:auto;display:block">
+  <!-- 透明热区层（新版首页 1920x5345 热区） -->
+  <div style="position:absolute;inset:0;pointer-events:none">
+    <a class="hd-hot" style="left:26.1%;top:6.57%;width:5.7%;height:2.23%" onclick="switchPage('contact');return false;" title="了解世盖易"></a>
+    <a class="hd-hot" style="left:33.3%;top:52.37%;width:8.6%;height:1.83%" onclick="switchPage('services');return false;" title="核心业务"></a>
+    <a class="hd-hot" style="left:35.2%;top:56.23%;width:5.2%;height:2.64%" onclick="switchPage('services',0);return false;" title="一件代发"></a>
+    <a class="hd-hot" style="left:40.4%;top:56.23%;width:5.2%;height:2.64%" onclick="switchPage('services',1);return false;" title="FBA中转"></a>
+    <a class="hd-hot" style="left:45.6%;top:56.23%;width:5.2%;height:2.64%" onclick="switchPage('services',1);return false;" title="大货中转"></a>
+    <a class="hd-hot" style="left:50.8%;top:56.23%;width:5.2%;height:2.64%" onclick="switchPage('services',1);return false;" title="B2C/B2B订单履约"></a>
+    <a class="hd-hot" style="left:35.2%;top:58.77%;width:5.2%;height:2.03%" onclick="switchPage('contact');return false;" title="立即咨询"></a>
+    <a class="hd-hot" style="left:40.4%;top:58.77%;width:5.2%;height:2.03%" onclick="switchPage('contact');return false;" title="立即咨询"></a>
+    <a class="hd-hot" style="left:45.6%;top:58.77%;width:5.2%;height:2.03%" onclick="switchPage('contact');return false;" title="立即咨询"></a>
+    <a class="hd-hot" style="left:50.8%;top:58.77%;width:5.2%;height:2.03%" onclick="switchPage('contact');return false;" title="立即咨询"></a>
+    <a class="hd-hot" style="left:33.9%;top:63.03%;width:6.2%;height:1.52%" onclick="switchPage('innovation');return false;" title="数据驱动全链路"></a>
+    <a class="hd-hot" style="left:13.3%;top:71.77%;width:17.3%;height:2.23%" onclick="switchPage('services',0);return false;" title="跨境电商卖家"></a>
+    <a class="hd-hot" style="left:21.8%;top:71.77%;width:17.3%;height:2.23%" onclick="switchPage('services',3);return false;" title="外贸工厂 & 出海品牌商"></a>
+    <a class="hd-hot" style="left:30.1%;top:71.77%;width:17.3%;height:2.23%" onclick="switchPage('services',1);return false;" title="贸易分销客户"></a>
+    <a class="hd-hot" style="left:38.4%;top:71.77%;width:17.3%;height:2.23%" onclick="switchPage('services',2);return false;" title="货代及物流伙伴"></a>
+    <a class="hd-hot" style="left:25.8%;top:84.87%;width:3.9%;height:1.52%" onclick="alert('感谢提交！我们将尽快与您联系。');return false;" title="提交·获取方案"></a>
+  </div>  </div>
+</div>
+<!-- /page-home -->
+
+<div class="page" id="page-services">
+<div class="svc-banner"><img id="svcBannerImg" src="svc_banner0.webp" alt="核心业务"></div>
+<div class="service-tabs svc-tabs-bar" id="serviceTabs">
+  <button class="service-tab active" data-idx="0">产品矩阵</button>
+  <button class="service-tab" data-idx="1">服务优势</button>
+  <button class="service-tab" data-idx="2">海外仓储</button>
+  <button class="service-tab" data-idx="3">头程运输</button>
+</div>
+<div class="tab-content active" id="tab-lmprod">
+<div class="design-full" style="line-height:0"><img src="svc_tab0_top.webp" alt="末端派送 · 产品运力" width="3840" height="7095" decoding="async" style="width:100%;height:auto;display:block"><img src="svc_tab0_bottom.webp" alt="末端派送 · 产品运力" width="3840" height="7095" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"></div>
+</div>
+<div class="tab-content" id="tab-lmsvc">
+<div class="design-full" style="line-height:0"><img src="svc_tab1_top.webp" alt="末端派送 · 服务优势" width="3840" height="3135" decoding="async" style="width:100%;height:auto;display:block"><img src="svc_tab1_bottom.webp" alt="末端派送 · 服务优势" width="3840" height="3135" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"></div>
+</div>
+<div class="tab-content" id="tab-warehouse">
+<div class="design-full" style="line-height:0"><img src="svc_tab2_top.webp" alt="海外仓储" width="3840" height="6309" decoding="async" style="width:100%;height:auto;display:block"><img src="svc_tab2_bottom.webp" alt="海外仓储" width="3840" height="6310" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"></div>
+</div>
+<div class="tab-content" id="tab-headhaul">
+<div class="design-full" style="line-height:0"><img src="svc_tab3_top.webp" alt="头程运输" width="3840" height="4610" decoding="async" style="width:100%;height:auto;display:block"><img src="svc_tab3_bottom.webp" alt="头程运输" width="3840" height="4611" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"></div>
+</div>
+</div>
+
+<div class="page" id="page-innovation">
+<div class="design-full" style="margin-top:0;line-height:0"><img src="innovation_top.webp" alt="创新技术" width="3840" height="4379" decoding="async" style="width:100%;height:auto;display:block"><img src="innovation_bottom.webp" alt="创新技术" width="3840" height="4380" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"></div>
+</div>
+
+<div class="page" id="page-about">
+<div class="design-full" style="margin-top:0;line-height:0"><img src="about_top.webp" alt="关于世盖易" width="3840" height="7292" decoding="async" style="width:100%;height:auto;display:block"><img src="about_bottom.webp" alt="关于世盖易" width="3840" height="7292" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"></div>
+
+<!-- 获取专属物流方案：设计稿整图（与首页一致） -->
+<section class="section ct-block-wrap">
+<div class="img-block img-banner"><img loading="lazy" src="home_cta.webp?v=3" alt="获取专属物流方案"></div>
+</section>
+</div>
+<!-- /page-about -->
+<div class="page" id="page-careers">
+<div class="design-full" style="margin-top:0;line-height:0"><img src="careers_top.webp" alt="加入我们" width="3840" height="3532" decoding="async" style="width:100%;height:auto;display:block"><img src="careers_bottom.webp" alt="加入我们" width="3840" height="3533" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"></div>
+</div>
+<div class="page" id="page-resources">
+<div class="subpage-banner" style="position:relative;margin-top:0;overflow:hidden;line-height:0">
+<img loading="lazy" src="res_banner.webp?v=1" alt="资源中心" style="width:100%;display:block">
+</div>
+<section class="section">
+<div class="resources-tabs" id="resourcesTabs">
+<button class="resources-tab active" data-idx="0">公司新闻</button>
+<button class="resources-tab" data-idx="1">行业资讯</button>
+<button class="resources-tab" data-idx="2">物流查询</button>
+<button class="resources-tab" data-idx="3">常见问题</button>
+</div>
+<div class="tab-content active" id="res-news">
+<div class="news-grid">
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_award.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-07-30</div><h4>扎根产业带斩获「汕品出海」奖项，世盖易助力国货走向全球</h4><p>世盖易亮相潮汕电商产业博览会，依托一站式跨境物流解决方案，赋能潮汕产业带国货扬帆出海。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_warehouse_interior.webp"></div><div class="nc-body"><div class="nc-date">2026-07-28</div><h4>官宣｜世盖易德国 20000㎡高标仓正式启用，构筑欧洲稳定本土履约底盘</h4><p>世盖易科隆海外仓全新落地，完善欧洲履约网络，为跨境卖家提供稳定高效的欧盟本土仓储派送服务。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_sports_event.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-04-30</div><h4>挥杆聚知己，跨境共前行｜「世盖」杯高尔夫精英赛圆满落幕</h4><p>「世盖」杯高尔夫精英赛顺利举办，汇聚跨境从业者，搭建交流平台，共谋行业发展新机遇。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="news_decade.webp"></div><div class="nc-body"><div class="nc-date">2026-04-24</div><h4>10年深耕，数据驱动！这家头仓配一体化跨境物流服务商，让跨境出海更安心</h4><p>十年深耕跨境赛道，世盖易打造数字化头仓配一体化体系，为出海企业提供可靠的全链路物流支撑。</p></div></div>
+</div>
+<div class="pagination">
+<button class="page-nav" disabled>Previous</button>
+<button class="active">1</button>
+<button class="page-nav" disabled>Next</button>
+</div></div>
+<div class="tab-content" id="res-industry">
+<div class="news-grid">
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="cargo_ship.webp"></div><div class="nc-body"><div class="nc-date">2026-07-30</div><h4>美国 301 关税落地，拆解成本变化和跨境卖家应对方案（附关税豁免税号）</h4><p>美国对华 12.5% 附加关税正式生效，世盖易拆解新政细则，提供合规降本实操方案。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="dmytro-demidko-eBWzFKahEaU-unsplash.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-07-23</div><h4>中国卖家霸榜亚马逊，GMV 却不足三成，该往何处发力？（附 2026 美国零售百强榜）</h4><p>亚马逊中国卖家数量占优但营收偏低，本文剖析行业现状，分享多渠道、品牌化破局思路。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="warehouse_scanning.webp?v=1"></div><div class="nc-body"><div class="nc-date">2026-07-01</div><h4>卖家避坑指南｜拒绝「暴雷」！海外仓入仓一定要预约，否则…</h4><p>海外仓送货无预约易出现拒收、滞柜、延误损失，一文讲清预约规则与避坑要点。</p></div></div>
+<div class="news-card"><div class="nc-img"><img loading="lazy" src="fedex_truck.webp"></div><div class="nc-body"><div class="nc-date">2026-07-01</div><h4>美线必看：5H/9H/1H/7H 查什么？扣多久？抢救方案是什么？</h4><p>详解美线四大海关扣留代码查验内容、滞留时长，配套完整扣货应急处理方案。</p></div></div>
+</div>
+<div class="pagination">
+<button class="page-nav" disabled>Previous</button>
+<button class="active">1</button>
+<button class="page-nav" disabled>Next</button>
+</div></div>
+<div class="tab-content" id="res-tracking">
+<div style="max-width:600px;margin:40px auto;text-align:center">
+<img loading="lazy" src="logistics_tracking.webp" style="max-height:200px;margin:0 auto 24px">
+<h3 style="color:var(--blue);margin-bottom:16px">物流轨迹查询</h3>
+<div style="display:flex;gap:12px"><input type="text" placeholder="运单号/参考号" style="flex:1;padding:14px 18px;border:2px solid var(--border);border-radius:8px;font-size:.92rem"><button class="btn btn-primary" onclick="alert('查询功能需要对接后端API')">查询</button></div>
+<p style="color:var(--text-muted);font-size:.82rem;margin-top:12px">支持 UPS / FedEx / USPS / UniUni / GOFO 等渠道</p></div></div>
+<div class="tab-content" id="res-faq">
+<div class="img-block img-wide"><img loading="lazy" src="res_faq.webp?v=1" alt="常见问题"></div>
+</div></section>
+
+
+<!-- 获取专属物流方案：设计稿整图（与首页一致） -->
+<section class="section ct-block-wrap">
+<div class="img-block img-banner"><img loading="lazy" src="home_cta.webp?v=3" alt="获取专属物流方案"></div>
+</section>
+</div>
+<!-- /page-resources -->
+<div class="page" id="page-contact">
+<!-- ============ 联系我们：新版设计稿整图方案（整图视觉 + 透明热区层） ============ -->
+<div class="contact-design-wrap" style="position:relative;width:100%;line-height:0;margin-top:0;background:rgba(14,32,66,1)">
+  <img src="contact_design_full_top.webp" alt="联系我们" width="1920" height="1488" decoding="async" style="width:100%;height:auto;display:block"><img src="contact_design_full_bottom.webp" alt="联系我们" width="1920" height="1488" loading="lazy" decoding="async" style="width:100%;height:auto;display:block">
+  <!-- 透明热区层（新版整图 1920x3054） -->
+  <div style="position:absolute;inset:0;pointer-events:none">
+    <a class="hd-hot" style="left:28.9%;top:23.19%;width:6.2%;height:1.6%" onclick="alert('感谢提交！我们将尽快与您联系。');return false;" title="提交·获取方案"></a>
+    <a class="hd-hot" style="left:15.5%;top:70.91%;width:3.0%;height:1.6%" onclick="alert('国内办公驻地：深圳 / 宁波 / 长沙 / 成都 / 福州 / 厦门 / 杭州');return false;" title="办公驻地"></a>
+    <a class="hd-hot" style="left:18.8%;top:70.91%;width:3.0%;height:1.6%" onclick="alert('海外驻地：美国加州');return false;" title="海外驻地"></a>
+    <a class="hd-hot" style="left:18.2%;top:72.96%;width:3.6%;height:2.0%" onclick="alert('深圳总部');return false;" title="深圳总部"></a>
+    <a class="hd-hot" style="left:34.1%;top:72.96%;width:4.7%;height:2.0%" onclick="alert('宁波运营中心');return false;" title="宁波运营中心"></a>
+    <a class="hd-hot" style="left:49.0%;top:72.96%;width:3.6%;height:2.0%" onclick="alert('长沙分部');return false;" title="长沙分部"></a>
+    <a class="hd-hot" style="left:18.2%;top:77.27%;width:3.6%;height:2.0%" onclick="alert('成都分部');return false;" title="成都分部"></a>
+    <a class="hd-hot" style="left:33.3%;top:77.27%;width:3.6%;height:2.0%" onclick="alert('福州分部');return false;" title="福州分部"></a>
+    <a class="hd-hot" style="left:48.4%;top:77.27%;width:3.6%;height:2.0%" onclick="alert('厦门分部');return false;" title="厦门分部"></a>
+    <a class="hd-hot" style="left:18.2%;top:81.69%;width:3.6%;height:2.0%" onclick="alert('杭州分部');return false;" title="杭州分部"></a>
+    <a class="hd-hot" style="left:54.4%;top:86.00%;width:1.3%;height:1.2%" onclick="alert('社交平台建设中，敬请期待');return false;" title="社交平台"></a>
+    <a class="hd-hot" style="left:55.7%;top:86.00%;width:1.3%;height:1.2%" onclick="alert('社交平台建设中，敬请期待');return false;" title="社交平台"></a>
+    <a class="hd-hot" style="left:57.0%;top:86.00%;width:1.3%;height:1.2%" onclick="alert('社交平台建设中，敬请期待');return false;" title="社交平台"></a>
+    <a class="hd-hot" style="left:58.3%;top:86.00%;width:1.3%;height:1.2%" onclick="alert('社交平台建设中，敬请期待');return false;" title="社交平台"></a>
+    <a class="hd-hot" style="left:13.5%;top:91.02%;width:3.5%;height:1.2%" onclick="switchPage('home');return false;" title="首页"></a>
+    <a class="hd-hot" style="left:13.5%;top:92.05%;width:3.5%;height:1.2%" onclick="switchPage('about');return false;" title="关于世盖易"></a>
+    <a class="hd-hot" style="left:13.5%;top:93.39%;width:3.5%;height:1.2%" onclick="switchPage('careers');return false;" title="加入我们"></a>
+    <a class="hd-hot" style="left:13.5%;top:94.51%;width:3.5%;height:1.2%" onclick="switchPage('resources');return false;" title="资源中心"></a>
+    <a class="hd-hot" style="left:17.2%;top:91.02%;width:3.5%;height:1.2%" onclick="switchPage('services',0);return false;" title="产品矩阵"></a>
+    <a class="hd-hot" style="left:17.2%;top:92.05%;width:3.5%;height:1.2%" onclick="switchPage('services',2);return false;" title="海外仓储"></a>
+    <a class="hd-hot" style="left:17.2%;top:93.39%;width:3.5%;height:1.2%" onclick="switchPage('services',3);return false;" title="头程运输"></a>
+    <a class="hd-hot" style="left:20.8%;top:91.02%;width:8.0%;height:1.2%" onclick="window.location.href='mailto:sales@skyeglobal.com';return false;" title="sales@skyeglobal.com"></a>
+    <a class="hd-hot" style="left:20.8%;top:92.05%;width:8.0%;height:1.2%" onclick="window.location.href='mailto:support@skyeglobal.com';return false;" title="support@skyeglobal.com"></a>
+    <a class="hd-hot" style="left:44.8%;top:99.85%;width:4.0%;height:1.0%" onclick="alert('隐私政策页面建设中，敬请期待');return false;" title="隐私政策"></a>
+    <a class="hd-hot" style="left:49.0%;top:99.85%;width:4.0%;height:1.0%" onclick="alert('服务条款页面建设中，敬请期待');return false;" title="服务条款"></a>
+  </div>
+</div>
+</div><!-- /page-contact -->
+
+<div class="float-sidebar">
+<div style="position:relative">
+<button class="float-btn" id="floatConsult" title="在线咨询" onclick="toggleFloatPopup('consultPopup')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<div class="float-popup" id="consultPopup"><p><strong>在线咨询</strong></p><p>请通过底部表单提交需求<br>或发送邮件至 sales@skyeglobal.com</p></div>
+</div>
+<div style="position:relative">
+<button class="float-btn" id="floatWechat" title="微信咨询" onclick="toggleFloatPopup('wechatPopup')"><svg width="24" height="24" viewBox="0 0 24 24" fill="#07C160"><path d="M8.5 11a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM12 2C6.477 2 2 6.015 2 10.95c0 2.88 1.629 5.426 4.106 7.013L4.5 22l4.586-2.942c.93.264 1.914.4 2.914.4 5.523 0 10-4.015 10-8.95S17.523 2 12 2z"/></svg></button>
+<div class="float-popup" id="wechatPopup"><p><strong>微信咨询</strong></p><p>搜索关注「世盖易SKYE」</p></div>
+</div>
+<div style="position:relative">
+<button class="float-btn" id="floatEmail" title="电话咨询" onclick="toggleFloatPopup('emailPopup')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></button>
+<div class="float-popup" id="emailPopup"><p><strong>电话咨询</strong></p><p>商务合作邮箱<br>sales@skyeglobal.com</p></div>
+</div>
+<button class="float-btn back-top" id="backTop" title="回到顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button></div>
+
+<footer class="footer footer-design">
+<div style="position:relative">
+<img loading="lazy" src="foot_design.webp?v=1" alt="世盖易页脚设计稿">
+<div class="footer-hotmap" style="position:absolute;inset:0;z-index:2">
+<a href="#" data-page="services" data-tab="0" title="产品矩阵" style="left:35%;top:75.3%;width:10%;height:1.7%"></a>
+<a href="#" data-page="services" data-tab="2" title="海外仓储" style="left:35%;top:77.0%;width:10%;height:1.7%"></a>
+<a href="#" data-page="services" data-tab="3" title="头程运输" style="left:35%;top:78.7%;width:10%;height:1.7%"></a>
+<a href="#" data-page="home" title="首页" style="left:20%;top:75.3%;width:10%;height:1.7%"></a>
+<a href="#" data-page="about" title="关于世盖易" style="left:20%;top:77.0%;width:10%;height:1.7%"></a>
+<a href="#" data-page="careers" title="加入我们" style="left:20%;top:78.7%;width:10%;height:1.7%"></a>
+<a href="#" data-page="resources" title="资源中心" style="left:20%;top:80.4%;width:10%;height:1.7%"></a>
+<a href="mailto:sales@skyeglobal.com" title="sales@skyeglobal.com" style="left:50%;top:75.3%;width:13%;height:1.7%"></a>
+<a href="mailto:support@skyeglobal.com" title="support@skyeglobal.com" style="left:50%;top:77.0%;width:13%;height:1.7%"></a>
+<a href="#" title="LinkedIn 分享" style="left:80%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 LinkedIn 分享');return false"></a>
+<a href="#" title="Facebook 分享" style="left:84.2%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 Facebook 分享');return false"></a>
+<a href="#" title="X 分享" style="left:88.4%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 X 分享');return false"></a>
+<a href="#" title="YouTube 分享" style="left:92.6%;top:63.5%;width:3.6%;height:6.5%" onclick="showShareToast('已复制链接，请粘贴到 YouTube 分享');return false"></a>
+<a href="#" title="隐私政策" style="left:70%;top:84.5%;width:7%;height:1.9%"></a>
+<a href="#" title="服务条款" style="left:79%;top:84.5%;width:7%;height:1.9%"></a>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+const pages=document.querySelectorAll('.page');
+const navAs=document.querySelectorAll('.nav-links a[data-page],.nav-dropdown a[data-page],.footer a[data-page]');
+function switchPage(id,tab){
+  pages.forEach(p=>p.classList.remove('active'));
+  const t=document.getElementById('page-'+id);if(t)t.classList.add('active');
+  document.querySelectorAll('.nav-links a[data-page],.dropdown-trigger[data-page]').forEach(a=>a.classList.remove('active'));
+  document.querySelectorAll('.nav-links a[data-page],.dropdown-trigger[data-page]').forEach(function(a){a.classList.remove('active')});
+  document.querySelectorAll('.nav-links a[data-page="'+id+'"],.dropdown-trigger[data-page="'+id+'"]').forEach(function(a){if((id==='services'&&a.hasAttribute('data-tab')&&typeof tab!=='undefined'&&parseInt(a.getAttribute('data-tab'))===tab)||(!a.hasAttribute('data-tab')))a.classList.add('active')});
+  if(id==='services'&&typeof tab!=='undefined'){
+    document.querySelectorAll('#serviceTabs .service-tab').forEach((tb,i)=>{tb.classList.toggle('active',i===tab)});
+    document.querySelectorAll('#page-services .tab-content').forEach((c,i)=>{c.classList.toggle('active',i===tab)});
+    document.querySelectorAll('.svc-hero-slide').forEach((s,k)=>{s.classList.toggle('active',k===tab)});
+    const sb=document.getElementById('svcBannerImg');if(sb)sb.src='svc_banner'+tab+'.webp';
+  }
+  if(id==='resources'&&typeof tab!=='undefined'){
+    document.querySelectorAll('#resourcesTabs .resources-tab').forEach((tb,i)=>{tb.classList.toggle('active',i===tab)});
+    document.querySelectorAll('#page-resources .tab-content').forEach((c,i)=>{c.classList.toggle('active',i===tab)});
+  }
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+navAs.forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();switchPage(this.dataset.page,this.dataset.tab!==undefined?parseInt(this.dataset.tab):undefined)})});
+document.querySelectorAll('.service-card[data-page]').forEach(c=>{c.addEventListener('click',function(){switchPage(this.dataset.page,parseInt(this.dataset.tab))})});
+document.querySelectorAll('.hero-btns a[data-page]').forEach(b=>{b.addEventListener('click',function(e){e.preventDefault();switchPage(this.dataset.page)})});
+document.querySelectorAll('.hero-design[data-page]').forEach(h=>{h.addEventListener('click',function(){switchPage(this.dataset.page)})});
+document.querySelectorAll('#serviceTabs .service-tab').forEach(t=>{t.addEventListener('click',function(){const i=parseInt(this.dataset.idx);document.querySelectorAll('#serviceTabs .service-tab').forEach(tb=>tb.classList.remove('active'));this.classList.add('active');document.querySelectorAll('#page-services .tab-content').forEach((c,j)=>{c.classList.toggle('active',j===i)});document.querySelectorAll('.svc-hero-slide').forEach((s,k)=>{s.classList.toggle('active',k===i)});const sb=document.getElementById('svcBannerImg');if(sb)sb.src='svc_banner'+i+'.webp';})});
+document.querySelectorAll('#resourcesTabs .resources-tab').forEach(t=>{t.addEventListener('click',function(){const i=parseInt(this.dataset.idx);document.querySelectorAll('#resourcesTabs .resources-tab').forEach(tb=>tb.classList.remove('active'));this.classList.add('active');document.querySelectorAll('#page-resources .tab-content').forEach((c,j)=>{c.classList.toggle('active',j===i)})})});
+function showShareToast(msg){var t=document.getElementById('shareToast');if(!t){t=document.createElement('div');t.id='shareToast';t.style.cssText='display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--blue);color:#fff;padding:16px 28px;border-radius:10px;font-size:.95rem;z-index:10001;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center;white-space:nowrap';document.body.appendChild(t)}t.textContent=msg;t.style.display='block';clearTimeout(t._tid);t._tid=setTimeout(function(){t.style.display='none'},2000)}function toggleFloatPopup(id){var all=document.querySelectorAll('.float-popup');var t=document.getElementById(id);if(!t)return;var was=t.classList.contains('show');all.forEach(function(p){p.classList.remove('show')});if(!was)t.classList.add('show')}const bt=document.getElementById('backTop');window.addEventListener('scroll',()=>{bt.classList.toggle('visible',window.scrollY>600)});bt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});window.switchPage=switchPage;window.showShareToast=showShareToast;
+})();
+</script>
+
+<script>
+function toggleWarehouseMap(){
+  var us=document.getElementById("usMap");
+  var de=document.getElementById("deMap");
+  var btn=document.getElementById("mapToggleBtn");
+  if(us.style.display==="none"){
+    us.style.display="block"; de.style.display="none";
+    btn.textContent="切换德国地图";
+  }else{
+    us.style.display="none"; de.style.display="block";
+    btn.textContent="切换美国地图";
+  }
+}
+</script>
+
+<script>
+(function(){
+/* 滚动淡入：进入视口的区块淡入上浮 */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+/* 兜底：load 后 800ms 强制所有未出现 .in 的 .reveal 补上 .in，防止 IO 失效导致内容不可见 */
+function revealAll(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in');});}
+if(document.readyState==='complete'){setTimeout(revealAll,800);}else{window.addEventListener('load',function(){setTimeout(revealAll,800);});}
+/* 联系我们“获取专属物流方案”表单（纯前端演示） */
+var f=document.getElementById('ctForm');if(f){
+  var btn=document.getElementById('ctSubmit'),msg=document.getElementById('ctMsg');
+  var fields=[f.ctName,f.ctPhone,f.ctEmail,f.ctIndustry,f.ctBiz,f.ctDesc];
+  function showMsg(txt,ok){msg.textContent=txt;msg.className='ct-msg '+(ok?'ok':'err')+' show';}
+  function clearErr(){fields.forEach(function(x){x.classList.remove('ct-invalid');});}
+  btn.addEventListener('click',function(){
+    clearErr();
+    var errs=[];
+    if(!f.ctName.value.trim()){errs.push('请填写联系人姓名');f.ctName.classList.add('ct-invalid');}
+    if(!f.ctPhone.value.trim()){errs.push('请填写联系电话');f.ctPhone.classList.add('ct-invalid');}
+    else if(!/^[0-9+\-\s]{6,20}$/.test(f.ctPhone.value.trim())){errs.push('联系电话格式不正确');f.ctPhone.classList.add('ct-invalid');}
+    if(f.ctEmail.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.ctEmail.value.trim())){errs.push('邮箱地址格式不正确');f.ctEmail.classList.add('ct-invalid');}
+    if(!f.ctDesc.value.trim()){errs.push('请填写需求描述');f.ctDesc.classList.add('ct-invalid');}
+    if(errs.length){showMsg(errs.join('；'),false);return;}
+    btn.classList.add('loading');btn.disabled=true;btn.textContent='提交中…';
+    setTimeout(function(){
+      btn.classList.remove('loading');btn.disabled=false;btn.textContent='提交·获取方案';
+      showMsg('提交成功！我们将尽快与您联系（演示，未实际发送）。',true);
+      f.reset();
+      setTimeout(function(){msg.className='ct-msg';},4000);
+    },1200);
+  });
+  fields.forEach(function(x){x.addEventListener('input',function(){x.classList.remove('ct-invalid');});});
+}
+})();
+</script>
+
+function ctBlockSubmit(btn){
+  var f=btn.closest('.ct-block-form');var els=f.querySelectorAll('input,select,textarea');
+  for(var i=0;i<els.length;i++){if(els[i].hasAttribute('required')&&!els[i].value.trim()){els[i].classList.add('ct-invalid');(function(el){setTimeout(function(){el.classList.remove('ct-invalid')},1600)})(els[i]);return}}
+  showShareToast('感谢提交！我们将尽快与您联系。');
+  f.reset();
+}
+</script>
+</body></html>
